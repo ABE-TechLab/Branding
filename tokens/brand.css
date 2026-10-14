@@ -1,0 +1,16 @@
+/*
+ * ABE TechLab — working brand tokens
+ * Values are read from current GitHub profile SVGs and are not a final
+ * formally approved design-system specification.
+ */
+:root {
+  --abe-color-charcoal: #111111;
+  --abe-color-off-white: #F9F9F6;
+  --abe-color-lime: #A7E021;
+
+  /* Supporting colors used by the current GitHub profile banner. */
+  --abe-banner-charcoal: #101010;
+  --abe-banner-muted-gray: #B8B8B3;
+  --abe-banner-graph-gray: #777A72;
+  --abe-banner-divider: #383A35;
+}
