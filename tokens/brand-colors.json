@@ -1,0 +1,47 @@
+{
+  "brand": "ABE TechLab",
+  "status": "working-draft",
+  "note": "Values reflect current GitHub profile SVGs; final brand-system approval is not recorded.",
+  "colors": {
+    "charcoal": {
+      "hex": "#111111",
+      "rgb": [17, 17, 17],
+      "role": "primary dark mark and text on light surfaces",
+      "source": "assets/logos/abe-techlab-mark-light.svg"
+    },
+    "offWhite": {
+      "hex": "#F9F9F6",
+      "rgb": [249, 249, 246],
+      "role": "light mark and text on dark surfaces",
+      "source": "assets/logos/abe-techlab-mark-dark.svg"
+    },
+    "lime": {
+      "hex": "#A7E021",
+      "rgb": [167, 224, 33],
+      "role": "brand accent",
+      "source": "both logo variants"
+    }
+  },
+  "bannerSupport": {
+    "bannerCharcoal": {
+      "hex": "#101010",
+      "rgb": [16, 16, 16],
+      "role": "profile banner background"
+    },
+    "mutedGray": {
+      "hex": "#B8B8B3",
+      "rgb": [184, 184, 179],
+      "role": "secondary banner descriptor"
+    },
+    "graphGray": {
+      "hex": "#777A72",
+      "rgb": [119, 122, 114],
+      "role": "banner geometric linework"
+    },
+    "dividerCharcoal": {
+      "hex": "#383A35",
+      "rgb": [56, 58, 53],
+      "role": "subtle banner divider"
+    }
+  }
+}
