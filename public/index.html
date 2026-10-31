@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111111">
-  <meta name="description" content="Public ABE TechLab logo assets for websites, products, and email communication.">
+  <meta name="description" content="ABE TechLab brand assets, adaptive logo, email-ready logos, and copy-ready brand colors.">
   <title>ABE TechLab — Brand Assets</title>
   <style>
     :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f4f5f2; color: #171816; }
@@ -14,55 +14,174 @@
     .eyebrow { color: #65705b; font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
     h1 { margin: 12px 0 10px; font-size: clamp(32px, 5vw, 48px); letter-spacing: -.045em; }
     .intro { max-width: 680px; color: #5b6057; line-height: 1.7; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 36px; }
+    h2.section-title { margin: 48px 0 8px; font-size: 24px; letter-spacing: -.025em; }
+    .section-intro { max-width: 700px; margin: 0; color: #62675f; font-size: 14px; line-height: 1.65; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 24px; }
     .card { overflow: hidden; border: 1px solid #dedfd9; border-radius: 16px; background: #fff; }
     .preview { min-height: 210px; display: grid; place-items: center; padding: 28px; color-scheme: light; }
     .preview.dark { background: #111; color-scheme: dark; }
     .preview img { display: block; width: 160px; max-width: 100%; height: auto; }
     .details { padding: 18px 20px 20px; }
-    h2 { margin: 0 0 6px; font-size: 16px; }
+    h3 { margin: 0 0 6px; font-size: 16px; }
     .details p { margin: 0 0 14px; color: #656a62; font-size: 13px; line-height: 1.5; }
     a { color: #396b16; font-size: 13px; font-weight: 650; overflow-wrap: anywhere; }
     code { display: block; margin-top: 10px; color: #555b52; font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
-    footer { margin-top: 30px; color: #777c72; font-size: 12px; line-height: 1.6; }
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 14px; margin-top: 22px; }
+    .color-card { overflow: hidden; border: 1px solid #dedfd9; border-radius: 14px; background: #fff; }
+    .swatch { height: 108px; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .color-info { padding: 16px; }
+    .color-name { margin: 0 0 4px; font-size: 15px; font-weight: 700; }
+    .color-role { margin: 0 0 13px; color: #656a62; font-size: 12px; line-height: 1.5; }
+    .color-line { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px; }
+    .color-line code { display:inline; margin:0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:#2f332d; font-size:13px; font-weight:650; }
+    .copy-button { border:1px solid #d7dbd1; border-radius:8px; padding:7px 10px; background:#f7f8f5; color:#283024; font:inherit; font-size:12px; font-weight:650; cursor:pointer; }
+    .copy-button:hover { background:#eef1e9; }
+    .copy-button:focus-visible { outline:3px solid #A7E021; outline-offset:2px; }
+    .copy-button[disabled] { opacity:.7; cursor:default; }
+    .token-panel { margin-top:18px; border:1px solid #dedfd9; border-radius:14px; background:#fff; padding:18px; }
+    .token-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .token-heading h3 { margin:0; }
+    pre { overflow:auto; margin:14px 0 0; padding:16px; border-radius:10px; background:#171816; color:#f9f9f6; font-size:12px; line-height:1.7; }
+    .token-help { margin:10px 0 0; color:#656a62; font-size:12px; line-height:1.55; }
+    .copy-status { min-height:20px; margin-top:10px; color:#396b16; font-size:12px; }
+    footer { margin-top: 36px; color: #777c72; font-size: 12px; line-height: 1.6; }
+    @media (max-width: 620px) { main { padding-top: 42px; } }
   </style>
 </head>
 <body>
   <main>
     <div class="eyebrow">ABE TechLab · Brand library</div>
-    <h1>Public logo assets</h1>
-    <p class="intro">Stable, recipient-accessible logo files for ABE TechLab websites, products, and email communication. The adaptive SVG changes its main mark with the preferred color scheme in supporting browsers. Use fixed PNG variants for email.</p>
-    <section class="grid" aria-label="Logo variants">
-      <article class="card">
-        <div class="preview"><img src="/logos/abe-techlab-mark-adaptive.svg" alt="ABE TechLab adaptive logo for light color scheme" width="160"></div>
-        <div class="preview dark"><img src="/logos/abe-techlab-mark-adaptive.svg" alt="ABE TechLab adaptive logo for dark color scheme" width="160"></div>
-        <div class="details">
-          <h2>Adaptive SVG</h2>
-          <p>One transparent vector file: charcoal in light schemes, off-white in dark schemes; lime accent stays constant.</p>
-          <a href="/logos/abe-techlab-mark-adaptive.svg">Open adaptive SVG</a>
-          <code>/logos/abe-techlab-mark-adaptive.svg</code>
-        </div>
-      </article>
-      <article class="card">
-        <div class="preview"><img src="/logos/abe-techlab-mark-light-v1.png" alt="ABE TechLab charcoal logo with lime accent for light backgrounds" width="160"></div>
-        <div class="details">
-          <h2>Light-background PNG</h2>
-          <p>Charcoal mark with lime accent on a transparent canvas; best for light email layouts.</p>
-          <a href="/logos/abe-techlab-mark-light-v1.png">Open PNG asset</a>
-          <code>/logos/abe-techlab-mark-light-v1.png</code>
-        </div>
-      </article>
-      <article class="card">
-        <div class="preview dark"><img src="/logos/abe-techlab-mark-dark-v1.png" alt="ABE TechLab off-white logo with lime accent for dark backgrounds" width="160"></div>
-        <div class="details">
-          <h2>Dark-background PNG</h2>
-          <p>Off-white mark with lime accent on a transparent canvas; best for dark email layouts.</p>
-          <a href="/logos/abe-techlab-mark-dark-v1.png">Open PNG asset</a>
-          <code>/logos/abe-techlab-mark-dark-v1.png</code>
-        </div>
-      </article>
+    <h1>Brand assets</h1>
+    <p class="intro">Publicly served logo files and working identity colors for ABE TechLab websites, products, and email communication. Use the adaptive SVG in supporting browser contexts and fixed PNG variants for email.</p>
+
+    <section aria-labelledby="logo-assets-heading">
+      <h2 class="section-title" id="logo-assets-heading">Logo assets</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="preview"><img src="/logos/abe-techlab-mark-adaptive.svg" alt="ABE TechLab adaptive logo for light color scheme" width="160"></div>
+          <div class="preview dark"><img src="/logos/abe-techlab-mark-adaptive.svg" alt="ABE TechLab adaptive logo for dark color scheme" width="160"></div>
+          <div class="details">
+            <h3>Adaptive SVG</h3>
+            <p>One transparent vector file: charcoal in light schemes, off-white in dark schemes; lime accent stays constant.</p>
+            <a href="/logos/abe-techlab-mark-adaptive.svg">Open adaptive SVG</a>
+            <code>/logos/abe-techlab-mark-adaptive.svg</code>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview"><img src="/logos/abe-techlab-mark-light-v1.png" alt="ABE TechLab charcoal logo with lime accent for light backgrounds" width="160"></div>
+          <div class="details">
+            <h3>Light-background PNG</h3>
+            <p>Charcoal mark with lime accent on a transparent canvas; best for light email layouts.</p>
+            <a href="/logos/abe-techlab-mark-light-v1.png">Open PNG asset</a>
+            <code>/logos/abe-techlab-mark-light-v1.png</code>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview dark"><img src="/logos/abe-techlab-mark-dark-v1.png" alt="ABE TechLab off-white logo with lime accent for dark backgrounds" width="160"></div>
+          <div class="details">
+            <h3>Dark-background PNG</h3>
+            <p>Off-white mark with lime accent on a transparent canvas; best for dark email layouts.</p>
+            <a href="/logos/abe-techlab-mark-dark-v1.png">Open PNG asset</a>
+            <code>/logos/abe-techlab-mark-dark-v1.png</code>
+          </div>
+        </article>
+      </div>
     </section>
-    <footer>All logo files are derivatives of the current working brand mark, which has not been independently verified as final master artwork. Email clients should use the fixed PNG variants rather than the adaptive SVG.</footer>
+
+    <section aria-labelledby="brand-colors-heading">
+      <h2 class="section-title" id="brand-colors-heading">Core brand colors</h2>
+      <p class="section-intro">These are the three current core identity colors. Select <strong>Copy HEX</strong> to copy a color code for design files, CSS, or product interfaces. RGB values are included for tools that request RGB input.</p>
+      <div class="palette-grid">
+        <article class="color-card">
+          <div class="swatch" style="background:#A7E021"></div>
+          <div class="color-info">
+            <h3 class="color-name">Lime green</h3>
+            <p class="color-role">Brand accent and visual highlight</p>
+            <div class="color-line"><code>#A7E021</code><button class="copy-button" type="button" data-copy="#A7E021">Copy HEX</button></div>
+            <div class="color-line"><code>RGB 167, 224, 33</code><button class="copy-button" type="button" data-copy="167, 224, 33">Copy RGB</button></div>
+            <code>--abe-color-lime</code>
+          </div>
+        </article>
+        <article class="color-card">
+          <div class="swatch" style="background:#111111"></div>
+          <div class="color-info">
+            <h3 class="color-name">Charcoal</h3>
+            <p class="color-role">Primary dark mark and text on light backgrounds</p>
+            <div class="color-line"><code>#111111</code><button class="copy-button" type="button" data-copy="#111111">Copy HEX</button></div>
+            <div class="color-line"><code>RGB 17, 17, 17</code><button class="copy-button" type="button" data-copy="17, 17, 17">Copy RGB</button></div>
+            <code>--abe-color-charcoal</code>
+          </div>
+        </article>
+        <article class="color-card">
+          <div class="swatch" style="background:#F9F9F6"></div>
+          <div class="color-info">
+            <h3 class="color-name">Off-white</h3>
+            <p class="color-role">Light mark and text on dark backgrounds</p>
+            <div class="color-line"><code>#F9F9F6</code><button class="copy-button" type="button" data-copy="#F9F9F6">Copy HEX</button></div>
+            <div class="color-line"><code>RGB 249, 249, 246</code><button class="copy-button" type="button" data-copy="249, 249, 246">Copy RGB</button></div>
+            <code>--abe-color-off-white</code>
+          </div>
+        </article>
+      </div>
+      <div class="token-panel">
+        <div class="token-heading">
+          <h3>CSS color tokens</h3>
+          <button class="copy-button" type="button" data-copy=":root {&#10;  --abe-color-lime: #A7E021;&#10;  --abe-color-charcoal: #111111;&#10;  --abe-color-off-white: #F9F9F6;&#10;}">Copy CSS</button>
+        </div>
+        <pre><code>:root {
+  --abe-color-lime: #A7E021;
+  --abe-color-charcoal: #111111;
+  --abe-color-off-white: #F9F9F6;
+}</code></pre>
+        <p class="token-help">These are working brand tokens, not a formally ratified final design-system specification. Supporting banner colors are documented in the repository's color palette.</p>
+      </div>
+      <div class="copy-status" id="copy-status" role="status" aria-live="polite"></div>
+    </section>
+
+    <footer>All logo files and color values are derivatives of the current working brand identity, which has not been independently verified as final master artwork. Email clients should use the fixed PNG variants rather than the adaptive SVG. For full guidance, see the Branding repository.</footer>
   </main>
+  <script>
+    (() => {
+      const status = document.getElementById("copy-status");
+      const buttons = document.querySelectorAll("[data-copy]");
+
+      async function copyText(value) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(value);
+          return;
+        }
+
+        const field = document.createElement("textarea");
+        field.value = value;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+        document.body.appendChild(field);
+        field.select();
+        const copied = document.execCommand("copy");
+        field.remove();
+        if (!copied) throw new Error("Clipboard copy was not available");
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", async () => {
+          const value = button.getAttribute("data-copy") || "";
+          try {
+            await copyText(value);
+            const original = button.textContent;
+            button.textContent = "Copied";
+            button.disabled = true;
+            status.textContent = "Copied " + value;
+            window.setTimeout(() => {
+              button.textContent = original;
+              button.disabled = false;
+            }, 1600);
+          } catch {
+            status.textContent = "Copy unavailable. Select and copy the displayed value instead.";
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

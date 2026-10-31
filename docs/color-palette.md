@@ -4,11 +4,25 @@ This is the **current working palette observed in the existing GitHub logo and b
 
 ## Core brand colors
 
-| Name | Hex | RGB | Current use | Status |
-| --- | --- | --- | --- | --- |
-| Charcoal | `#111111` | 17, 17, 17 | Primary dark mark on light backgrounds | Current logo asset value |
-| Off-white | `#F9F9F6` | 249, 249, 246 | Light mark on dark backgrounds; banner text | Current logo/banner value |
-| Lime green | `#A7E021` | 167, 224, 33 | Mark accent and visual highlight | Current logo/banner value |
+These are the three primary identity colors. The HEX values are written in copy-ready form; RGB values are included for tools and workflows that request RGB rather than HEX.
+
+| Name | HEX (copy-ready) | RGB | Current use |
+| --- | --- | --- | --- |
+| Lime green | `#A7E021` | `167, 224, 33` | Brand accent and visual highlight |
+| Charcoal | `#111111` | `17, 17, 17` | Primary dark mark and text on light backgrounds |
+| Off-white | `#F9F9F6` | `249, 249, 246` | Light mark on dark backgrounds; light-surface text |
+
+### Copy-ready CSS
+
+```css
+:root {
+  --abe-color-lime: #A7E021;
+  --abe-color-charcoal: #111111;
+  --abe-color-off-white: #F9F9F6;
+}
+```
+
+For a machine-readable source, use [`tokens/brand-colors.json`](../tokens/brand-colors.json). The matching CSS custom properties already exist in [`tokens/brand.css`](../tokens/brand.css).
 
 ## Banner support colors
 
@@ -34,4 +48,6 @@ These colors are used in the existing profile banner as supporting colors. They 
 
 Machine-readable values are stored in [`tokens/brand-colors.json`](../tokens/brand-colors.json), and CSS custom properties are in [`tokens/brand.css`](../tokens/brand.css).
 
-If a value changes in an approved source asset, update both token files and this document in the same change.
+The [public asset page](../public/index.html) also shows the three core colors with copy buttons for their HEX values.
+
+If a value changes in an approved source asset, update both token files, this document, and the public asset page in the same change.

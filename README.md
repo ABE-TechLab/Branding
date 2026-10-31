@@ -12,33 +12,39 @@ The central library for ABE TechLab's visual identity assets, working color valu
 | Dark backgrounds | [Dark logo SVG](./assets/logos/abe-techlab-mark-dark.svg) | Off-white mark with lime accent; transparent canvas |
 | Adaptive web and portfolio use | [Adaptive logo SVG](./public/logos/abe-techlab-mark-adaptive.svg) | One transparent SVG; charcoal in light schemes and off-white in dark schemes |
 | Email and static hosting | [Email-ready light PNG](./public/logos/abe-techlab-mark-light-v1.png) · [Email-ready dark PNG](./public/logos/abe-techlab-mark-dark-v1.png) | Transparent 320 × 255 PNG exports; intended to display at 160 px wide |
+| Public asset index and color copier | [public/index.html](./public/index.html) | Logo previews, direct asset links, and copy-ready core HEX codes |
 | Asset hosting guide | [Email logo assets](./docs/email-logo-assets.md) | Vercel static publishing, stable URLs, adaptive SVG, and email usage |
-| Public asset index | [public/index.html](./public/index.html) | Previews and direct links for hosted logo files |
 | GitHub profile | [Profile banner SVG](./assets/github/abe-techlab-profile-banner.svg) | 1200 × 320 banner for the organization profile |
 | GitHub asset notes | [GitHub assets guide](./assets/github/README.md) | Current public copies and embedding guidance |
 | Usage guidelines | [Brand guidelines](./docs/brand-guidelines.md) | Background choice, clear space, sizing, and handling |
-| Color specifications | [Color palette](./docs/color-palette.md) | Hex/RGB values and current status |
+| Color specifications | [Color palette](./docs/color-palette.md) | Core HEX/RGB values, copy-ready CSS, and banner support colors |
 | Machine-readable tokens | [JSON color tokens](./tokens/brand-colors.json) · [CSS variables](./tokens/brand.css) | Reusable implementation values |
 
 ### GitHub profile banner
 
 ![ABE TechLab — Ideas into systems. Systems into impact.](./assets/github/abe-techlab-profile-banner.svg)
 
-## Brand colors
+## Core brand colors
 
-These values are read from the current logo and banner assets. They are documented for consistency, not presented as final formal brand approval.
+The three current core colors are:
 
-| Token | Hex | Intended role |
+| Color | HEX | RGB |
 | --- | --- | --- |
-| Charcoal | `#111111` | Primary dark mark |
-| Off-white | `#F9F9F6` | Light mark and text on dark surfaces |
-| Lime green | `#A7E021` | Accent |
-| Banner charcoal | `#101010` | Current banner background |
-| Muted gray | `#B8B8B3` | Banner secondary text |
-| Graph gray | `#777A72` | Banner linework |
-| Divider charcoal | `#383A35` | Banner divider |
+| Lime green | `#A7E021` | `167, 224, 33` |
+| Charcoal | `#111111` | `17, 17, 17` |
+| Off-white | `#F9F9F6` | `249, 249, 246` |
 
-See [Color palette](./docs/color-palette.md) for RGB values and usage notes.
+Copy-ready CSS:
+
+```css
+:root {
+  --abe-color-lime: #A7E021;
+  --abe-color-charcoal: #111111;
+  --abe-color-off-white: #F9F9F6;
+}
+```
+
+The [public brand asset page](./public/index.html) includes swatches and buttons to copy each HEX code. See the [full color palette](./docs/color-palette.md) for usage notes and supporting banner colors.
 
 ## Logo usage at a glance
 
@@ -77,7 +83,7 @@ After the production deployment is ready, the image and SVG files will be availa
 
 Replace `<production-domain>` with the production domain assigned to the Vercel project. Use the project's production domain or a custom domain—not a preview deployment URL, GitHub file-page URL, or tokenized download URL.
 
-The root page (`/`) is a small index with previews and direct links. The exact deployment URL is determined by the Vercel project and domain configuration; it is intentionally not guessed or hardcoded here. Ensure Vercel Deployment Protection is not enabled for these public assets, otherwise email recipients and anonymous image proxies may be unable to fetch them.
+The root page (`/`) is a small index with logo previews, direct links, and copy-ready brand colors. The exact deployment URL is determined by the Vercel project and domain configuration; it is intentionally not guessed or hardcoded here. Ensure Vercel Deployment Protection is not enabled for these public assets, otherwise email recipients and anonymous image proxies may be unable to fetch them.
 
 See [Email logo assets](./docs/email-logo-assets.md) for the HTML examples and ABEmail configuration notes.
 
