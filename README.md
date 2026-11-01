@@ -17,6 +17,7 @@ The central library for ABE TechLab's visual identity assets, working color valu
 | Stacked lockup PNGs | [Light PNG](./public/logos/abe-techlab-lockup-stacked-light-v1.png) · [Dark PNG](./public/logos/abe-techlab-lockup-stacked-dark-v1.png) | 1560 × 1050, transparent, fixed-color exports |
 | Horizontal lockup PNGs | [Light PNG](./public/logos/abe-techlab-lockup-horizontal-light-v1.png) · [Dark PNG](./public/logos/abe-techlab-lockup-horizontal-dark-v1.png) | 2040 × 495, transparent, fixed-color exports |
 | Wordmark PNGs | [Light PNG](./public/logos/abe-techlab-wordmark-light-v1.png) · [Dark PNG](./public/logos/abe-techlab-wordmark-dark-v1.png) | 1590 × 336, transparent, fixed-color exports |
+| Opaque background PNGs | [Complete 12-file set](./docs/logo-background-pngs.md) | Mark, stacked, horizontal, and wordmark compositions on white, black, and lemon backgrounds; fully opaque |
 | Agent standard | [AGENTS.md](./AGENTS.md) | Cross-product instructions for source control, precise exports, validation, and publishing |
 | Product brand onboarding | [Onboarding guide](./docs/product-brand-onboarding.md) · [Manifest template](./templates/product-brand-manifest.json) | Establish a product-specific source of truth in the central brand library |
 | Reproducible PNG exporter | [export_logo_variants.py](./scripts/export_logo_variants.py) | Render light/dark PNGs from adaptive SVG masters without changing geometry |
@@ -67,6 +68,7 @@ See [Logo lockups](./docs/logo-lockups.md) for the complete asset set, placement
 - Use the **wordmark-only** variant in text-led or narrow placements where the symbol would be redundant.
 - The adaptive SVG variants switch their charcoal elements to off-white for dark color schemes and retain the lime accent. They are intended for modern browser contexts that support `prefers-color-scheme`.
 - Use fixed-color transparent PNG exports for email clients and other platforms that sanitize SVG/CSS; retain SVGs as the vector working sources.
+- Use the opaque-background PNG set when the image must include its own white, black, or lemon canvas. These files are not transparent and should not be used when an image must blend into a surrounding surface.
 - Each new lockup has separate light and dark PNG exports rendered at 3× the SVG viewBox dimensions. Select the variant that matches the actual background; the PNGs do not automatically adapt to dark mode.
 - The PNG exports are 320 × 255 pixels and are intended to be displayed at approximately 160 pixels wide.
 - Keep lime as an accent and preserve the colors and proportions of the supplied assets.
@@ -122,11 +124,13 @@ See [Email logo assets](./docs/email-logo-assets.md) for the HTML examples and A
 ├── docs/
 │   ├── product-brand-onboarding.md
 │   ├── logo-lockups.md
+│   ├── logo-background-pngs.md
 │   ├── brand-guidelines.md
 │   ├── color-palette.md
 │   └── email-logo-assets.md
 ├── scripts/
 │   ├── export_logo_variants.py
+│   ├── export_logo_background_variants.py
 │   └── requirements-brand-assets.txt
 ├── templates/
 │   └── product-brand-manifest.json
@@ -186,3 +190,6 @@ No separate redistribution license is declared by this repository at present. Do
 ## Brand operations for every ABE product
 
 `AGENTS.md` is the central agent operating standard for all ABE TechLab and product brand work. Follow it before sourcing, designing, exporting, approving, or publishing logos and tokens. New product identities should be onboarded through the [product brand guide](./docs/product-brand-onboarding.md) and represented with the [manifest template](./templates/product-brand-manifest.json). The [PNG export script](./scripts/export_logo_variants.py) makes fixed-color light/dark PNG derivatives from the approved adaptive SVG masters; it does not redraw their geometry.
+
+
+The opaque-background PNG family is generated separately by [the background exporter](./scripts/export_logo_background_variants.py) and documented in [Logo background PNGs](./docs/logo-background-pngs.md). It supplements—not replaces—the transparent logo exports.
