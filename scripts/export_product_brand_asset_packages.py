@@ -315,6 +315,8 @@ def render_abemail(package_root: Path, public_root: Path) -> dict:
 
     public_destination = public_root / "abemail"
     mirror_public(package_root / "abemail" / "logos", public_destination / "logos")
+    # Publish the original editable SVG sources separately from generated variants.
+    mirror_public(source_root, public_destination / "source")
     return {
         "brand": "abemail",
         "source_type": "editable-svg-vector-paths-with-live-inter-font-wordmark",
@@ -566,6 +568,8 @@ def render_techtrack_brand(slug: str, config: dict, package_root: Path, public_r
     # Mirror generated output only; preserve source and documentation directories.
     destination = public_root / slug
     mirror_public(package_root / slug / "logos", destination / "logos")
+    # Keep the uploaded, PNG-backed SVG references reachable from individual asset pages.
+    mirror_public(source_dir, destination / "source")
     return {
         "brand": slug,
         "source_type": "png-backed-svg-uploads",
