@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "brand_id": "abe-techlab",
+  "product_name": "ABE TechLab",
+  "brand_owner": "ABE TechLab",
+  "brand_type": "parent-company",
+  "status": "review",
+  "source_of_truth": {
+    "repository": "ABE-TechLab/Branding",
+    "path": "brands/abe-techlab/",
+    "source_revision": "388339d69bcf1f90cba7a0029bbb13292a3618a6"
+  },
+  "approval": {
+    "status": "pending",
+    "approved_by": [],
+    "approved_at": null,
+    "notes": "Existing working vector mark variants moved unchanged from assets/logos. Source artwork is not independently verified against an authoritative editable master."
+  },
+  "palette": {
+    "colors": [
+      {
+        "token": "charcoal",
+        "name": "Charcoal",
+        "hex": "#111111",
+        "rgb": [
+          17,
+          17,
+          17
+        ],
+        "role": "primary",
+        "status": "working"
+      },
+      {
+        "token": "off-white",
+        "name": "Off-white",
+        "hex": "#F9F9F6",
+        "rgb": [
+          249,
+          249,
+          246
+        ],
+        "role": "surface",
+        "status": "working"
+      },
+      {
+        "token": "lime",
+        "name": "Lime",
+        "hex": "#A7E021",
+        "rgb": [
+          167,
+          224,
+          33
+        ],
+        "role": "accent",
+        "status": "working"
+      }
+    ]
+  },
+  "typography": {
+    "families": [],
+    "font_licenses_reviewed": false,
+    "notes": "The source package currently contains symbol-only SVGs; no wordmark or typography master has been added here."
+  },
+  "logos": [
+    {
+      "asset_id": "mark-light",
+      "composition": "symbol",
+      "status": "review",
+      "source_file": "source/abe-techlab-mark-light.svg",
+      "adaptive_svg": null,
+      "light_png": null,
+      "dark_png": null,
+      "transparent_background": true,
+      "approved_by": [],
+      "approved_at": null
+    },
+    {
+      "asset_id": "mark-dark",
+      "composition": "symbol",
+      "status": "review",
+      "source_file": "source/abe-techlab-mark-dark.svg",
+      "adaptive_svg": null,
+      "light_png": null,
+      "dark_png": null,
+      "transparent_background": true,
+      "approved_by": [],
+      "approved_at": null
+    }
+  ],
+  "third_party_assets": [],
+  "licensing": {
+    "ownership_confirmed": false,
+    "redistribution_status": "unreviewed",
+    "notes": "Repository currently treats these as internal ABE TechLab working assets."
+  },
+  "last_reviewed": "2026-11-01"
+}
