@@ -10,7 +10,10 @@ The central library for ABE TechLab's visual identity assets, working color valu
 | --- | --- | --- |
 | Light backgrounds | [Light logo SVG](./assets/logos/abe-techlab-mark-light.svg) | Charcoal mark with lime accent; transparent canvas |
 | Dark backgrounds | [Dark logo SVG](./assets/logos/abe-techlab-mark-dark.svg) | Off-white mark with lime accent; transparent canvas |
-| Adaptive web and portfolio use | [Adaptive logo SVG](./public/logos/abe-techlab-mark-adaptive.svg) | One transparent SVG; charcoal in light schemes and off-white in dark schemes |
+| Adaptive web and portfolio use | [Adaptive symbol SVG](./public/logos/abe-techlab-mark-adaptive.svg) | Standalone symbol that adapts to light/dark color schemes |
+| Stacked brand lockup | [Stacked adaptive SVG](./public/logos/abe-techlab-lockup-stacked-adaptive.svg) | Symbol centered above the ABE TechLab wordmark |
+| Horizontal brand lockup | [Horizontal adaptive SVG](./public/logos/abe-techlab-lockup-horizontal-adaptive.svg) | Symbol left of the ABE TechLab wordmark |
+| Wordmark only | [Adaptive wordmark SVG](./public/logos/abe-techlab-wordmark-adaptive.svg) | ABE TechLab typography without the symbol |
 | Email and static hosting | [Email-ready light PNG](./public/logos/abe-techlab-mark-light-v1.png) · [Email-ready dark PNG](./public/logos/abe-techlab-mark-dark-v1.png) | Transparent 320 × 255 PNG exports; intended to display at 160 px wide |
 | Public asset index and color copier | [public/index.html](./public/index.html) | Logo previews, direct asset links, and copy-ready core HEX codes |
 | Asset hosting guide | [Email logo assets](./docs/email-logo-assets.md) | Vercel static publishing, stable URLs, adaptive SVG, and email usage |
@@ -48,9 +51,15 @@ The [public brand asset page](./public/index.html) includes swatches and buttons
 
 ## Logo usage at a glance
 
+See [Logo lockups](./docs/logo-lockups.md) for the complete asset set, placement guidance, and format recommendations.
+
 - Use the **light variant** on off-white and other light backgrounds.
 - Use the **dark variant** on charcoal and other dark backgrounds.
-- Use the **adaptive SVG** for websites, portfolio pages, and other modern browser contexts where the SVG is rendered with support for `prefers-color-scheme`. It has a transparent canvas, defaults to the charcoal mark, switches the mark to off-white in dark color schemes, and keeps the lime accent unchanged.
+- Use the **symbol-only mark** for app icons, avatars, favicons, and compact placements.
+- Use the **stacked lockup** when the logo needs a centered or vertical composition.
+- Use the **horizontal lockup** in website headers, footers, navigation, and document headers.
+- Use the **wordmark-only** variant in text-led or narrow placements where the symbol would be redundant.
+- The adaptive SVG variants switch their charcoal elements to off-white for dark color schemes and retain the lime accent. They are intended for modern browser contexts that support `prefers-color-scheme`.
 - Use the transparent PNG exports for email clients; retain SVGs as the editable/vector working sources.
 - The PNG exports are 320 × 255 pixels and are intended to be displayed at approximately 160 pixels wide.
 - Keep lime as an accent and preserve the colors and proportions of the supplied assets.
@@ -107,6 +116,9 @@ See [Email logo assets](./docs/email-logo-assets.md) for the HTML examples and A
 │   ├── index.html
 │   └── logos/
 │       ├── abe-techlab-mark-adaptive.svg
+│       ├── abe-techlab-lockup-stacked-adaptive.svg
+│       ├── abe-techlab-lockup-horizontal-adaptive.svg
+│       ├── abe-techlab-wordmark-adaptive.svg
 │       ├── abe-techlab-mark-dark-v1.png
 │       └── abe-techlab-mark-light-v1.png
 └── tokens/
