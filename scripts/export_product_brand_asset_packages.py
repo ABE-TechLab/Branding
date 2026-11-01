@@ -213,13 +213,11 @@ def clear_generated(path: Path) -> None:
 
 
 def mirror_public(source: Path, destination: Path) -> None:
-    # A brand's public folder may contain a hand-authored index.html page.
-    # Replace only generated logo files; never remove pages or other static content.
-    destination.mkdir(parents=True, exist_ok=True)
-    logo_destination = destination / "logos"
-    if logo_destination.exists():
-        shutil.rmtree(logo_destination)
-    shutil.copytree(source, logo_destination)
+    # destination is the brand's generated public/logos directory.
+    # Replace only that directory; leave index.html and asset-detail pages untouched.
+    if destination.exists():
+        shutil.rmtree(destination)
+    shutil.copytree(source, destination)
 
 
 def render_abemail(package_root: Path, public_root: Path) -> dict:
