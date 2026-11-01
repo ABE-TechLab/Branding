@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "brand_id": "abemail",
+  "colors": [
+    {
+      "name": "Mint Green",
+      "token": "mint",
+      "hex": "#72E3AD",
+      "rgb": [
+        114,
+        227,
+        173
+      ]
+    },
+    {
+      "name": "Deep Teal",
+      "token": "deep-teal",
+      "hex": "#0C2E34",
+      "rgb": [
+        12,
+        46,
+        52
+      ]
+    },
+    {
+      "name": "White",
+      "token": "white",
+      "hex": "#FFFFFF",
+      "rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "Black",
+      "token": "black",
+      "hex": "#000000",
+      "rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Lemon",
+      "token": "lemon",
+      "hex": "#FFC93D",
+      "rgb": [
+        255,
+        201,
+        61
+      ]
+    }
+  ]
+}
