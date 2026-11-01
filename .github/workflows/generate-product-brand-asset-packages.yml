@@ -133,9 +133,16 @@ jobs:
             cmp "/tmp/expected-inventory/$brand/inventory.json" "brands/$brand/inventory.json"
             echo "Verified reproducible asset package: $brand"
           done
+          # The ABE TechLab brand home is intentionally an alias of the root company page.
+          # Compare that alias to its root page separately, then compare every other generated page.
+          cp /tmp/expected-public/brands/abe-techlab/index.html /tmp/expected-abe-techlab-home.html
+          cp public/brands/abe-techlab/index.html /tmp/actual-abe-techlab-home.html
+          rm /tmp/expected-public/brands/abe-techlab/index.html public/brands/abe-techlab/index.html
           diff -qr /tmp/expected-public/brands public/brands
           cmp /tmp/expected-public/index.html public/index.html
-          echo "Verified shared brand navigation and all public asset pages."
+          cmp /tmp/expected-abe-techlab-home.html /tmp/expected-public/index.html
+          cmp /tmp/actual-abe-techlab-home.html public/index.html
+          echo "Verified shared brand navigation, company-page alias and all public asset pages."
 
 
       - name: Upload rendered package preview
