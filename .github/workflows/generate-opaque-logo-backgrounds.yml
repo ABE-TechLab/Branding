@@ -51,6 +51,8 @@ jobs:
             exit 0
           fi
           git commit -m "Add opaque ABE logo background PNG variants"
+          # Rebase the generated commit if repository metadata changes landed after checkout.
+          git pull --rebase origin "$GITHUB_REF_NAME"
           git push
 
       - name: Regenerate expected PNGs for pull request comparison
