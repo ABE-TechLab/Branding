@@ -2,8 +2,6 @@ name: Generate and validate opaque logo backgrounds
 
 on:
   push:
-    branches:
-      - brand/opaque-logo-background-pngs
     paths:
       - "scripts/export_logo_background_variants.py"
       - "public/logos/*-adaptive.svg"
