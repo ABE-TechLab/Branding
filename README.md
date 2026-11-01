@@ -14,6 +14,12 @@ The central library for ABE TechLab's visual identity assets, working color valu
 | Stacked brand lockup | [Stacked adaptive SVG](./public/logos/abe-techlab-lockup-stacked-adaptive.svg) | Symbol centered above the ABE TechLab wordmark |
 | Horizontal brand lockup | [Horizontal adaptive SVG](./public/logos/abe-techlab-lockup-horizontal-adaptive.svg) | Symbol left of the ABE TechLab wordmark |
 | Wordmark only | [Adaptive wordmark SVG](./public/logos/abe-techlab-wordmark-adaptive.svg) | ABE TechLab typography without the symbol |
+| Stacked lockup PNGs | [Light PNG](./public/logos/abe-techlab-lockup-stacked-light-v1.png) · [Dark PNG](./public/logos/abe-techlab-lockup-stacked-dark-v1.png) | 1560 × 1050, transparent, fixed-color exports |
+| Horizontal lockup PNGs | [Light PNG](./public/logos/abe-techlab-lockup-horizontal-light-v1.png) · [Dark PNG](./public/logos/abe-techlab-lockup-horizontal-dark-v1.png) | 2040 × 495, transparent, fixed-color exports |
+| Wordmark PNGs | [Light PNG](./public/logos/abe-techlab-wordmark-light-v1.png) · [Dark PNG](./public/logos/abe-techlab-wordmark-dark-v1.png) | 1590 × 336, transparent, fixed-color exports |
+| Agent standard | [AGENTS.md](./AGENTS.md) | Cross-product instructions for source control, precise exports, validation, and publishing |
+| Product brand onboarding | [Onboarding guide](./docs/product-brand-onboarding.md) · [Manifest template](./templates/product-brand-manifest.json) | Establish a product-specific source of truth in the central brand library |
+| Reproducible PNG exporter | [export_logo_variants.py](./scripts/export_logo_variants.py) | Render light/dark PNGs from adaptive SVG masters without changing geometry |
 | Email and static hosting | [Email-ready light PNG](./public/logos/abe-techlab-mark-light-v1.png) · [Email-ready dark PNG](./public/logos/abe-techlab-mark-dark-v1.png) | Transparent 320 × 255 PNG exports; intended to display at 160 px wide |
 | Public asset index and color copier | [public/index.html](./public/index.html) | Logo previews, direct asset links, and copy-ready core HEX codes |
 | Asset hosting guide | [Email logo assets](./docs/email-logo-assets.md) | Vercel static publishing, stable URLs, adaptive SVG, and email usage |
@@ -60,7 +66,8 @@ See [Logo lockups](./docs/logo-lockups.md) for the complete asset set, placement
 - Use the **horizontal lockup** in website headers, footers, navigation, and document headers.
 - Use the **wordmark-only** variant in text-led or narrow placements where the symbol would be redundant.
 - The adaptive SVG variants switch their charcoal elements to off-white for dark color schemes and retain the lime accent. They are intended for modern browser contexts that support `prefers-color-scheme`.
-- Use the transparent PNG exports for email clients; retain SVGs as the editable/vector working sources.
+- Use fixed-color transparent PNG exports for email clients and other platforms that sanitize SVG/CSS; retain SVGs as the vector working sources.
+- Each new lockup has separate light and dark PNG exports rendered at 3× the SVG viewBox dimensions. Select the variant that matches the actual background; the PNGs do not automatically adapt to dark mode.
 - The PNG exports are 320 × 255 pixels and are intended to be displayed at approximately 160 pixels wide.
 - Keep lime as an accent and preserve the colors and proportions of the supplied assets.
 - Leave clear space around the mark; don't stretch, rotate, crop, or add effects.
@@ -89,6 +96,9 @@ After the production deployment is ready, the image and SVG files will be availa
 - `https://<production-domain>/logos/abe-techlab-mark-adaptive.svg`
 - `https://<production-domain>/logos/abe-techlab-mark-light-v1.png`
 - `https://<production-domain>/logos/abe-techlab-mark-dark-v1.png`
+- `https://<production-domain>/logos/abe-techlab-lockup-stacked-light-v1.png` and `...-dark-v1.png`
+- `https://<production-domain>/logos/abe-techlab-lockup-horizontal-light-v1.png` and `...-dark-v1.png`
+- `https://<production-domain>/logos/abe-techlab-wordmark-light-v1.png` and `...-dark-v1.png`
 
 Replace `<production-domain>` with the production domain assigned to the Vercel project. Use the project's production domain or a custom domain—not a preview deployment URL, GitHub file-page URL, or tokenized download URL.
 
@@ -101,6 +111,7 @@ See [Email logo assets](./docs/email-logo-assets.md) for the HTML examples and A
 ```text
 .
 ├── README.md
+├── AGENTS.md
 ├── assets/
 │   ├── github/
 │   │   ├── README.md
@@ -109,9 +120,16 @@ See [Email logo assets](./docs/email-logo-assets.md) for the HTML examples and A
 │       ├── abe-techlab-mark-dark.svg
 │       └── abe-techlab-mark-light.svg
 ├── docs/
+│   ├── product-brand-onboarding.md
+│   ├── logo-lockups.md
 │   ├── brand-guidelines.md
 │   ├── color-palette.md
 │   └── email-logo-assets.md
+├── scripts/
+│   ├── export_logo_variants.py
+│   └── requirements-brand-assets.txt
+├── templates/
+│   └── product-brand-manifest.json
 ├── public/
 │   ├── index.html
 │   └── logos/
@@ -119,6 +137,12 @@ See [Email logo assets](./docs/email-logo-assets.md) for the HTML examples and A
 │       ├── abe-techlab-lockup-stacked-adaptive.svg
 │       ├── abe-techlab-lockup-horizontal-adaptive.svg
 │       ├── abe-techlab-wordmark-adaptive.svg
+│       ├── abe-techlab-lockup-stacked-light-v1.png
+│       ├── abe-techlab-lockup-stacked-dark-v1.png
+│       ├── abe-techlab-lockup-horizontal-light-v1.png
+│       ├── abe-techlab-lockup-horizontal-dark-v1.png
+│       ├── abe-techlab-wordmark-light-v1.png
+│       ├── abe-techlab-wordmark-dark-v1.png
 │       ├── abe-techlab-mark-dark-v1.png
 │       └── abe-techlab-mark-light-v1.png
 └── tokens/
@@ -157,3 +181,8 @@ This repository is the **private working brand library**. Its `public/` director
 6. Be clear about what is working draft versus formally approved.
 
 No separate redistribution license is declared by this repository at present. Do not assume the assets are licensed for third-party redistribution.
+
+
+## Brand operations for every ABE product
+
+`AGENTS.md` is the central agent operating standard for all ABE TechLab and product brand work. Follow it before sourcing, designing, exporting, approving, or publishing logos and tokens. New product identities should be onboarded through the [product brand guide](./docs/product-brand-onboarding.md) and represented with the [manifest template](./templates/product-brand-manifest.json). The [PNG export script](./scripts/export_logo_variants.py) makes fixed-color light/dark PNG derivatives from the approved adaptive SVG masters; it does not redraw their geometry.

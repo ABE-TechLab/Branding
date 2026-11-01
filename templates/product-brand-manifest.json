@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "brand_id": "<product-slug>",
+  "product_name": "<product-name>",
+  "brand_owner": "ABE TechLab",
+  "status": "draft",
+  "source_of_truth": {
+    "repository": "ABE-TechLab/Branding",
+    "path": "brands/<product-slug>/",
+    "source_revision": "<git-commit-or-release-tag>"
+  },
+  "approval": {
+    "status": "pending",
+    "approved_by": [],
+    "approved_at": null,
+    "notes": ""
+  },
+  "hosting": {
+    "production_origin": "https://<production-brand-assets-domain>",
+    "public_assets": true,
+    "deployment_protection_enabled": false
+  },
+  "palette": {
+    "colors": [
+      {
+        "token": "<semantic-token>",
+        "name": "<color-name>",
+        "hex": "#000000",
+        "rgb": [0, 0, 0],
+        "role": "<primary|secondary|accent|surface|text>",
+        "status": "draft"
+      }
+    ]
+  },
+  "typography": {
+    "families": [],
+    "font_licenses_reviewed": false,
+    "notes": ""
+  },
+  "logos": [
+    {
+      "asset_id": "<composition-slug>",
+      "composition": "<symbol|stacked|horizontal|wordmark|app-icon>",
+      "status": "draft",
+      "source_file": "source/<editable-master-file>",
+      "adaptive_svg": "logos/svg/<asset>-adaptive.svg",
+      "light_png": "logos/png/<asset>-light-v1.png",
+      "dark_png": "logos/png/<asset>-dark-v1.png",
+      "png_export_scale": 3,
+      "transparent_background": true,
+      "sha256": {
+        "source": "<sha256>",
+        "adaptive_svg": "<sha256>",
+        "light_png": "<sha256>",
+        "dark_png": "<sha256>"
+      },
+      "approved_by": [],
+      "approved_at": null
+    }
+  ],
+  "third_party_assets": [],
+  "licensing": {
+    "ownership_confirmed": false,
+    "redistribution_status": "unreviewed",
+    "notes": ""
+  },
+  "last_reviewed": null
+}
