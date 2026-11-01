@@ -23,6 +23,11 @@ on:
 permissions:
   contents: write
 
+# Avoid overlapping asset commits when several source files are uploaded together.
+concurrency:
+  group: product-brand-assets-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   generate-assets:
     runs-on: ubuntu-24.04
@@ -56,6 +61,10 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # The source branch may have advanced after this workflow checked it out.
+          # Rebase before staging generated files so the asset commit pushes cleanly.
+          git fetch origin "$GITHUB_REF_NAME"
+          git rebase "origin/$GITHUB_REF_NAME"
           git add \
             brands/abemail/logos brands/abemail/inventory.json \
             brands/techtrack/logos brands/techtrack/inventory.json \
