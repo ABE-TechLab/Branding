@@ -383,51 +383,64 @@ def render_directory(public_root: Path) -> str:
     return shell(content,"Brand library","", "Browse all ABE TechLab brand identities.")
 
 def wrap_company_page(source_html: str) -> str:
-    if "BRAND_LIBRARY_SHELL_START" in source_html:
-        start=source_html.index("/* BRAND_LIBRARY_SHELL_START */")
-        end=source_html.index("/* BRAND_LIBRARY_SHELL_END */")+len("/* BRAND_LIBRARY_SHELL_END */")
-        source_html=source_html[:start]+ROOT_CSS.strip()+"\n"+source_html[end:]
-        if "</style>" not in source_html:
-            raise ValueError("Company page is missing its inline style block")
-        source_html=source_html.replace("</style>",ROOT_CSS+"\n  </style>",1)
+    # Remove all copies of the generated shared-shell CSS. Previous iterations
+    # could append another copy during regeneration; normalize to exactly one.
+    shell_css = re.compile(
+        r"/\* BRAND_LIBRARY_SHELL_START \*/.*?/\* BRAND_LIBRARY_SHELL_END \*/",
+        re.S,
+    )
+    source_html = shell_css.sub("", source_html)
+    if "</style>" not in source_html:
+        raise ValueError("Company page is missing its inline style block")
+    source_html = source_html.replace("</style>", ROOT_CSS.strip() + "\n  </style>", 1)
+
+    # Add the shell/sidebar only when the source page has not already been wrapped.
+    if '<aside class="brand-sidebar"' not in source_html:
         sidebar = """
-        <aside class="brand-sidebar" aria-label="Brand navigation">
-          <a class="brand-sidebar__identity" href="/brands/abe-techlab/"><img src="/logos/abe-techlab-mark-adaptive.svg" alt=""><span>ABE TechLab<small>Brand library</small></span></a>
-          <div><p class="brand-nav__label">Company & product brands</p><nav class="brand-nav">
-          <a href="/brands/abe-techlab/" aria-current="page"><span class="brand-nav__dot" style="background:#A7E021"></span><span>ABE TechLab</span></a>
-          <a href="/brands/abemail/"><span class="brand-nav__dot" style="background:#72E3AD"></span><span>ABEmail</span></a>
-          <a href="/brands/techtrack/"><span class="brand-nav__dot" style="background:#1264F3"></span><span>TechTrack</span></a>
-          <a href="/brands/techtrack-kids/"><span class="brand-nav__dot" style="background:#885CF6"></span><span>TechTrack Kids</span></a>
-          </nav></div>
-          <div class="brand-sidebar__foot">One source of truth for every brand.<br><a href="https://github.com/ABE-TechLab/Branding">Open Brand Library repository ↗</a></div>
-        </aside>
-    """
-        source_html=source_html.replace("<body>\n  <main>", "<body>\n  <div class=\"brand-shell\">"+sidebar+"<div class=\"brand-main\">\n  <main>",1)
-        source_html=source_html.replace("</main>\n</body>", "</main></div>\n</div>\n</body>",1)
-        if 'href="/brands/abemail/"' not in source_html:
+    <aside class="brand-sidebar" aria-label="Brand navigation">
+      <a class="brand-sidebar__identity" href="/brands/abe-techlab/"><img src="/logos/abe-techlab-mark-adaptive.svg" alt=""><span>ABE TechLab<small>Brand library</small></span></a>
+      <div><p class="brand-nav__label">Company & product brands</p><nav class="brand-nav">
+      <a href="/brands/abe-techlab/" aria-current="page"><span class="brand-nav__dot" style="background:#A7E021"></span><span>ABE TechLab</span></a>
+      <a href="/brands/abemail/"><span class="brand-nav__dot" style="background:#72E3AD"></span><span>ABEmail</span></a>
+      <a href="/brands/techtrack/"><span class="brand-nav__dot" style="background:#1264F3"></span><span>TechTrack</span></a>
+      <a href="/brands/techtrack-kids/"><span class="brand-nav__dot" style="background:#885CF6"></span><span>TechTrack Kids</span></a>
+      </nav></div>
+      <div class="brand-sidebar__foot">One source of truth for every brand.<br><a href="https://github.com/ABE-TechLab/Branding">Open Brand Library repository ↗</a></div>
+    </aside>
+"""
+        source_html = source_html.replace(
+            "<body>\n  <main>",
+            "<body>\n  <div class=\"brand-shell\">" + sidebar + "<div class=\"brand-main\">\n  <main>",
+            1,
+        )
+        source_html = source_html.replace("</main>\n</body>", "</main></div>\n</div>\n</body>", 1)
+        if '<aside class="brand-sidebar"' not in source_html:
             raise ValueError("Sidebar navigation was not installed in company page")
+
     dimensions = {
         "mark": None,
         "lockup-stacked": "1560 × 1050",
         "lockup-horizontal": "2040 × 495",
         "wordmark": "1590 × 336",
     }
-    for comp in ("mark","lockup-stacked","lockup-horizontal","wordmark"):
-        old=f'href="/logos/abe-techlab-{comp}-adaptive.svg">Open adaptive SVG'
-        new=f'href="/brands/abe-techlab/assets/{comp}/adaptive/">View asset page'
-        source_html=source_html.replace(old,new)
-        for theme in ("light","dark"):
-            route=f'/brands/abe-techlab/assets/{comp}/{theme}/'
-            old_png=f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">Open PNG asset'
-            source_html=source_html.replace(old_png,f'href="{route}">View {theme} asset page')
-            size=dimensions[comp]
-            old_label=(f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">{theme.title()}'
-                       + (f' ({size})' if size else ''))
-            source_html=source_html.replace(old_label,f'href="{route}">{theme.title()} asset page')
-        for background in ("white","black","lemon"):
-            route=f'/brands/abe-techlab/assets/{comp}/{background}/'
-            old_background=f'href="/logos/abe-techlab-{comp}-bg-{background}-v1.png">'
-            source_html=source_html.replace(old_background,f'href="{route}">')
+    for comp in ("mark", "lockup-stacked", "lockup-horizontal", "wordmark"):
+        old = f'href="/logos/abe-techlab-{comp}-adaptive.svg">Open adaptive SVG'
+        new = f'href="/brands/abe-techlab/assets/{comp}/adaptive/">View asset page'
+        source_html = source_html.replace(old, new)
+        for theme in ("light", "dark"):
+            route = f"/brands/abe-techlab/assets/{comp}/{theme}/"
+            old_png = f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">Open PNG asset'
+            source_html = source_html.replace(old_png, f'href="{route}">View {theme} asset page')
+            size = dimensions[comp]
+            old_label = (
+                f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">{theme.title()}'
+                + (f" ({size})" if size else "")
+            )
+            source_html = source_html.replace(old_label, f'href="{route}">{theme.title()} asset page')
+        for background in ("white", "black", "lemon"):
+            route = f"/brands/abe-techlab/assets/{comp}/{background}/"
+            old_background = f'href="/logos/abe-techlab-{comp}-bg-{background}-v1.png">'
+            source_html = source_html.replace(old_background, f'href="{route}">')
     return source_html
 
 def build(public_root: Path) -> None:
