@@ -19,6 +19,8 @@ The central library for ABE TechLab's visual identity assets, working color valu
 | Wordmark PNGs | [Light PNG](./public/logos/abe-techlab-wordmark-light-v1.png) · [Dark PNG](./public/logos/abe-techlab-wordmark-dark-v1.png) | 1590 × 336, transparent, fixed-color exports |
 | Agent standard | [AGENTS.md](./AGENTS.md) | Cross-product instructions for source control, precise exports, validation, and publishing |
 | Product brand onboarding | [Onboarding guide](./docs/product-brand-onboarding.md) · [Manifest template](./templates/product-brand-manifest.json) | Establish a product-specific source of truth in the central brand library |
+| ABEmail product logo source | [Brand folder](./brands/abemail/README.md) · [SVG upload folder](./brands/abemail/source/) | Original editable ABEmail logo SVGs; currently awaiting source upload |
+| TechTrack product logo source | [Brand folder](./brands/techtrack/README.md) · [SVG upload folder](./brands/techtrack/source/) | Original editable TechTrack logo SVGs; currently awaiting source upload |
 | Reproducible PNG exporter | [export_logo_variants.py](./scripts/export_logo_variants.py) | Render light/dark PNGs from adaptive SVG masters without changing geometry |
 | Email and static hosting | [Email-ready light PNG](./public/logos/abe-techlab-mark-light-v1.png) · [Email-ready dark PNG](./public/logos/abe-techlab-mark-dark-v1.png) | Transparent 320 × 255 PNG exports; intended to display at 160 px wide |
 | Public asset index and color copier | [public/index.html](./public/index.html) | Logo previews, direct asset links, and copy-ready core HEX codes |
