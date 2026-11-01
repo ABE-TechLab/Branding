@@ -16,9 +16,13 @@ The profile banner is a designed SVG currently used for GitHub profile presentat
 | --- | --- | --- |
 | [Light mark](../assets/logos/abe-techlab-mark-light.svg) | Off-white or other light backgrounds | Charcoal + lime |
 | [Dark mark](../assets/logos/abe-techlab-mark-dark.svg) | Charcoal or other dark backgrounds | Off-white + lime |
+| [Stacked lockup](../public/logos/abe-techlab-lockup-stacked-adaptive.svg) | Centered and vertical placements | Adaptive charcoal/off-white wordmark + symbol; lime accent |
+| [Horizontal lockup](../public/logos/abe-techlab-lockup-horizontal-adaptive.svg) | Website headers, navigation, footers, document headers | Adaptive charcoal/off-white wordmark + symbol; lime accent |
+| [Wordmark only](../public/logos/abe-techlab-wordmark-adaptive.svg) | Text-led or narrow placements | Adaptive charcoal/off-white wordmark |
+| [Adaptive symbol](../public/logos/abe-techlab-mark-adaptive.svg) | Compact placements, app icons, avatars | Adaptive charcoal/off-white symbol + lime accent |
 | [GitHub profile banner](../assets/github/abe-techlab-profile-banner.svg) | Banner/header placements | Charcoal, off-white, lime, supporting gray |
 
-The names “light” and “dark” refer to the background use case. Select the file that maintains strong contrast with the surface.
+The names “light” and “dark” refer to the background use case. Select the file that maintains strong contrast with the surface. For websites and other compatible browser contexts, the adaptive SVGs use `prefers-color-scheme`; see [Logo lockups](./logo-lockups.md) for selection guidance and browser/email limitations.
 
 ## Clear space and sizing
 
@@ -34,6 +38,7 @@ The names “light” and “dark” refer to the background use case. Select th
 - Avoid low-contrast lime text on off-white surfaces.
 - Keep supporting banner grays within the banner's visual system unless a broader palette decision is approved.
 - Use only the supplied variants for current uses. Do not recolor the SVG paths ad hoc.
+- Select the stacked or horizontal lockup according to the available space; do not rebuild the wordmark from separate text in a product interface.
 
 See [Color palette](./color-palette.md) for current implementation values and their status.
 
@@ -52,11 +57,11 @@ See [Color palette](./color-palette.md) for current implementation values and th
 - Recolor individual parts or change the lime accent without a deliberate brand decision.
 - Use the logo over visually busy content without a suitable clear area.
 - Claim the current approximated SVG is the final master artwork.
-- Create wordmarks, lockups, icons, or print-ready files and label them “official” without review.
+- Label the current wordmark or lockup files “final”, “official”, or “approved” without company review.
 
 ## Typography
 
-The existing banner uses Arial/Helvetica-style sans-serif text. Treat this as a practical implementation choice for that asset, not a ratified company typeface. No official type family or typography scale is recorded yet.
+The current lockups use an Arial/Helvetica-style system sans-serif treatment, with “ABE” in a heavier weight and “TechLab” in a medium weight. This is a practical working treatment, not a ratified company typeface or typography scale. The SVG uses live text, so the viewer's available sans-serif font may affect exact glyph shapes and spacing slightly.
 
 ## Contributions and change control
 
