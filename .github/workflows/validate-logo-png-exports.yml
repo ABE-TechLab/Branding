@@ -7,6 +7,7 @@ on:
     paths:
       - "public/logos/**"
       - "scripts/export_logo_variants.py"
+      - "scripts/export_logo_background_variants.py"
       - "scripts/requirements-brand-assets.txt"
       - ".github/workflows/validate-logo-png-exports.yml"
 
@@ -50,3 +51,40 @@ jobs:
             fi
             echo "Verified: $file"
           done
+
+      - name: Regenerate opaque background PNGs from SVG masters
+        run: python scripts/export_logo_background_variants.py --output-dir /tmp/expected-logo-background-pngs
+
+      - name: Verify committed opaque PNG files match reproducible exports
+        shell: bash
+        run: |
+          set -euo pipefail
+          files=(
+            abe-techlab-mark-bg-white-v1.png
+            abe-techlab-mark-bg-black-v1.png
+            abe-techlab-mark-bg-lemon-v1.png
+            abe-techlab-lockup-stacked-bg-white-v1.png
+            abe-techlab-lockup-stacked-bg-black-v1.png
+            abe-techlab-lockup-stacked-bg-lemon-v1.png
+            abe-techlab-lockup-horizontal-bg-white-v1.png
+            abe-techlab-lockup-horizontal-bg-black-v1.png
+            abe-techlab-lockup-horizontal-bg-lemon-v1.png
+            abe-techlab-wordmark-bg-white-v1.png
+            abe-techlab-wordmark-bg-black-v1.png
+            abe-techlab-wordmark-bg-lemon-v1.png
+          )
+          for file in "${files[@]}"; do
+            if ! cmp --silent "/tmp/expected-logo-background-pngs/$file" "public/logos/$file"; then
+              echo "Opaque PNG export is missing, stale, or differs from the SVG source: $file"
+              exit 1
+            fi
+            echo "Verified: $file"
+          done
+
+      - name: Upload validated logo PNGs
+        uses: actions/upload-artifact@v4
+        with:
+          name: abe-techlab-logo-png-exports
+          path: public/logos/*.png
+          if-no-files-found: error
+          retention-days: 14

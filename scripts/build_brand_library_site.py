@@ -13,7 +13,7 @@ BRANDS = {
         "intro": "The parent-company identity and shared visual foundation for ABE TechLab products.",
         "accent": "#A7E021", "status": "WORKING BRAND ASSETS",
         "compositions": ["mark", "lockup-stacked", "lockup-horizontal", "wordmark"],
-        "variants": ["adaptive", "light", "dark"],
+        "variants": ["adaptive", "light", "dark", "white", "black", "lemon"],
         "type": "abe",
         "notes": "The available source contains standalone light and dark mark artwork. The public library also includes working adaptive lockups and wordmark variants. They remain subject to final master-artwork verification.",
     },
@@ -202,6 +202,8 @@ def filename(slug: str, composition: str, variant: str, fmt: str = "png") -> str
             return f"abe-techlab-{composition}-adaptive.svg" if fmt == "svg" else (
                 f"abe-techlab-{composition}-light-v1.png"
             )
+        if variant in ("white", "black", "lemon"):
+            return f"abe-techlab-{composition}-bg-{variant}-v1.png" if fmt == "png" else None
         suffix = "light-v1.png" if variant == "light" else "dark-v1.png"
         return f"abe-techlab-{composition}-{suffix}" if fmt == "png" else None
     if slug == "abemail":
@@ -423,6 +425,10 @@ def wrap_company_page(source_html: str) -> str:
             old_label=(f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">{theme.title()}'
                        + (f' ({size})' if size else ''))
             source_html=source_html.replace(old_label,f'href="{route}">{theme.title()} asset page')
+        for background in ("white","black","lemon"):
+            route=f'/brands/abe-techlab/assets/{comp}/{background}/'
+            old_background=f'href="/logos/abe-techlab-{comp}-bg-{background}-v1.png">'
+            source_html=source_html.replace(old_background,f'href="{route}">')
     return source_html
 
 def build(public_root: Path) -> None:

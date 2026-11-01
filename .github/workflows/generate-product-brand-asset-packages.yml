@@ -3,12 +3,16 @@ name: Generate and validate product brand asset packages
 on:
   push:
     branches:
+      - main
       - brand/abemail-techtrack-logo-packages
+      - chore/integrate-abe-opaque-backgrounds
     paths:
       - "brands/abemail/source/**"
       - "brands/techtrack/source/**"
       - "brands/techtrack-kids/source/**"
       - "scripts/export_product_brand_asset_packages.py"
+      - "scripts/export_logo_background_variants.py"
+      - "public/logos/**"
       - "scripts/build_brand_library_site.py"
       - "public/index.html"
       - ".github/workflows/generate-product-brand-asset-packages.yml"
@@ -95,7 +99,7 @@ jobs:
         run: |
           python scripts/export_product_brand_asset_packages.py \
             --package-root /tmp/expected-brands \
-            --public-root /tmp/expected-public \
+            --public-root /tmp/expected-public/brands \
             --inventory-dir /tmp/expected-inventory
 
       - name: Generate expected shared brand navigation and asset pages
@@ -115,6 +119,9 @@ jobs:
           test -s /tmp/expected-public/brands/techtrack/assets/horizontal/transparent/index.html
           test -s /tmp/expected-public/brands/techtrack-kids/assets/stacked/lemon/index.html
           test -s /tmp/expected-public/brands/abe-techlab/assets/mark/adaptive/index.html
+          test -s /tmp/expected-public/brands/abe-techlab/assets/mark/white/index.html
+          test -s /tmp/expected-public/brands/abe-techlab/assets/lockup-horizontal/black/index.html
+          test -s /tmp/expected-public/brands/abe-techlab/assets/wordmark/lemon/index.html
 
       - name: Compare generated exports against committed assets
         if: github.event_name == 'pull_request'

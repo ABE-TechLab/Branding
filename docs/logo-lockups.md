@@ -38,3 +38,10 @@ The source-preserving export process is documented in the repository-root [AGENT
 ## Asset status
 
 These compositions are working lockups built from the current symbol geometry and an initial system-sans wordmark. Review them in the actual products and placements before treating them as final company standards. When a formal brand typeface or approved master vector becomes available, update the wordmark and all lockups together.
+
+
+## Opaque background PNG exports
+
+A separate set of [opaque background PNGs](./logo-background-pngs.md) is available for all four compositions: symbol only, stacked lockup, horizontal lockup, and wordmark only. Each composition has a white (#FFFFFF), black (#000000), and lemon (#A7E021) background version. These images include a complete background and are not transparent.
+
+The lemon-background symbol treatments use off-white (#F9F9F6) for the small accent detail so it remains visible against the lemon canvas. The white and black versions retain the standard lime accent (#A7E021). The assets are rendered at 3× viewBox dimensions and validated for fully opaque pixels and exact canvas colors. Use this family only when a fixed background is desired; keep using the transparent exports when the image must blend into its surrounding surface.
