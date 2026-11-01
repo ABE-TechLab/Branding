@@ -55,6 +55,14 @@ jobs:
       - name: Install raster and SVG rendering dependencies
         run: python -m pip install "Pillow>=10,<13" "CairoSVG>=2.7,<3"
 
+      - name: Sync branch before generating assets
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "$GITHUB_REF_NAME"
+          git rebase "origin/$GITHUB_REF_NAME"
+
       - name: Generate vector and raster-derived product packages
         if: github.event_name == 'push'
         run: python scripts/export_product_brand_asset_packages.py
@@ -70,10 +78,6 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # The source branch may have advanced after this workflow checked it out.
-          # Rebase before staging generated files so the asset commit pushes cleanly.
-          git fetch origin "$GITHUB_REF_NAME"
-          git rebase "origin/$GITHUB_REF_NAME"
           git add \
             brands/abemail/logos brands/abemail/inventory.json \
             brands/techtrack/logos brands/techtrack/inventory.json \
