@@ -9,8 +9,8 @@ on:
       - "brands/techtrack/source/**"
       - "brands/techtrack-kids/source/**"
       - "scripts/export_product_brand_asset_packages.py"
+      - "scripts/build_brand_library_site.py"
       - "public/index.html"
-      - "public/brands/**"
       - ".github/workflows/generate-product-brand-asset-packages.yml"
   pull_request:
     branches:
@@ -20,6 +20,7 @@ on:
       - "brands/techtrack/**"
       - "brands/techtrack-kids/**"
       - "scripts/export_product_brand_asset_packages.py"
+      - "scripts/build_brand_library_site.py"
       - "public/index.html"
       - "public/brands/**"
       - ".github/workflows/generate-product-brand-asset-packages.yml"
@@ -58,6 +59,10 @@ jobs:
         if: github.event_name == 'push'
         run: python scripts/export_product_brand_asset_packages.py
 
+      - name: Generate shared brand navigation and individual asset pages
+        if: github.event_name == 'push'
+        run: python scripts/build_brand_library_site.py
+
       - name: Commit generated logo variants and public assets
         if: github.event_name == 'push'
         shell: bash
@@ -73,7 +78,7 @@ jobs:
             brands/abemail/logos brands/abemail/inventory.json \
             brands/techtrack/logos brands/techtrack/inventory.json \
             brands/techtrack-kids/logos brands/techtrack-kids/inventory.json \
-            public/brands
+            public/index.html public/brands
           if git diff --cached --quiet; then
             echo "Product logo exports are already current."
             exit 0
@@ -89,13 +94,23 @@ jobs:
             --public-root /tmp/expected-public \
             --inventory-dir /tmp/expected-inventory
 
-      - name: Verify static product brand landing pages exist
+      - name: Generate expected shared brand navigation and asset pages
+        if: github.event_name == 'pull_request'
+        run: python scripts/build_brand_library_site.py --public-root /tmp/expected-public
+
+      - name: Verify brand pages and individual asset routes
         if: github.event_name == 'pull_request'
         run: |
-          test -s public/brands/index.html
-          test -s public/brands/abemail/index.html
-          test -s public/brands/techtrack/index.html
-          test -s public/brands/techtrack-kids/index.html
+          test -s /tmp/expected-public/index.html
+          test -s /tmp/expected-public/brands/index.html
+          for brand in abe-techlab abemail techtrack techtrack-kids; do
+            test -s "/tmp/expected-public/brands/$brand/index.html"
+          done
+          test -s /tmp/expected-public/brands/abemail/assets/symbol/white/index.html
+          test -s /tmp/expected-public/brands/abemail/assets/wordmark/monochrome/index.html
+          test -s /tmp/expected-public/brands/techtrack/assets/horizontal/transparent/index.html
+          test -s /tmp/expected-public/brands/techtrack-kids/assets/stacked/lemon/index.html
+          test -s /tmp/expected-public/brands/abe-techlab/assets/mark/adaptive/index.html
 
       - name: Compare generated exports against committed assets
         if: github.event_name == 'pull_request'
@@ -105,9 +120,12 @@ jobs:
           for brand in abemail techtrack techtrack-kids; do
             diff -qr "/tmp/expected-brands/$brand/logos" "brands/$brand/logos"
             cmp "/tmp/expected-inventory/$brand/inventory.json" "brands/$brand/inventory.json"
-            diff -qr "/tmp/expected-public/$brand/logos" "public/brands/$brand/logos"
             echo "Verified reproducible asset package: $brand"
           done
+          diff -qr /tmp/expected-public/brands public/brands
+          cmp /tmp/expected-public/index.html public/index.html
+          echo "Verified shared brand navigation and all public asset pages."
+
 
       - name: Upload rendered package preview
         if: always()
