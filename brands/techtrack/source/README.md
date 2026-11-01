@@ -1,15 +1,5 @@
-# TechTrack — Original Logo Sources
+# TechTrack — Uploaded Source SVGs
 
-Upload the original, editable TechTrack logo SVG master file(s) into this directory.
+These original files are retained unchanged. Each SVG wraps a PNG image using an embedded data URI; it contains no editable path or text geometry. The image dimensions match the SVG viewBox. This is not a vector master.
 
-**Preferred:** the original SVG exported from the design source, with paths and gradients preserved. If the logo has separate symbol and wordmark artwork, include both files.
-
-Please do not upload an enlarged PNG or a screenshot as a replacement for the SVG master. Do not modify or optimize the original SVG before uploading; retain the original file as supplied.
-
-After upload, the artwork will be inspected for:
-- SVG validity, viewBox, dimensions, and embedded references.
-- Paths, gradients, masks, clipping, and typography.
-- Whether fonts are embedded or text remains live.
-- Original colours and any light/dark behaviour.
-
-No derived exports are approved or published until the source and brand treatments have been reviewed.
+The generated package extracts the embedded PNG, separates its solid background, and creates transparent/opaque PNG variants. 2× exports use high-quality Lanczos interpolation; the source pixel detail does not increase. Keep these files unchanged and replace them only when the original editable logo master becomes available.

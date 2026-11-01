@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "brand_id": "techtrack-kids",
+  "product_name": "TechTrack Kids",
+  "brand_owner": "ABE TechLab",
+  "status": "review",
+  "source_of_truth": {
+    "repository": "ABE-TechLab/Branding",
+    "path": "brands/techtrack-kids/",
+    "source_revision": "32c4373d3dddf8fabb893be1a99872695debf9f2"
+  },
+  "approval": {
+    "status": "pending",
+    "approved_by": [],
+    "approved_at": null,
+    "notes": "Separate Kids ecosystem. Supplied .svg files are wrappers around embedded PNG artwork, not editable vector masters. Lemon-background exports use orange for the yellow details that would otherwise blend into the lemon canvas."
+  },
+  "palette": {
+    "colors": [
+      {
+        "token": "blue",
+        "name": "Blue",
+        "hex": "#1264F3",
+        "rgb": [
+          18,
+          100,
+          243
+        ],
+        "role": "primary",
+        "status": "reference"
+      },
+      {
+        "token": "teal",
+        "name": "Teal",
+        "hex": "#08C9A5",
+        "rgb": [
+          8,
+          201,
+          165
+        ],
+        "role": "primary",
+        "status": "reference"
+      },
+      {
+        "token": "yellow",
+        "name": "Yellow",
+        "hex": "#FFC93D",
+        "rgb": [
+          255,
+          201,
+          61
+        ],
+        "role": "accent",
+        "status": "reference"
+      },
+      {
+        "token": "orange",
+        "name": "Orange",
+        "hex": "#FF7A45",
+        "rgb": [
+          255,
+          122,
+          69
+        ],
+        "role": "accent",
+        "status": "reference"
+      },
+      {
+        "token": "purple",
+        "name": "Purple",
+        "hex": "#885CF6",
+        "rgb": [
+          136,
+          92,
+          246
+        ],
+        "role": "accent",
+        "status": "reference"
+      },
+      {
+        "token": "pink",
+        "name": "Pink",
+        "hex": "#FF5C7A",
+        "rgb": [
+          255,
+          92,
+          122
+        ],
+        "role": "accent",
+        "status": "reference"
+      },
+      {
+        "token": "light",
+        "name": "Light",
+        "hex": "#F8FAFF",
+        "rgb": [
+          248,
+          250,
+          255
+        ],
+        "role": "surface",
+        "status": "reference"
+      },
+      {
+        "token": "lemon",
+        "name": "Lemon",
+        "hex": "#FFC93D",
+        "rgb": [
+          255,
+          201,
+          61
+        ],
+        "role": "surface",
+        "status": "reference"
+      }
+    ]
+  },
+  "typography": {
+    "families": [],
+    "font_licenses_reviewed": false,
+    "notes": "Lettering is raster artwork inside embedded PNGs; font family and licensing cannot be inferred from the container."
+  },
+  "source_artwork": {
+    "format": "svg-with-embedded-png",
+    "editable_vector_master": false,
+    "compositions": [
+      "mark",
+      "horizontal",
+      "stacked",
+      "wordmark"
+    ],
+    "note": "Wordmark-only image is derived by cropping the text region from the supplied stacked logo."
+  },
+  "export": {
+    "png": "logos/png/",
+    "svg": "logos/svg/",
+    "native_and_2x_png": true,
+    "opaque_backgrounds": [
+      "white",
+      "black",
+      "lemon"
+    ],
+    "transparent_variants": true
+  },
+  "licensing": {
+    "ownership_confirmed": false,
+    "redistribution_status": "unreviewed",
+    "notes": "Internal product brand source supplied by ABE TechLab; legal/redistribution review not recorded."
+  },
+  "last_reviewed": "2026-11-01"
+}

@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "brand_id": "techtrack",
+  "product_name": "TechTrack",
+  "brand_owner": "ABE TechLab",
+  "status": "review",
+  "source_of_truth": {
+    "repository": "ABE-TechLab/Branding",
+    "path": "brands/techtrack/",
+    "source_revision": "32c4373d3dddf8fabb893be1a99872695debf9f2"
+  },
+  "approval": {
+    "status": "pending",
+    "approved_by": [],
+    "approved_at": null,
+    "notes": "The supplied .svg files wrap embedded PNGs; they are not editable vector masters. Preserve them as source references and do not claim vector-quality scaling."
+  },
+  "palette": {
+    "colors": [
+      {
+        "token": "navy",
+        "name": "Navy",
+        "hex": "#071A3D",
+        "rgb": [
+          7,
+          26,
+          61
+        ],
+        "role": "primary",
+        "status": "reference"
+      },
+      {
+        "token": "electric-blue",
+        "name": "Electric Blue",
+        "hex": "#1264F3",
+        "rgb": [
+          18,
+          100,
+          243
+        ],
+        "role": "primary",
+        "status": "reference"
+      },
+      {
+        "token": "cyan-blue",
+        "name": "Cyan Blue",
+        "hex": "#1488F0",
+        "rgb": [
+          20,
+          136,
+          240
+        ],
+        "role": "secondary",
+        "status": "reference"
+      },
+      {
+        "token": "teal-green",
+        "name": "Teal Green",
+        "hex": "#08C9A5",
+        "rgb": [
+          8,
+          201,
+          165
+        ],
+        "role": "accent",
+        "status": "reference"
+      },
+      {
+        "token": "light-gray",
+        "name": "Light Gray",
+        "hex": "#F3F6FC",
+        "rgb": [
+          243,
+          246,
+          252
+        ],
+        "role": "surface",
+        "status": "reference"
+      },
+      {
+        "token": "white",
+        "name": "White",
+        "hex": "#FFFFFF",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "role": "surface",
+        "status": "reference"
+      },
+      {
+        "token": "lemon",
+        "name": "Lemon",
+        "hex": "#FFC93D",
+        "rgb": [
+          255,
+          201,
+          61
+        ],
+        "role": "surface",
+        "status": "reference"
+      }
+    ]
+  },
+  "typography": {
+    "families": [],
+    "font_licenses_reviewed": false,
+    "notes": "Lettering is raster artwork inside embedded PNGs; font family and licensing cannot be inferred from the container."
+  },
+  "source_artwork": {
+    "format": "svg-with-embedded-png",
+    "editable_vector_master": false,
+    "compositions": [
+      "mark",
+      "horizontal",
+      "stacked",
+      "wordmark"
+    ],
+    "note": "Wordmark-only image is derived by cropping the text region from the supplied stacked logo."
+  },
+  "export": {
+    "png": "logos/png/",
+    "svg": "logos/svg/",
+    "native_and_2x_png": true,
+    "opaque_backgrounds": [
+      "white",
+      "black",
+      "lemon"
+    ],
+    "transparent_variants": true
+  },
+  "licensing": {
+    "ownership_confirmed": false,
+    "redistribution_status": "unreviewed",
+    "notes": "Internal product brand source supplied by ABE TechLab; legal/redistribution review not recorded."
+  },
+  "last_reviewed": "2026-11-01"
+}

@@ -1,0 +1,491 @@
+{
+  "brand": "techtrack",
+  "source_type": "png-backed-svg-uploads",
+  "vector_master_available": false,
+  "source_resolution_note": "The uploaded SVGs contain embedded PNGs at the SVG viewBox dimensions. 2x files are interpolation-only; supply original editable vector artwork for true vector-quality scaling.",
+  "palette": {
+    "navy": "#071A3D",
+    "electric_blue": "#1264F3",
+    "cyan_blue": "#1488F0",
+    "teal_green": "#08C9A5",
+    "light_gray": "#F3F6FC",
+    "white": "#FFFFFF"
+  },
+  "tagline": "Skills Today. Opportunities Tomorrow.",
+  "source_files": {
+    "mark": {
+      "source": "brands/techtrack/source/techtrack-mark-bg-white-v1.svg",
+      "source_sha256": "01fdbfa4f87a5b5189dca51afcceedd88861fed72f962da6d8598f937b351616",
+      "embedded_png_sha256": "b93102b026e2e23f163e61e0b74ef3a37b2f898e84d07968faeb81b991dbc383",
+      "source_dimensions": [
+        471,
+        435
+      ],
+      "source_background": "white",
+      "vector_paths": 0,
+      "embedded_raster": true
+    },
+    "horizontal": {
+      "source": "brands/techtrack/source/techtrack-lockup-horizontal-bg-black-v1.svg",
+      "source_sha256": "2426fd97f46c2a84eb1ce2551ec0239d7f762059fb75304deb93876b7ba1ec25",
+      "embedded_png_sha256": "7bcdf981afbcc0afeac30d4e96feec5eecedc2a5648b689dccaefdc8248dcc75",
+      "source_dimensions": [
+        1596,
+        435
+      ],
+      "source_background": "black",
+      "vector_paths": 0,
+      "embedded_raster": true
+    },
+    "stacked": {
+      "source": "brands/techtrack/source/techtrack-lockup-stacked-bg-white-v1.svg",
+      "source_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+      "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+      "source_dimensions": [
+        1113,
+        756
+      ],
+      "source_background": "white",
+      "vector_paths": 0,
+      "embedded_raster": true
+    }
+  },
+  "inventory": [
+    {
+      "composition": "mark",
+      "background": "white",
+      "png": "techtrack/logos/png/techtrack-mark-bg-white-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-mark-bg-white-2x-v1.png",
+      "source_dimensions": [
+        471,
+        435
+      ],
+      "export_dimensions_2x": [
+        942,
+        870
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-mark-bg-white-v1.svg",
+        "source_sha256": "01fdbfa4f87a5b5189dca51afcceedd88861fed72f962da6d8598f937b351616",
+        "embedded_png_sha256": "b93102b026e2e23f163e61e0b74ef3a37b2f898e84d07968faeb81b991dbc383",
+        "source_dimensions": [
+          471,
+          435
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "mark",
+      "background": "black",
+      "png": "techtrack/logos/png/techtrack-mark-bg-black-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-mark-bg-black-2x-v1.png",
+      "source_dimensions": [
+        471,
+        435
+      ],
+      "export_dimensions_2x": [
+        942,
+        870
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-mark-bg-white-v1.svg",
+        "source_sha256": "01fdbfa4f87a5b5189dca51afcceedd88861fed72f962da6d8598f937b351616",
+        "embedded_png_sha256": "b93102b026e2e23f163e61e0b74ef3a37b2f898e84d07968faeb81b991dbc383",
+        "source_dimensions": [
+          471,
+          435
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "mark",
+      "background": "lemon",
+      "png": "techtrack/logos/png/techtrack-mark-bg-lemon-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-mark-bg-lemon-2x-v1.png",
+      "source_dimensions": [
+        471,
+        435
+      ],
+      "export_dimensions_2x": [
+        942,
+        870
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-mark-bg-white-v1.svg",
+        "source_sha256": "01fdbfa4f87a5b5189dca51afcceedd88861fed72f962da6d8598f937b351616",
+        "embedded_png_sha256": "b93102b026e2e23f163e61e0b74ef3a37b2f898e84d07968faeb81b991dbc383",
+        "source_dimensions": [
+          471,
+          435
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "mark",
+      "background": "transparent",
+      "png": "techtrack/logos/png/techtrack-mark-transparent-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-mark-transparent-2x-v1.png",
+      "svg_wrapper": "techtrack/logos/svg/techtrack-mark-transparent-v1.svg",
+      "source_dimensions": [
+        471,
+        435
+      ],
+      "export_dimensions_2x": [
+        942,
+        870
+      ],
+      "render_method": "background-separated embedded PNG; SVG is a raster-backed wrapper",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-mark-bg-white-v1.svg",
+        "source_sha256": "01fdbfa4f87a5b5189dca51afcceedd88861fed72f962da6d8598f937b351616",
+        "embedded_png_sha256": "b93102b026e2e23f163e61e0b74ef3a37b2f898e84d07968faeb81b991dbc383",
+        "source_dimensions": [
+          471,
+          435
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "horizontal",
+      "background": "white",
+      "png": "techtrack/logos/png/techtrack-horizontal-bg-white-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-horizontal-bg-white-2x-v1.png",
+      "source_dimensions": [
+        1596,
+        435
+      ],
+      "export_dimensions_2x": [
+        3192,
+        870
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-horizontal-bg-black-v1.svg",
+        "source_sha256": "2426fd97f46c2a84eb1ce2551ec0239d7f762059fb75304deb93876b7ba1ec25",
+        "embedded_png_sha256": "7bcdf981afbcc0afeac30d4e96feec5eecedc2a5648b689dccaefdc8248dcc75",
+        "source_dimensions": [
+          1596,
+          435
+        ],
+        "source_background": "black",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "horizontal",
+      "background": "black",
+      "png": "techtrack/logos/png/techtrack-horizontal-bg-black-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-horizontal-bg-black-2x-v1.png",
+      "source_dimensions": [
+        1596,
+        435
+      ],
+      "export_dimensions_2x": [
+        3192,
+        870
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-horizontal-bg-black-v1.svg",
+        "source_sha256": "2426fd97f46c2a84eb1ce2551ec0239d7f762059fb75304deb93876b7ba1ec25",
+        "embedded_png_sha256": "7bcdf981afbcc0afeac30d4e96feec5eecedc2a5648b689dccaefdc8248dcc75",
+        "source_dimensions": [
+          1596,
+          435
+        ],
+        "source_background": "black",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "horizontal",
+      "background": "lemon",
+      "png": "techtrack/logos/png/techtrack-horizontal-bg-lemon-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-horizontal-bg-lemon-2x-v1.png",
+      "source_dimensions": [
+        1596,
+        435
+      ],
+      "export_dimensions_2x": [
+        3192,
+        870
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-horizontal-bg-black-v1.svg",
+        "source_sha256": "2426fd97f46c2a84eb1ce2551ec0239d7f762059fb75304deb93876b7ba1ec25",
+        "embedded_png_sha256": "7bcdf981afbcc0afeac30d4e96feec5eecedc2a5648b689dccaefdc8248dcc75",
+        "source_dimensions": [
+          1596,
+          435
+        ],
+        "source_background": "black",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "horizontal",
+      "background": "transparent",
+      "png": "techtrack/logos/png/techtrack-horizontal-transparent-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-horizontal-transparent-2x-v1.png",
+      "svg_wrapper": "techtrack/logos/svg/techtrack-horizontal-transparent-v1.svg",
+      "source_dimensions": [
+        1596,
+        435
+      ],
+      "export_dimensions_2x": [
+        3192,
+        870
+      ],
+      "render_method": "background-separated embedded PNG; SVG is a raster-backed wrapper",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-horizontal-bg-black-v1.svg",
+        "source_sha256": "2426fd97f46c2a84eb1ce2551ec0239d7f762059fb75304deb93876b7ba1ec25",
+        "embedded_png_sha256": "7bcdf981afbcc0afeac30d4e96feec5eecedc2a5648b689dccaefdc8248dcc75",
+        "source_dimensions": [
+          1596,
+          435
+        ],
+        "source_background": "black",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "stacked",
+      "background": "white",
+      "png": "techtrack/logos/png/techtrack-stacked-bg-white-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-stacked-bg-white-2x-v1.png",
+      "source_dimensions": [
+        1113,
+        756
+      ],
+      "export_dimensions_2x": [
+        2226,
+        1512
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-stacked-bg-white-v1.svg",
+        "source_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+        "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+        "source_dimensions": [
+          1113,
+          756
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "stacked",
+      "background": "black",
+      "png": "techtrack/logos/png/techtrack-stacked-bg-black-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-stacked-bg-black-2x-v1.png",
+      "source_dimensions": [
+        1113,
+        756
+      ],
+      "export_dimensions_2x": [
+        2226,
+        1512
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-stacked-bg-white-v1.svg",
+        "source_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+        "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+        "source_dimensions": [
+          1113,
+          756
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "stacked",
+      "background": "lemon",
+      "png": "techtrack/logos/png/techtrack-stacked-bg-lemon-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-stacked-bg-lemon-2x-v1.png",
+      "source_dimensions": [
+        1113,
+        756
+      ],
+      "export_dimensions_2x": [
+        2226,
+        1512
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-stacked-bg-white-v1.svg",
+        "source_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+        "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+        "source_dimensions": [
+          1113,
+          756
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "stacked",
+      "background": "transparent",
+      "png": "techtrack/logos/png/techtrack-stacked-transparent-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-stacked-transparent-2x-v1.png",
+      "svg_wrapper": "techtrack/logos/svg/techtrack-stacked-transparent-v1.svg",
+      "source_dimensions": [
+        1113,
+        756
+      ],
+      "export_dimensions_2x": [
+        2226,
+        1512
+      ],
+      "render_method": "background-separated embedded PNG; SVG is a raster-backed wrapper",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-stacked-bg-white-v1.svg",
+        "source_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+        "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+        "source_dimensions": [
+          1113,
+          756
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "wordmark",
+      "background": "white",
+      "png": "techtrack/logos/png/techtrack-wordmark-bg-white-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-wordmark-bg-white-2x-v1.png",
+      "source_dimensions": [
+        959,
+        266
+      ],
+      "export_dimensions_2x": [
+        1918,
+        532
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-stacked-bg-white-v1.svg",
+        "source_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+        "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+        "source_dimensions": [
+          1113,
+          756
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "wordmark",
+      "background": "black",
+      "png": "techtrack/logos/png/techtrack-wordmark-bg-black-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-wordmark-bg-black-2x-v1.png",
+      "source_dimensions": [
+        959,
+        266
+      ],
+      "export_dimensions_2x": [
+        1918,
+        532
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-stacked-bg-white-v1.svg",
+        "source_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+        "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+        "source_dimensions": [
+          1113,
+          756
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "wordmark",
+      "background": "lemon",
+      "png": "techtrack/logos/png/techtrack-wordmark-bg-lemon-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-wordmark-bg-lemon-2x-v1.png",
+      "source_dimensions": [
+        959,
+        266
+      ],
+      "export_dimensions_2x": [
+        1918,
+        532
+      ],
+      "render_method": "2x Lanczos upscale from embedded raster; no new vector detail created",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-stacked-bg-white-v1.svg",
+        "source_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+        "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+        "source_dimensions": [
+          1113,
+          756
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    },
+    {
+      "composition": "wordmark",
+      "background": "transparent",
+      "png": "techtrack/logos/png/techtrack-wordmark-transparent-v1.png",
+      "png_2x": "techtrack/logos/png/techtrack-wordmark-transparent-2x-v1.png",
+      "svg_wrapper": "techtrack/logos/svg/techtrack-wordmark-transparent-v1.svg",
+      "source_dimensions": [
+        959,
+        266
+      ],
+      "export_dimensions_2x": [
+        1918,
+        532
+      ],
+      "render_method": "background-separated embedded PNG; SVG is a raster-backed wrapper",
+      "source": {
+        "source": "brands/techtrack/source/techtrack-lockup-stacked-bg-white-v1.svg",
+        "source_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+        "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+        "source_dimensions": [
+          1113,
+          756
+        ],
+        "source_background": "white",
+        "vector_paths": 0,
+        "embedded_raster": true
+      }
+    }
+  ]
+}

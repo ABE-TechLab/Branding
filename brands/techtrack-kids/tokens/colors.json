@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "brand_id": "techtrack-kids",
+  "colors": [
+    {
+      "name": "Blue",
+      "token": "blue",
+      "hex": "#1264F3",
+      "rgb": [
+        18,
+        100,
+        243
+      ]
+    },
+    {
+      "name": "Teal",
+      "token": "teal",
+      "hex": "#08C9A5",
+      "rgb": [
+        8,
+        201,
+        165
+      ]
+    },
+    {
+      "name": "Yellow",
+      "token": "yellow",
+      "hex": "#FFC93D",
+      "rgb": [
+        255,
+        201,
+        61
+      ]
+    },
+    {
+      "name": "Orange",
+      "token": "orange",
+      "hex": "#FF7A45",
+      "rgb": [
+        255,
+        122,
+        69
+      ]
+    },
+    {
+      "name": "Purple",
+      "token": "purple",
+      "hex": "#885CF6",
+      "rgb": [
+        136,
+        92,
+        246
+      ]
+    },
+    {
+      "name": "Pink",
+      "token": "pink",
+      "hex": "#FF5C7A",
+      "rgb": [
+        255,
+        92,
+        122
+      ]
+    },
+    {
+      "name": "Light",
+      "token": "light",
+      "hex": "#F8FAFF",
+      "rgb": [
+        248,
+        250,
+        255
+      ]
+    },
+    {
+      "name": "Lemon",
+      "token": "lemon",
+      "hex": "#FFC93D",
+      "rgb": [
+        255,
+        201,
+        61
+      ]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+name: Generate and validate product brand asset packages
+
+on:
+  push:
+    branches:
+      - brand/abemail-techtrack-logo-packages
+    paths:
+      - "brands/abemail/source/**"
+      - "brands/techtrack/source/**"
+      - "brands/techtrack-kids/source/**"
+      - "scripts/export_product_brand_asset_packages.py"
+      - "scripts/build_brand_library_site.py"
+      - "public/index.html"
+      - ".github/workflows/generate-product-brand-asset-packages.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "brands/abemail/**"
+      - "brands/techtrack/**"
+      - "brands/techtrack-kids/**"
+      - "scripts/export_product_brand_asset_packages.py"
+      - "scripts/build_brand_library_site.py"
+      - "public/index.html"
+      - "public/brands/**"
+      - ".github/workflows/generate-product-brand-asset-packages.yml"
+
+permissions:
+  contents: write
+
+# Avoid overlapping asset commits when several source files are uploaded together.
+concurrency:
+  group: product-brand-assets-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate-assets:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Inter font and Cairo libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-inter libcairo2 libffi-dev
+          fc-cache -f
+          fc-match Inter
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install raster and SVG rendering dependencies
+        run: python -m pip install "Pillow>=10,<13" "CairoSVG>=2.7,<3"
+
+      - name: Sync branch before generating assets
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "$GITHUB_REF_NAME"
+          git rebase "origin/$GITHUB_REF_NAME"
+
+      - name: Generate vector and raster-derived product packages
+        if: github.event_name == 'push'
+        run: python scripts/export_product_brand_asset_packages.py
+
+      - name: Generate shared brand navigation and individual asset pages
+        if: github.event_name == 'push'
+        run: python scripts/build_brand_library_site.py
+
+      - name: Commit generated logo variants and public assets
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            brands/abemail/logos brands/abemail/inventory.json \
+            brands/techtrack/logos brands/techtrack/inventory.json \
+            brands/techtrack-kids/logos brands/techtrack-kids/inventory.json \
+            public/index.html public/brands
+          if git diff --cached --quiet; then
+            echo "Product logo exports are already current."
+            exit 0
+          fi
+          git commit -m "Generate ABEmail and TechTrack logo variants"
+          git push
+
+      - name: Re-render to a clean temporary directory for PR validation
+        if: github.event_name == 'pull_request'
+        run: |
+          python scripts/export_product_brand_asset_packages.py \
+            --package-root /tmp/expected-brands \
+            --public-root /tmp/expected-public \
+            --inventory-dir /tmp/expected-inventory
+
+      - name: Generate expected shared brand navigation and asset pages
+        if: github.event_name == 'pull_request'
+        run: python scripts/build_brand_library_site.py --public-root /tmp/expected-public
+
+      - name: Verify brand pages and individual asset routes
+        if: github.event_name == 'pull_request'
+        run: |
+          test -s /tmp/expected-public/index.html
+          test -s /tmp/expected-public/brands/index.html
+          for brand in abe-techlab abemail techtrack techtrack-kids; do
+            test -s "/tmp/expected-public/brands/$brand/index.html"
+          done
+          test -s /tmp/expected-public/brands/abemail/assets/symbol/white/index.html
+          test -s /tmp/expected-public/brands/abemail/assets/wordmark/monochrome/index.html
+          test -s /tmp/expected-public/brands/techtrack/assets/horizontal/transparent/index.html
+          test -s /tmp/expected-public/brands/techtrack-kids/assets/stacked/lemon/index.html
+          test -s /tmp/expected-public/brands/abe-techlab/assets/mark/adaptive/index.html
+
+      - name: Compare generated exports against committed assets
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          for brand in abemail techtrack techtrack-kids; do
+            diff -qr "/tmp/expected-brands/$brand/logos" "brands/$brand/logos"
+            cmp "/tmp/expected-inventory/$brand/inventory.json" "brands/$brand/inventory.json"
+            echo "Verified reproducible asset package: $brand"
+          done
+          diff -qr /tmp/expected-public/brands public/brands
+          cmp /tmp/expected-public/index.html public/index.html
+          echo "Verified shared brand navigation and all public asset pages."
+
+
+      - name: Upload rendered package preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: abemail-techtrack-product-brand-assets
+          path: |
+            brands/abemail/logos/png/*.png
+            brands/techtrack/logos/png/*.png
+            brands/techtrack-kids/logos/png/*.png
+          if-no-files-found: warn
+          retention-days: 14
