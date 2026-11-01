@@ -7,9 +7,9 @@ This guide explains when to use each current logo composition. The files are wor
 | Composition | Asset | Best use |
 | --- | --- | --- |
 | Symbol only | [Adaptive symbol SVG](../public/logos/abe-techlab-mark-adaptive.svg) | App icons, avatars, favicons, compact placements |
-| Stacked | [Adaptive stacked lockup](../public/logos/abe-techlab-lockup-stacked-adaptive.svg) | Centered or vertical layouts, title pages, social graphics |
-| Horizontal | [Adaptive horizontal lockup](../public/logos/abe-techlab-lockup-horizontal-adaptive.svg) | Website headers, footers, navigation, document headers |
-| Wordmark only | [Adaptive wordmark](../public/logos/abe-techlab-wordmark-adaptive.svg) | Text-led or narrow placements, or where the symbol is already present nearby |
+| Stacked | [Adaptive stacked lockup](../public/logos/abe-techlab-lockup-stacked-adaptive.svg) · [Light PNG](../public/logos/abe-techlab-lockup-stacked-light-v1.png) · [Dark PNG](../public/logos/abe-techlab-lockup-stacked-dark-v1.png) | Centered or vertical layouts, title pages, social graphics |
+| Horizontal | [Adaptive horizontal lockup](../public/logos/abe-techlab-lockup-horizontal-adaptive.svg) · [Light PNG](../public/logos/abe-techlab-lockup-horizontal-light-v1.png) · [Dark PNG](../public/logos/abe-techlab-lockup-horizontal-dark-v1.png) | Website headers, footers, navigation, document headers |
+| Wordmark only | [Adaptive wordmark](../public/logos/abe-techlab-wordmark-adaptive.svg) · [Light PNG](../public/logos/abe-techlab-wordmark-light-v1.png) · [Dark PNG](../public/logos/abe-techlab-wordmark-dark-v1.png) | Text-led or narrow placements, or where the symbol is already present nearby |
 
 ## Theme behavior
 
@@ -31,7 +31,9 @@ The lockups use an Arial/Helvetica-style system sans-serif treatment: “ABE” 
 
 ## Email and raster use
 
-The adaptive SVGs are intended for websites and other modern browser contexts. Email clients can sanitize SVG and embedded CSS/media queries, so do not assume the adaptive lockups will switch themes reliably in email. For email, use fixed-color PNG artwork chosen for the actual message background. The current fixed PNG exports are provided for the symbol-only mark; fixed raster exports for the stacked, horizontal, and wordmark compositions should be added when those specific email use cases are needed.
+The adaptive SVGs are intended for websites and other modern browser contexts. Email clients can sanitize SVG and embedded CSS/media queries, so do not assume the adaptive lockups will switch themes reliably in email. Each of the stacked, horizontal, and wordmark compositions now has a fixed-color transparent PNG for light and dark backgrounds. The exports are rendered at 3× their SVG viewBox dimensions: stacked 1560 × 1050, horizontal 2040 × 495, and wordmark 1590 × 336. Choose the PNG variant that matches the actual image background; PNGs do not switch colors automatically.
+
+The source-preserving export process is documented in the repository-root [AGENTS.md](../AGENTS.md), and can be rerun with [`scripts/export_logo_variants.py`](../scripts/export_logo_variants.py). It changes only the `.ink` theme color, keeps the original geometry and accent, and validates dimensions, alpha transparency, and expected colors.
 
 ## Asset status
 
