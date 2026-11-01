@@ -9,6 +9,8 @@ on:
       - "brands/techtrack/source/**"
       - "brands/techtrack-kids/source/**"
       - "scripts/export_product_brand_asset_packages.py"
+      - "public/index.html"
+      - "public/brands/**"
       - ".github/workflows/generate-product-brand-asset-packages.yml"
   pull_request:
     branches:
@@ -18,6 +20,8 @@ on:
       - "brands/techtrack/**"
       - "brands/techtrack-kids/**"
       - "scripts/export_product_brand_asset_packages.py"
+      - "public/index.html"
+      - "public/brands/**"
       - ".github/workflows/generate-product-brand-asset-packages.yml"
 
 permissions:
@@ -84,6 +88,14 @@ jobs:
             --package-root /tmp/expected-brands \
             --public-root /tmp/expected-public \
             --inventory-dir /tmp/expected-inventory
+
+      - name: Verify static product brand landing pages exist
+        if: github.event_name == 'pull_request'
+        run: |
+          test -s public/brands/index.html
+          test -s public/brands/abemail/index.html
+          test -s public/brands/techtrack/index.html
+          test -s public/brands/techtrack-kids/index.html
 
       - name: Compare generated exports against committed assets
         if: github.event_name == 'pull_request'
