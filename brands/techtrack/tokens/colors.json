@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "brand_id": "techtrack",
+  "colors": [
+    {
+      "name": "Navy",
+      "token": "navy",
+      "hex": "#071A3D",
+      "rgb": [
+        7,
+        26,
+        61
+      ]
+    },
+    {
+      "name": "Electric Blue",
+      "token": "electric-blue",
+      "hex": "#1264F3",
+      "rgb": [
+        18,
+        100,
+        243
+      ]
+    },
+    {
+      "name": "Cyan Blue",
+      "token": "cyan-blue",
+      "hex": "#1488F0",
+      "rgb": [
+        20,
+        136,
+        240
+      ]
+    },
+    {
+      "name": "Teal Green",
+      "token": "teal-green",
+      "hex": "#08C9A5",
+      "rgb": [
+        8,
+        201,
+        165
+      ]
+    },
+    {
+      "name": "Light Gray",
+      "token": "light-gray",
+      "hex": "#F3F6FC",
+      "rgb": [
+        243,
+        246,
+        252
+      ]
+    },
+    {
+      "name": "White",
+      "token": "white",
+      "hex": "#FFFFFF",
+      "rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "Lemon",
+      "token": "lemon",
+      "hex": "#FFC93D",
+      "rgb": [
+        255,
+        201,
+        61
+      ]
+    }
+  ]
+}
