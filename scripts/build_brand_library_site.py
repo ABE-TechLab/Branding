@@ -286,7 +286,8 @@ def render_variant_page(slug: str, composition: str, variant: str, cfg: dict, pu
         current = ' aria-current="page"' if other == variant else ""
         variants.append(f'<a href="{asset_route(slug,composition,other)}"{current}>{esc(human_variant(other))}</a>')
 
-    viewer = f'<div class="asset-viewer {bgclass}"><a href="{png_url}" target="_blank" rel="noopener" aria-label="Open full-size image">{f"<img src={esc(png_url)} alt={esc(title)}>" if png_url else ""}</a></div>' if png_url else ""
+    image_markup = f'<img src="{esc(png_url)}" alt="{esc(title)}">' if png_url else ""
+    viewer = f'<div class="asset-viewer {bgclass}"><a href="{png_url}" target="_blank" rel="noopener" aria-label="Open full-size image">{image_markup}</a></div>' if png_url else ""
     meta = ""
     if slug == "abemail":
         meta = '<div class="asset-meta">Source: editable SVG vector paths · PNG render scale: 4× · Colour treatment follows the original Concept 1 artwork.</div>'
@@ -404,21 +405,24 @@ def wrap_company_page(source_html: str) -> str:
     source_html=source_html.replace("</main>\n</body>", "</main></div>\n</div>\n</body>",1)
     if 'href="/brands/abemail/"' not in source_html:
         raise ValueError("Sidebar navigation was not installed in company page")
-    for comp, label in [
-        ("mark","mark"),("lockup-stacked","lockup-stacked"),
-        ("lockup-horizontal","lockup-horizontal"),("wordmark","wordmark")
-    ]:
+    dimensions = {
+        "mark": None,
+        "lockup-stacked": "1560 × 1050",
+        "lockup-horizontal": "2040 × 495",
+        "wordmark": "1590 × 336",
+    }
+    for comp in ("mark","lockup-stacked","lockup-horizontal","wordmark"):
         old=f'href="/logos/abe-techlab-{comp}-adaptive.svg">Open adaptive SVG'
         new=f'href="/brands/abe-techlab/assets/{comp}/adaptive/">View asset page'
         source_html=source_html.replace(old,new)
-        # Give the corresponding light/dark asset its own dedicated page.
         for theme in ("light","dark"):
+            route=f'/brands/abe-techlab/assets/{comp}/{theme}/'
             old_png=f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">Open PNG asset'
-            source_html=source_html.replace(old_png,f'href="/brands/abe-techlab/assets/{comp}/{theme}/">View {theme} asset page')
-            source_html=source_html.replace(
-                f'href="/logos/abe-techlab-{comp}-{theme}-v1.png"> {theme.title()}',
-                f'href="/brands/abe-techlab/assets/{comp}/{theme}/"> {theme.title()}'
-            )
+            source_html=source_html.replace(old_png,f'href="{route}">View {theme} asset page')
+            size=dimensions[comp]
+            old_label=(f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">{theme.title()}'
+                       + (f' ({size})' if size else ''))
+            source_html=source_html.replace(old_label,f'href="{route}">{theme.title()} asset page')
     return source_html
 
 def build(public_root: Path) -> None:
