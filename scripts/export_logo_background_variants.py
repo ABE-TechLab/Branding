@@ -66,11 +66,18 @@ def render_source(source, selector, bg, ink, accent, has_accent, target):
         output_width=width, output_height=height
     )
     with Image.open(rgba_target) as rendered:
-        rendered.convert("RGB").quantize(
+        indexed = rendered.convert("RGB").quantize(
             colors=256,
             method=Image.Quantize.FASTOCTREE,
             dither=Image.Dither.NONE,
-        ).save(target, optimize=True)
+        )
+        # Preserve the exact requested canvas token after palette quantization.
+        background_index = indexed.getpixel((0, 0))
+        palette = indexed.getpalette()
+        background_rgb = tuple(bytes.fromhex(bg.lstrip("#")))
+        palette[background_index * 3:background_index * 3 + 3] = list(background_rgb)
+        indexed.putpalette(palette)
+        indexed.save(target, optimize=True)
     rgba_target.unlink()
     validate(target, (width, height), bg, ink, accent, has_accent)
 
