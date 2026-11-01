@@ -143,3 +143,4 @@ if __name__ == "__main__":
         raise SystemExit(1)
 
 # Version 1 opaque background exports are separate from transparent PNG assets.
+# Trigger the branch asset-generation workflow after exporter changes.
