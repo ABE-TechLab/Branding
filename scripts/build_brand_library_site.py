@@ -387,26 +387,25 @@ def wrap_company_page(source_html: str) -> str:
         start=source_html.index("/* BRAND_LIBRARY_SHELL_START */")
         end=source_html.index("/* BRAND_LIBRARY_SHELL_END */")+len("/* BRAND_LIBRARY_SHELL_END */")
         source_html=source_html[:start]+ROOT_CSS.strip()+"\n"+source_html[end:]
-        return source_html
-    if "</style>" not in source_html:
-        raise ValueError("Company page is missing its inline style block")
-    source_html=source_html.replace("</style>",ROOT_CSS+"\n  </style>",1)
-    sidebar = """
-    <aside class="brand-sidebar" aria-label="Brand navigation">
-      <a class="brand-sidebar__identity" href="/brands/abe-techlab/"><img src="/logos/abe-techlab-mark-adaptive.svg" alt=""><span>ABE TechLab<small>Brand library</small></span></a>
-      <div><p class="brand-nav__label">Company & product brands</p><nav class="brand-nav">
-      <a href="/brands/abe-techlab/" aria-current="page"><span class="brand-nav__dot" style="background:#A7E021"></span><span>ABE TechLab</span></a>
-      <a href="/brands/abemail/"><span class="brand-nav__dot" style="background:#72E3AD"></span><span>ABEmail</span></a>
-      <a href="/brands/techtrack/"><span class="brand-nav__dot" style="background:#1264F3"></span><span>TechTrack</span></a>
-      <a href="/brands/techtrack-kids/"><span class="brand-nav__dot" style="background:#885CF6"></span><span>TechTrack Kids</span></a>
-      </nav></div>
-      <div class="brand-sidebar__foot">One source of truth for every brand.<br><a href="https://github.com/ABE-TechLab/Branding">Open Brand Library repository ↗</a></div>
-    </aside>
-"""
-    source_html=source_html.replace("<body>\n  <main>", "<body>\n  <div class=\"brand-shell\">"+sidebar+"<div class=\"brand-main\">\n  <main>",1)
-    source_html=source_html.replace("</main>\n</body>", "</main></div>\n</div>\n</body>",1)
-    if 'href="/brands/abemail/"' not in source_html:
-        raise ValueError("Sidebar navigation was not installed in company page")
+        if "</style>" not in source_html:
+            raise ValueError("Company page is missing its inline style block")
+        source_html=source_html.replace("</style>",ROOT_CSS+"\n  </style>",1)
+        sidebar = """
+        <aside class="brand-sidebar" aria-label="Brand navigation">
+          <a class="brand-sidebar__identity" href="/brands/abe-techlab/"><img src="/logos/abe-techlab-mark-adaptive.svg" alt=""><span>ABE TechLab<small>Brand library</small></span></a>
+          <div><p class="brand-nav__label">Company & product brands</p><nav class="brand-nav">
+          <a href="/brands/abe-techlab/" aria-current="page"><span class="brand-nav__dot" style="background:#A7E021"></span><span>ABE TechLab</span></a>
+          <a href="/brands/abemail/"><span class="brand-nav__dot" style="background:#72E3AD"></span><span>ABEmail</span></a>
+          <a href="/brands/techtrack/"><span class="brand-nav__dot" style="background:#1264F3"></span><span>TechTrack</span></a>
+          <a href="/brands/techtrack-kids/"><span class="brand-nav__dot" style="background:#885CF6"></span><span>TechTrack Kids</span></a>
+          </nav></div>
+          <div class="brand-sidebar__foot">One source of truth for every brand.<br><a href="https://github.com/ABE-TechLab/Branding">Open Brand Library repository ↗</a></div>
+        </aside>
+    """
+        source_html=source_html.replace("<body>\n  <main>", "<body>\n  <div class=\"brand-shell\">"+sidebar+"<div class=\"brand-main\">\n  <main>",1)
+        source_html=source_html.replace("</main>\n</body>", "</main></div>\n</div>\n</body>",1)
+        if 'href="/brands/abemail/"' not in source_html:
+            raise ValueError("Sidebar navigation was not installed in company page")
     dimensions = {
         "mark": None,
         "lockup-stacked": "1560 × 1050",
