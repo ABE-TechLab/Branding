@@ -262,21 +262,21 @@ def render_variant_page(slug: str, composition: str, variant: str, cfg: dict, pu
         actions.append(f'<a class="primary" href="{png_url}" target="_blank" rel="noopener">Open PNG in new tab</a>')
         actions.append(f'<a href="{png_url}" download="{esc(png_name)}">Download PNG</a>')
     if slug in ("techtrack", "techtrack-kids"):
-        if variant == "transparent":
-            two_x = f"/brands/{slug}/logos/png/{slug}-{composition}-transparent-2x-v1.png"
-            if (public_root / two_x.lstrip("/")).is_file():
-                actions.append(f'<a href="{two_x}" download>Download 2× PNG</a>')
-            if svg_url:
-                actions.append(f'<a href="{svg_url}" target="_blank" rel="noopener">Open raster-backed SVG wrapper</a>')
-            source_name = {
-                "mark": f"{slug}-mark-bg-white-v1.svg",
-                "horizontal": f"{slug}-lockup-horizontal-bg-black-v1.svg",
-                "stacked": f"{slug}-lockup-stacked-bg-white-v1.svg",
-                "wordmark": f"{slug}-lockup-stacked-bg-white-v1.svg",
-            }[composition]
-            source_url = f"/brands/{slug}/source/{source_name}"
-            if (public_root / source_url.lstrip("/")).is_file():
-                actions.append(f'<a href="{source_url}" target="_blank" rel="noopener">Open original uploaded SVG reference</a>')
+        raster_variant = "transparent" if variant == "transparent" else f"bg-{variant}"
+        two_x = f"/brands/{slug}/logos/png/{slug}-{composition}-{raster_variant}-2x-v1.png"
+        if (public_root / two_x.lstrip("/")).is_file():
+            actions.append(f'<a href="{two_x}" download>Download 2× PNG</a>')
+        if svg_url:
+            actions.append(f'<a href="{svg_url}" target="_blank" rel="noopener">Open raster-backed SVG wrapper</a>')
+        source_name = {
+            "mark": f"{slug}-mark-bg-white-v1.svg",
+            "horizontal": f"{slug}-lockup-horizontal-bg-black-v1.svg",
+            "stacked": f"{slug}-lockup-stacked-bg-white-v1.svg",
+            "wordmark": f"{slug}-lockup-stacked-bg-white-v1.svg",
+        }[composition]
+        source_url = f"/brands/{slug}/source/{source_name}"
+        if (public_root / source_url.lstrip("/")).is_file():
+            actions.append(f'<a href="{source_url}" target="_blank" rel="noopener">Open original uploaded SVG reference</a>')
     elif svg_url:
         actions.append(f'<a href="{svg_url}" target="_blank" rel="noopener">Open SVG in new tab</a>')
         actions.append(f'<a href="{svg_url}" download="{esc(svg_name)}">Download SVG</a>')
