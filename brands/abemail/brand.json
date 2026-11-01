@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "brand_id": "abemail",
+  "product_name": "ABEmail",
+  "brand_owner": "ABE TechLab",
+  "status": "review",
+  "source_of_truth": {
+    "repository": "ABE-TechLab/Branding",
+    "path": "brands/abemail/",
+    "source_revision": "32c4373d3dddf8fabb893be1a99872695debf9f2"
+  },
+  "approval": {
+    "status": "pending",
+    "approved_by": [],
+    "approved_at": null,
+    "notes": "Original Concept 1 SVG files are supplied. They contain vector paths and editable live Inter text; final brand approval remains pending."
+  },
+  "palette": {
+    "colors": [
+      {
+        "token": "mint",
+        "name": "Mint Green",
+        "hex": "#72E3AD",
+        "rgb": [
+          114,
+          227,
+          173
+        ],
+        "role": "accent",
+        "status": "source"
+      },
+      {
+        "token": "deep-teal",
+        "name": "Deep Teal",
+        "hex": "#0C2E34",
+        "rgb": [
+          12,
+          46,
+          52
+        ],
+        "role": "primary",
+        "status": "source"
+      },
+      {
+        "token": "white",
+        "name": "White",
+        "hex": "#FFFFFF",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "role": "surface",
+        "status": "source"
+      },
+      {
+        "token": "black",
+        "name": "Black",
+        "hex": "#000000",
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "role": "surface",
+        "status": "export"
+      }
+    ]
+  },
+  "typography": {
+    "families": [
+      "Inter"
+    ],
+    "font_licenses_reviewed": false,
+    "notes": "The source SVG keeps ABEmail as editable text with Inter, Arial, sans-serif fallback. High-resolution PNG exports are rendered with Inter installed; SVG users should ensure Inter is available if exact wordmark metrics are required."
+  },
+  "logos": [
+    {
+      "asset_id": "mark",
+      "composition": "symbol",
+      "source_files": [
+        "source/ABEmail_C1_Symbol_Light.svg",
+        "source/ABEmail_C1_Symbol_Dark.svg",
+        "source/ABEmail_C1_Symbol_Monochrome.svg"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "monochrome"
+      ]
+    },
+    {
+      "asset_id": "horizontal",
+      "composition": "horizontal",
+      "source_files": [
+        "source/ABEmail_C1_Horizontal_Light.svg",
+        "source/ABEmail_C1_Horizontal_Dark.svg",
+        "source/ABEmail_C1_Horizontal_Monochrome.svg"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "monochrome"
+      ]
+    },
+    {
+      "asset_id": "stacked",
+      "composition": "stacked",
+      "source_files": [
+        "source/ABEmail_C1_Stacked_Light.svg",
+        "source/ABEmail_C1_Stacked_Dark.svg",
+        "source/ABEmail_C1_Stacked_Monochrome.svg"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "monochrome"
+      ]
+    },
+    {
+      "asset_id": "wordmark",
+      "composition": "wordmark",
+      "source_derivation": "Extracted from the existing horizontal SVG live text element; original lettering remains live Inter text."
+    }
+  ],
+  "export": {
+    "svg": "logos/svg/",
+    "png": "logos/png/",
+    "png_scale": 4,
+    "opaque_backgrounds": [
+      "white",
+      "black",
+      "lemon"
+    ],
+    "transparent_variants": true
+  },
+  "licensing": {
+    "ownership_confirmed": false,
+    "redistribution_status": "unreviewed",
+    "notes": "Internal product brand source supplied by ABE TechLab; legal/redistribution review not recorded."
+  },
+  "last_reviewed": "2026-11-01"
+}
