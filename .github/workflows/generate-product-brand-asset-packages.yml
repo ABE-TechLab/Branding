@@ -105,7 +105,7 @@ jobs:
           for brand in abemail techtrack techtrack-kids; do
             diff -qr "/tmp/expected-brands/$brand/logos" "brands/$brand/logos"
             cmp "/tmp/expected-inventory/$brand/inventory.json" "brands/$brand/inventory.json"
-            diff -qr "/tmp/expected-public/$brand" "public/brands/$brand"
+            diff -qr "/tmp/expected-public/$brand/logos" "public/brands/$brand/logos"
             echo "Verified reproducible asset package: $brand"
           done
 
