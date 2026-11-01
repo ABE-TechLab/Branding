@@ -126,3 +126,5 @@ if __name__ == "__main__":
     except (OSError, ValueError, KeyError, ET.ParseError) as error:
         print(f"ERROR: {error}", file=sys.stderr)
         raise SystemExit(1)
+
+# Version 1 opaque background exports are separate from transparent PNG assets.
