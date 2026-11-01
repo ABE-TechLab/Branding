@@ -69,6 +69,7 @@ Follow this sequence for every asset task:
 For every newly rendered PNG:
 
 - Keep an alpha channel and confirm that the background is genuinely transparent—not a white, black, or checkerboard fill.
+- When a request explicitly requires a fixed background, create a separately named opaque-background family instead of changing the transparent exports. Confirm alpha is 255 for every pixel and verify the canvas color exactly against the documented background token.
 - Confirm the expected canvas dimensions and aspect ratio against the source viewBox and export scale.
 - Confirm that the dark asset uses the specified light foreground and that the light asset uses the specified dark foreground. Keep accent colors exactly on-token.
 - Inspect anti-aliased edges, clear space, alignment, baseline, and clipping. Confirm the entire mark and wordmark are inside the canvas.
@@ -120,3 +121,8 @@ A brand-asset task is complete only when:
 - The change has the required human approval and no unverified asset is represented as official.
 
 If any item cannot be verified, report it explicitly as incomplete rather than claiming the brand asset is ready.
+
+
+### Explicit opaque-background exports
+
+The transparent PNG family remains the default. When the asset owner explicitly requests a fixed background, use scripts/export_logo_background_variants.py to create a separate opaque family from the existing adaptive SVG sources. The current ABE TechLab package includes white (#FFFFFF), black (#000000), and lemon (#A7E021) backgrounds for the mark, stacked lockup, horizontal lockup, and wordmark. These files must be fully opaque; they must not replace or be confused with the transparent exports. The lemon-background symbol treatment uses the existing off-white brand token for its small accent detail to maintain visibility.

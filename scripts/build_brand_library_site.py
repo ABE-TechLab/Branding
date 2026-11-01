@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import shutil
 from pathlib import Path
 
@@ -13,7 +14,7 @@ BRANDS = {
         "intro": "The parent-company identity and shared visual foundation for ABE TechLab products.",
         "accent": "#A7E021", "status": "WORKING BRAND ASSETS",
         "compositions": ["mark", "lockup-stacked", "lockup-horizontal", "wordmark"],
-        "variants": ["adaptive", "light", "dark"],
+        "variants": ["adaptive", "light", "dark", "white", "black", "lemon"],
         "type": "abe",
         "notes": "The available source contains standalone light and dark mark artwork. The public library also includes working adaptive lockups and wordmark variants. They remain subject to final master-artwork verification.",
     },
@@ -202,6 +203,8 @@ def filename(slug: str, composition: str, variant: str, fmt: str = "png") -> str
             return f"abe-techlab-{composition}-adaptive.svg" if fmt == "svg" else (
                 f"abe-techlab-{composition}-light-v1.png"
             )
+        if variant in ("white", "black", "lemon"):
+            return f"abe-techlab-{composition}-bg-{variant}-v1.png" if fmt == "png" else None
         suffix = "light-v1.png" if variant == "light" else "dark-v1.png"
         return f"abe-techlab-{composition}-{suffix}" if fmt == "png" else None
     if slug == "abemail":
@@ -381,15 +384,20 @@ def render_directory(public_root: Path) -> str:
     return shell(content,"Brand library","", "Browse all ABE TechLab brand identities.")
 
 def wrap_company_page(source_html: str) -> str:
-    if "BRAND_LIBRARY_SHELL_START" in source_html:
-        start=source_html.index("/* BRAND_LIBRARY_SHELL_START */")
-        end=source_html.index("/* BRAND_LIBRARY_SHELL_END */")+len("/* BRAND_LIBRARY_SHELL_END */")
-        source_html=source_html[:start]+ROOT_CSS.strip()+"\n"+source_html[end:]
-        return source_html
+    # Remove all copies of the generated shared-shell CSS. Previous iterations
+    # could append another copy during regeneration; normalize to exactly one.
+    shell_css = re.compile(
+        r"/\* BRAND_LIBRARY_SHELL_START \*/.*?/\* BRAND_LIBRARY_SHELL_END \*/",
+        re.S,
+    )
+    source_html = shell_css.sub("", source_html)
     if "</style>" not in source_html:
         raise ValueError("Company page is missing its inline style block")
-    source_html=source_html.replace("</style>",ROOT_CSS+"\n  </style>",1)
-    sidebar = """
+    source_html = source_html.replace("</style>", ROOT_CSS.strip() + "\n  </style>", 1)
+
+    # Add the shell/sidebar only when the source page has not already been wrapped.
+    if '<aside class="brand-sidebar"' not in source_html:
+        sidebar = """
     <aside class="brand-sidebar" aria-label="Brand navigation">
       <a class="brand-sidebar__identity" href="/brands/abe-techlab/"><img src="/logos/abe-techlab-mark-adaptive.svg" alt=""><span>ABE TechLab<small>Brand library</small></span></a>
       <div><p class="brand-nav__label">Company & product brands</p><nav class="brand-nav">
@@ -401,28 +409,39 @@ def wrap_company_page(source_html: str) -> str:
       <div class="brand-sidebar__foot">One source of truth for every brand.<br><a href="https://github.com/ABE-TechLab/Branding">Open Brand Library repository ↗</a></div>
     </aside>
 """
-    source_html=source_html.replace("<body>\n  <main>", "<body>\n  <div class=\"brand-shell\">"+sidebar+"<div class=\"brand-main\">\n  <main>",1)
-    source_html=source_html.replace("</main>\n</body>", "</main></div>\n</div>\n</body>",1)
-    if 'href="/brands/abemail/"' not in source_html:
-        raise ValueError("Sidebar navigation was not installed in company page")
+        source_html = source_html.replace(
+            "<body>\n  <main>",
+            "<body>\n  <div class=\"brand-shell\">" + sidebar + "<div class=\"brand-main\">\n  <main>",
+            1,
+        )
+        source_html = source_html.replace("</main>\n</body>", "</main></div>\n</div>\n</body>", 1)
+        if '<aside class="brand-sidebar"' not in source_html:
+            raise ValueError("Sidebar navigation was not installed in company page")
+
     dimensions = {
         "mark": None,
         "lockup-stacked": "1560 × 1050",
         "lockup-horizontal": "2040 × 495",
         "wordmark": "1590 × 336",
     }
-    for comp in ("mark","lockup-stacked","lockup-horizontal","wordmark"):
-        old=f'href="/logos/abe-techlab-{comp}-adaptive.svg">Open adaptive SVG'
-        new=f'href="/brands/abe-techlab/assets/{comp}/adaptive/">View asset page'
-        source_html=source_html.replace(old,new)
-        for theme in ("light","dark"):
-            route=f'/brands/abe-techlab/assets/{comp}/{theme}/'
-            old_png=f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">Open PNG asset'
-            source_html=source_html.replace(old_png,f'href="{route}">View {theme} asset page')
-            size=dimensions[comp]
-            old_label=(f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">{theme.title()}'
-                       + (f' ({size})' if size else ''))
-            source_html=source_html.replace(old_label,f'href="{route}">{theme.title()} asset page')
+    for comp in ("mark", "lockup-stacked", "lockup-horizontal", "wordmark"):
+        old = f'href="/logos/abe-techlab-{comp}-adaptive.svg">Open adaptive SVG'
+        new = f'href="/brands/abe-techlab/assets/{comp}/adaptive/">View asset page'
+        source_html = source_html.replace(old, new)
+        for theme in ("light", "dark"):
+            route = f"/brands/abe-techlab/assets/{comp}/{theme}/"
+            old_png = f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">Open PNG asset'
+            source_html = source_html.replace(old_png, f'href="{route}">View {theme} asset page')
+            size = dimensions[comp]
+            old_label = (
+                f'href="/logos/abe-techlab-{comp}-{theme}-v1.png">{theme.title()}'
+                + (f" ({size})" if size else "")
+            )
+            source_html = source_html.replace(old_label, f'href="{route}">{theme.title()} asset page')
+        for background in ("white", "black", "lemon"):
+            route = f"/brands/abe-techlab/assets/{comp}/{background}/"
+            old_background = f'href="/logos/abe-techlab-{comp}-bg-{background}-v1.png">'
+            source_html = source_html.replace(old_background, f'href="{route}">')
     return source_html
 
 def build(public_root: Path) -> None:
