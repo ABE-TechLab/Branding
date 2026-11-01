@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="ABE TechLab brand assets, adaptive logo, email-ready logos, and copy-ready brand colors.">
+  <title>ABE TechLab — Brand Assets</title>
+  <style>
+    :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f4f5f2; color: #171816; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; }
+    main { width: min(1080px, calc(100% - 40px)); margin: 0 auto; padding: 64px 0 72px; }
+    .eyebrow { color: #65705b; font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { margin: 12px 0 10px; font-size: clamp(32px, 5vw, 48px); letter-spacing: -.045em; }
+    .intro { max-width: 680px; color: #5b6057; line-height: 1.7; }
+    h2.section-title { margin: 48px 0 8px; font-size: 24px; letter-spacing: -.025em; }
+    .section-intro { max-width: 700px; margin: 0; color: #62675f; font-size: 14px; line-height: 1.65; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 24px; }
+    .card { overflow: hidden; border: 1px solid #dedfd9; border-radius: 16px; background: #fff; }
+    .preview { min-height: 210px; display: grid; place-items: center; padding: 28px; color-scheme: light; }
+    .preview.dark { background: #111; color-scheme: dark; }
+    .preview img { display: block; width: 160px; max-width: 100%; height: auto; }
+    .preview.lockup-stacked img { width: 220px; }
+    .preview.lockup-horizontal img, .preview.lockup-wordmark img { width: 300px; }
+    .details { padding: 18px 20px 20px; }
+    h3 { margin: 0 0 6px; font-size: 16px; }
+    .details p { margin: 0 0 14px; color: #656a62; font-size: 13px; line-height: 1.5; }
+    a { color: #396b16; font-size: 13px; font-weight: 650; overflow-wrap: anywhere; }
+    code { display: block; margin-top: 10px; color: #555b52; font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 14px; margin-top: 22px; }
+    .color-card { overflow: hidden; border: 1px solid #dedfd9; border-radius: 14px; background: #fff; }
+    .swatch { height: 108px; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .color-info { padding: 16px; }
+    .color-name { margin: 0 0 4px; font-size: 15px; font-weight: 700; }
+    .color-role { margin: 0 0 13px; color: #656a62; font-size: 12px; line-height: 1.5; }
+    .color-line { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px; }
+    .color-line code { display:inline; margin:0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:#2f332d; font-size:13px; font-weight:650; }
+    .copy-button { border:1px solid #d7dbd1; border-radius:8px; padding:7px 10px; background:#f7f8f5; color:#283024; font:inherit; font-size:12px; font-weight:650; cursor:pointer; }
+    .copy-button:hover { background:#eef1e9; }
+    .copy-button:focus-visible { outline:3px solid #A7E021; outline-offset:2px; }
+    .copy-button[disabled] { opacity:.7; cursor:default; }
+    .token-panel { margin-top:18px; border:1px solid #dedfd9; border-radius:14px; background:#fff; padding:18px; }
+    .token-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .token-heading h3 { margin:0; }
+    pre { overflow:auto; margin:14px 0 0; padding:16px; border-radius:10px; background:#171816; color:#f9f9f6; font-size:12px; line-height:1.7; }
+    .token-help { margin:10px 0 0; color:#656a62; font-size:12px; line-height:1.55; }
+    .copy-status { min-height:20px; margin-top:10px; color:#396b16; font-size:12px; }
+    footer { margin-top: 36px; color: #777c72; font-size: 12px; line-height: 1.6; }
+    @media (max-width: 620px) { main { padding-top: 42px; } }
+  
+/* BRAND_LIBRARY_SHELL_START */
+:root { --brand-ink:#171816; --brand-muted:#62675f; --brand-line:#dedfd9; --brand-panel:#fff; --brand-canvas:#f4f5f2; --brand-accent:#396b16; }
+body { background:var(--brand-canvas); }
+.brand-shell { min-height:100vh; display:grid; grid-template-columns:260px minmax(0,1fr); }
+.brand-sidebar { position:sticky; top:0; height:100vh; padding:26px 18px 24px; background:#fff; border-right:1px solid var(--brand-line); display:flex; flex-direction:column; gap:26px; z-index:10; }
+.brand-sidebar__identity { display:flex; align-items:center; gap:12px; padding:2px 8px 20px; border-bottom:1px solid #e9ebe5; text-decoration:none; color:inherit; }
+.brand-sidebar__identity img { width:38px; height:38px; object-fit:contain; }
+.brand-sidebar__identity span { display:block; font-weight:760; font-size:14px; letter-spacing:-.02em; color:#171816; }
+.brand-sidebar__identity small { display:block; margin-top:3px; color:#788071; font-size:10px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+.brand-nav__label { padding:0 10px; margin:0 0 9px; font-size:10px; font-weight:750; letter-spacing:.14em; color:#858b80; text-transform:uppercase; }
+.brand-nav { display:grid; gap:5px; }
+.brand-nav a { display:flex; align-items:center; gap:11px; min-height:43px; padding:9px 11px; border-radius:9px; color:#4f554a; text-decoration:none; font-size:13px; font-weight:650; transition:background .16s ease,color .16s ease; }
+.brand-nav a:hover { background:#f3f5ef; color:#171816; }
+.brand-nav a[aria-current="page"] { background:#eff4e9; color:#2e5715; box-shadow:inset 3px 0 0 #A7E021; }
+.brand-nav__dot { width:9px; height:9px; flex:none; border-radius:3px; background:#aeb4a8; }
+.brand-nav a[aria-current="page"] .brand-nav__dot { background:#6c982f; }
+.brand-sidebar__foot { margin-top:auto; padding:15px 10px 0; border-top:1px solid #e9ebe5; color:#83897e; font-size:11px; line-height:1.6; }
+.brand-sidebar__foot a { color:#566d43; }
+.brand-main { width:100%; min-width:0; max-width:1440px; margin:0 auto; padding:54px clamp(24px,4vw,64px) 76px; }
+.brand-main > main { width:100%; max-width:1180px; margin:0 auto; padding:0; }
+.brand-mobilebar { display:none; }
+.page-kicker { display:flex; align-items:center; gap:9px; color:#71796c; font-size:11px; font-weight:750; letter-spacing:.13em; text-transform:uppercase; }
+.page-kicker__line { width:22px; height:1px; background:var(--brand-accent,#A7E021); }
+.brand-hero { display:flex; align-items:flex-start; justify-content:space-between; gap:26px; margin:12px 0 32px; }
+.brand-hero h1 { margin:0 0 10px; color:#171816; font-size:clamp(34px,4vw,48px); letter-spacing:-.05em; line-height:1.04; }
+.brand-hero p { max-width:720px; margin:0; color:#5b6057; font-size:14px; line-height:1.75; }
+.brand-badge { flex:none; margin-top:8px; padding:8px 10px; border:1px solid var(--brand-line); border-radius:7px; background:#fff; color:#65705b; font-size:9px; font-weight:800; letter-spacing:.09em; }
+.brand-section { margin-top:40px; }
+.brand-section__heading { display:flex; align-items:end; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:6px; }
+.brand-section h2 { margin:0; color:#20241e; font-size:21px; letter-spacing:-.03em; }
+.brand-section__intro { margin:0; max-width:760px; color:#656a62; font-size:13px; line-height:1.65; }
+.brand-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-top:20px; }
+.brand-card { overflow:hidden; border:1px solid var(--brand-line); border-radius:14px; background:#fff; }
+.brand-card__head { padding:17px 18px 8px; }
+.brand-card__head h3 { margin:0 0 5px; color:#20241e; font-size:15px; }
+.brand-card__head p { margin:0; color:#71786c; font-size:12px; line-height:1.55; }
+.brand-card__previews { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; padding:12px 12px 8px; }
+.brand-preview { height:118px; display:grid; place-items:center; overflow:hidden; padding:10px; border:1px solid #e4e7df; border-radius:9px; background:#fff; text-decoration:none; }
+.brand-preview--black { background:#101311; border-color:#101311; }
+.brand-preview--lemon { background:#FFC93D; border-color:#FFC93D; }
+.brand-preview--transparent { background-color:#fafbf8; background-image:linear-gradient(45deg,#e8ebe4 25%,transparent 25%),linear-gradient(-45deg,#e8ebe4 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#e8ebe4 75%),linear-gradient(-45deg,transparent 75%,#e8ebe4 75%); background-size:16px 16px; background-position:0 0,0 8px,8px -8px,-8px 0; }
+.brand-preview img { display:block; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
+.brand-preview__caption { display:block; padding:0 12px 13px; color:#7b8176; font-size:10px; }
+.brand-card__actions { display:flex; flex-wrap:wrap; gap:8px; padding:9px 16px 17px; }
+.brand-link { display:inline-flex; justify-content:center; align-items:center; min-height:33px; padding:7px 10px; border:1px solid #d8ddd1; border-radius:7px; background:#fafbf8; color:#3c5a2c; font-size:11px; font-weight:700; text-decoration:none; }
+.brand-link:hover { background:#f0f4ea; text-decoration:none; }
+.brand-link--primary { border-color:#dce8cb; background:#eef4e6; color:#315817; }
+.brand-note { margin-top:22px; padding:17px 19px; border:1px solid #e0e4d9; border-radius:12px; background:#fbfcf9; color:#62695c; font-size:12px; line-height:1.7; }
+.brand-note strong { color:#343c2e; }
+.brand-palette { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-top:16px; }
+.brand-swatch { overflow:hidden; border:1px solid var(--brand-line); border-radius:11px; background:#fff; }
+.brand-swatch__color { height:65px; }
+.brand-swatch__meta { padding:11px 12px; }
+.brand-swatch__meta strong { display:block; font-size:12px; }
+.brand-swatch__meta code { display:block; margin-top:4px; color:#71786c; font-size:11px; }
+.asset-crumbs { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:7px 0 24px; color:#8b9187; font-size:12px; }
+.asset-crumbs a { color:#5d7650; font-weight:650; text-decoration:none; }
+.asset-hero { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(250px,.8fr); gap:20px; margin-top:22px; align-items:stretch; }
+.asset-viewer { min-height:360px; display:grid; place-items:center; padding:35px; border:1px solid var(--brand-line); border-radius:15px; background:#fff; }
+.asset-viewer--black { background:#101311; border-color:#101311; }
+.asset-viewer--lemon { background:#FFC93D; border-color:#FFC93D; }
+.asset-viewer--transparent { background-color:#fafbf8; background-image:linear-gradient(45deg,#e8ebe4 25%,transparent 25%),linear-gradient(-45deg,#e8ebe4 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#e8ebe4 75%),linear-gradient(-45deg,transparent 75%,#e8ebe4 75%); background-size:22px 22px; background-position:0 0,0 11px,11px -11px,-11px 0; }
+.asset-viewer img { display:block; max-width:100%; max-height:620px; width:auto; height:auto; object-fit:contain; }
+.asset-sidebar { padding:22px; border:1px solid var(--brand-line); border-radius:15px; background:#fff; }
+.asset-sidebar h2 { margin:0 0 8px; color:#20241e; font-size:18px; letter-spacing:-.03em; }
+.asset-sidebar p { margin:0 0 18px; color:#687062; font-size:12px; line-height:1.7; }
+.asset-actions { display:grid; gap:9px; }
+.asset-actions a { display:flex; align-items:center; justify-content:center; min-height:42px; padding:10px 13px; border:1px solid #d8ddd1; border-radius:8px; color:#354e29; background:#fafbf8; font-size:12px; font-weight:750; text-decoration:none; }
+.asset-actions a.primary { color:#fff; border-color:#273b1a; background:#273b1a; }
+.asset-actions a:hover { filter:brightness(.97); text-decoration:none; }
+.asset-meta { margin-top:20px; padding-top:16px; border-top:1px solid #edf0e9; color:#7b8275; font-size:11px; line-height:1.7; }
+.asset-variants { display:flex; flex-wrap:wrap; gap:8px; margin-top:19px; }
+.asset-variants a { padding:7px 10px; border:1px solid #dce0d7; border-radius:7px; color:#59664e; font-size:11px; font-weight:700; text-decoration:none; }
+.asset-variants a[aria-current="page"] { border-color:#c7d9b0; background:#eff4e9; color:#325717; }
+.brand-footer { margin-top:42px; padding-top:17px; border-top:1px solid #e2e5dc; color:#858b7f; font-size:11px; line-height:1.65; }
+.brand-main .eyebrow { color:#65705b; }
+.brand-main h1 { letter-spacing:-.045em; }
+@media(max-width:880px) { .brand-shell{grid-template-columns:220px minmax(0,1fr)} .brand-sidebar{padding:23px 12px} .brand-main{padding:40px 25px 60px} .asset-hero{grid-template-columns:1fr} }
+@media(max-width:680px) {
+ .brand-shell{display:block}
+ .brand-sidebar{position:sticky;top:0;width:100%;height:auto;padding:11px 14px 12px;border-right:0;border-bottom:1px solid var(--brand-line);gap:8px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px)}
+ .brand-sidebar__identity{padding:0 3px 9px;border-bottom:0}
+ .brand-sidebar__identity img{width:28px;height:28px}
+ .brand-sidebar__identity span{font-size:12px}
+ .brand-sidebar__identity small{font-size:8px;margin-top:1px}
+ .brand-nav__label{display:none}
+ .brand-nav{display:flex;gap:5px;overflow-x:auto;padding-bottom:2px}
+ .brand-nav a{flex:none;min-height:34px;padding:7px 9px;font-size:11px;white-space:nowrap;background:#f7f8f5}
+ .brand-nav a[aria-current="page"]{box-shadow:inset 0 -2px 0 #A7E021}
+ .brand-nav__dot{width:7px;height:7px}
+ .brand-sidebar__foot{display:none}
+ .brand-main{padding:30px 17px 50px}
+ .brand-hero{display:block}
+ .brand-badge{display:inline-block;margin-top:18px}
+ .brand-grid{grid-template-columns:1fr}
+ .brand-preview{height:104px}
+ .asset-viewer{min-height:240px;padding:20px}
+ .asset-sidebar{padding:17px}
+}
+ /* BRAND_LIBRARY_SHELL_END */
+
+  </style>
+</head>
+<body>
+  <div class="brand-shell">
+    <aside class="brand-sidebar" aria-label="Brand navigation">
+      <a class="brand-sidebar__identity" href="/brands/abe-techlab/"><img src="/logos/abe-techlab-mark-adaptive.svg" alt=""><span>ABE TechLab<small>Brand library</small></span></a>
+      <div><p class="brand-nav__label">Company & product brands</p><nav class="brand-nav">
+      <a href="/brands/abe-techlab/" aria-current="page"><span class="brand-nav__dot" style="background:#A7E021"></span><span>ABE TechLab</span></a>
+      <a href="/brands/abemail/"><span class="brand-nav__dot" style="background:#72E3AD"></span><span>ABEmail</span></a>
+      <a href="/brands/techtrack/"><span class="brand-nav__dot" style="background:#1264F3"></span><span>TechTrack</span></a>
+      <a href="/brands/techtrack-kids/"><span class="brand-nav__dot" style="background:#885CF6"></span><span>TechTrack Kids</span></a>
+      </nav></div>
+      <div class="brand-sidebar__foot">One source of truth for every brand.<br><a href="https://github.com/ABE-TechLab/Branding">Open Brand Library repository ↗</a></div>
+    </aside>
+<div class="brand-main">
+  <main>
+    <div class="eyebrow">ABE TechLab · Brand library</div>
+    <h1>Brand assets</h1>
+    <p class="intro">Publicly served logo files and working identity colors for ABE TechLab websites, products, and email communication. Use the adaptive SVG in supporting browser contexts and fixed PNG variants for email.</p>
+
+    <section aria-labelledby="logo-assets-heading">
+      <h2 class="section-title" id="logo-assets-heading">Logo assets</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="preview"><img src="/logos/abe-techlab-mark-adaptive.svg" alt="ABE TechLab adaptive logo for light color scheme" width="160"></div>
+          <div class="preview dark"><img src="/logos/abe-techlab-mark-adaptive.svg" alt="ABE TechLab adaptive logo for dark color scheme" width="160"></div>
+          <div class="details">
+            <h3>Adaptive SVG</h3>
+            <p>One transparent vector file: charcoal in light schemes, off-white in dark schemes; lime accent stays constant.</p>
+            <a href="/brands/abe-techlab/assets/mark/adaptive/">View asset page</a>
+            <code>/logos/abe-techlab-mark-adaptive.svg</code>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview"><img src="/logos/abe-techlab-mark-light-v1.png" alt="ABE TechLab charcoal logo with lime accent for light backgrounds" width="160"></div>
+          <div class="details">
+            <h3>Light-background PNG</h3>
+            <p>Charcoal mark with lime accent on a transparent canvas; best for light email layouts.</p>
+            <a href="/brands/abe-techlab/assets/mark/light/">View light asset page</a>
+            <code>/logos/abe-techlab-mark-light-v1.png</code>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview dark"><img src="/logos/abe-techlab-mark-dark-v1.png" alt="ABE TechLab off-white logo with lime accent for dark backgrounds" width="160"></div>
+          <div class="details">
+            <h3>Dark-background PNG</h3>
+            <p>Off-white mark with lime accent on a transparent canvas; best for dark email layouts.</p>
+            <a href="/brands/abe-techlab/assets/mark/dark/">View dark asset page</a>
+            <code>/logos/abe-techlab-mark-dark-v1.png</code>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <section aria-labelledby="logo-lockups-heading">
+      <h2 class="section-title" id="logo-lockups-heading">Logo lockups</h2>
+      <p class="section-intro">Choose a composition that fits the placement. The previews show fixed-color transparent PNG exports for light and dark surfaces; adaptive SVG files remain available for compatible browser use.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="preview lockup-stacked"><img src="/logos/abe-techlab-lockup-stacked-light-v1.png" alt="ABE TechLab stacked lockup for a light background" width="220"></div>
+          <div class="preview dark lockup-stacked"><img src="/logos/abe-techlab-lockup-stacked-dark-v1.png" alt="ABE TechLab stacked lockup for a dark background" width="220"></div>
+          <div class="details">
+            <h3>Stacked lockup</h3>
+            <p>Symbol above the name. Use for centered, vertical, or presentation-style placements.</p>
+            <a href="/brands/abe-techlab/assets/lockup-stacked/adaptive/">View asset page</a>
+            <p>Fixed PNG exports: <a href="/brands/abe-techlab/assets/lockup-stacked/light/">Light asset page</a> · <a href="/brands/abe-techlab/assets/lockup-stacked/dark/">Dark asset page</a></p>
+            <code>/logos/abe-techlab-lockup-stacked-adaptive.svg</code>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview lockup-horizontal"><img src="/logos/abe-techlab-lockup-horizontal-light-v1.png" alt="ABE TechLab horizontal lockup for a light background" width="300"></div>
+          <div class="preview dark lockup-horizontal"><img src="/logos/abe-techlab-lockup-horizontal-dark-v1.png" alt="ABE TechLab horizontal lockup for a dark background" width="300"></div>
+          <div class="details">
+            <h3>Horizontal lockup</h3>
+            <p>Symbol beside the name. Use for website headers, footers, navigation, and document headers.</p>
+            <a href="/brands/abe-techlab/assets/lockup-horizontal/adaptive/">View asset page</a>
+            <p>Fixed PNG exports: <a href="/brands/abe-techlab/assets/lockup-horizontal/light/">Light asset page</a> · <a href="/brands/abe-techlab/assets/lockup-horizontal/dark/">Dark asset page</a></p>
+            <code>/logos/abe-techlab-lockup-horizontal-adaptive.svg</code>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview lockup-wordmark"><img src="/logos/abe-techlab-wordmark-light-v1.png" alt="ABE TechLab wordmark for a light background" width="300"></div>
+          <div class="preview dark lockup-wordmark"><img src="/logos/abe-techlab-wordmark-dark-v1.png" alt="ABE TechLab wordmark for a dark background" width="300"></div>
+          <div class="details">
+            <h3>Wordmark only</h3>
+            <p>The company name without the symbol. Use in text-led placements or where the symbol already appears nearby.</p>
+            <a href="/brands/abe-techlab/assets/wordmark/adaptive/">View asset page</a>
+            <p>Fixed PNG exports: <a href="/brands/abe-techlab/assets/wordmark/light/">Light asset page</a> · <a href="/brands/abe-techlab/assets/wordmark/dark/">Dark asset page</a></p>
+            <code>/logos/abe-techlab-wordmark-adaptive.svg</code>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="product-brands-heading"><h2 class="section-title" id="product-brands-heading">Product brand libraries</h2><p class="section-intro">Browse separate, product-specific logo systems and download their logo files.</p><div class="grid"><article class="card"><div class="preview"><img src="/brands/abemail/logos/png/abemail-horizontal-bg-white-v1.png" alt="ABEmail logo" width="260"></div><div class="details"><h3>ABEmail</h3><p>Vector-based logo compositions with editable source artwork.</p><a href="/brands/abemail/">Open ABEmail brand page</a></div></article><article class="card"><div class="preview"><img src="/brands/techtrack/logos/png/techtrack-horizontal-bg-white-v1.png" alt="TechTrack logo" width="260"></div><div class="details"><h3>TechTrack</h3><p>Standard platform identity and logo downloads.</p><a href="/brands/techtrack/">Open TechTrack brand page</a></div></article><article class="card"><div class="preview"><img src="/brands/techtrack-kids/logos/png/techtrack-kids-horizontal-bg-white-v1.png" alt="TechTrack Kids logo" width="260"></div><div class="details"><h3>TechTrack Kids</h3><p>Separate Kids ecosystem with its own palette and wordmark.</p><a href="/brands/techtrack-kids/">Open TechTrack Kids brand page</a></div></article></div><p style="margin-top:18px"><a href="/brands/">Open all product brand libraries →</a></p></section>
+
+    <section aria-labelledby="brand-colors-heading">
+      <h2 class="section-title" id="brand-colors-heading">Core brand colors</h2>
+      <p class="section-intro">These are the three current core identity colors. Select <strong>Copy HEX</strong> to copy a color code for design files, CSS, or product interfaces. RGB values are included for tools that request RGB input.</p>
+      <div class="palette-grid">
+        <article class="color-card">
+          <div class="swatch" style="background:#A7E021"></div>
+          <div class="color-info">
+            <h3 class="color-name">Lime green</h3>
+            <p class="color-role">Brand accent and visual highlight</p>
+            <div class="color-line"><code>#A7E021</code><button class="copy-button" type="button" data-copy="#A7E021">Copy HEX</button></div>
+            <div class="color-line"><code>RGB 167, 224, 33</code><button class="copy-button" type="button" data-copy="167, 224, 33">Copy RGB</button></div>
+            <code>--abe-color-lime</code>
+          </div>
+        </article>
+        <article class="color-card">
+          <div class="swatch" style="background:#111111"></div>
+          <div class="color-info">
+            <h3 class="color-name">Charcoal</h3>
+            <p class="color-role">Primary dark mark and text on light backgrounds</p>
+            <div class="color-line"><code>#111111</code><button class="copy-button" type="button" data-copy="#111111">Copy HEX</button></div>
+            <div class="color-line"><code>RGB 17, 17, 17</code><button class="copy-button" type="button" data-copy="17, 17, 17">Copy RGB</button></div>
+            <code>--abe-color-charcoal</code>
+          </div>
+        </article>
+        <article class="color-card">
+          <div class="swatch" style="background:#F9F9F6"></div>
+          <div class="color-info">
+            <h3 class="color-name">Off-white</h3>
+            <p class="color-role">Light mark and text on dark backgrounds</p>
+            <div class="color-line"><code>#F9F9F6</code><button class="copy-button" type="button" data-copy="#F9F9F6">Copy HEX</button></div>
+            <div class="color-line"><code>RGB 249, 249, 246</code><button class="copy-button" type="button" data-copy="249, 249, 246">Copy RGB</button></div>
+            <code>--abe-color-off-white</code>
+          </div>
+        </article>
+      </div>
+      <div class="token-panel">
+        <div class="token-heading">
+          <h3>CSS color tokens</h3>
+          <button class="copy-button" type="button" data-copy=":root {&#10;  --abe-color-lime: #A7E021;&#10;  --abe-color-charcoal: #111111;&#10;  --abe-color-off-white: #F9F9F6;&#10;}">Copy CSS</button>
+        </div>
+        <pre><code>:root {
+  --abe-color-lime: #A7E021;
+  --abe-color-charcoal: #111111;
+  --abe-color-off-white: #F9F9F6;
+}</code></pre>
+        <p class="token-help">These are working brand tokens, not a formally ratified final design-system specification. Supporting banner colors are documented in the repository's color palette.</p>
+      </div>
+      <div class="copy-status" id="copy-status" role="status" aria-live="polite"></div>
+    </section>
+
+    <footer>All logo files and color values are derivatives of the current working brand identity, which has not been independently verified as final master artwork. Email clients should use the fixed PNG variants rather than the adaptive SVG. For full guidance, see the Branding repository.</footer>
+  </main>
+  <script>
+    (() => {
+      const status = document.getElementById("copy-status");
+      const buttons = document.querySelectorAll("[data-copy]");
+
+      async function copyText(value) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(value);
+          return;
+        }
+
+        const field = document.createElement("textarea");
+        field.value = value;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+        document.body.appendChild(field);
+        field.select();
+        const copied = document.execCommand("copy");
+        field.remove();
+        if (!copied) throw new Error("Clipboard copy was not available");
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", async () => {
+          const value = button.getAttribute("data-copy") || "";
+          try {
+            await copyText(value);
+            const original = button.textContent;
+            button.textContent = "Copied";
+            button.disabled = true;
+            status.textContent = "Copied " + value;
+            window.setTimeout(() => {
+              button.textContent = original;
+              button.disabled = false;
+            }, 1600);
+          } catch {
+            status.textContent = "Copy unavailable. Select and copy the displayed value instead.";
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
