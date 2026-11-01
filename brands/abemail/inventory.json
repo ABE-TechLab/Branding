@@ -1,0 +1,347 @@
+{
+  "brand": "abemail",
+  "source_type": "editable-svg-vector-paths-with-live-inter-font-wordmark",
+  "export_scale": 4,
+  "palette": {
+    "mint": "#72E3AD",
+    "deep_teal": "#0C2E34",
+    "white": "#FFFFFF",
+    "black_background": "#000000",
+    "lemon_background": "#FFC93D"
+  },
+  "inventory": [
+    {
+      "composition": "symbol",
+      "theme": "dark",
+      "svg": "abemail/logos/svg/abemail-symbol-dark-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-symbol-dark-v1.png",
+      "viewBox": "0 0 512 512",
+      "png_dimensions": [
+        2048,
+        2048
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Symbol_Dark.svg",
+      "source_sha256": "95b5d23ea7a4be8104c47b8ca8bc907b50b8fd58eae133ca3bb792495bc21d2a",
+      "vector_paths": 2,
+      "live_text": 0
+    },
+    {
+      "composition": "symbol",
+      "theme": "light",
+      "svg": "abemail/logos/svg/abemail-symbol-light-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-symbol-light-v1.png",
+      "viewBox": "0 0 512 512",
+      "png_dimensions": [
+        2048,
+        2048
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Symbol_Light.svg",
+      "source_sha256": "680fc6cf99c367f775c254130167c55b252e2830e271afd9ed18ae0b89e5c018",
+      "vector_paths": 2,
+      "live_text": 0
+    },
+    {
+      "composition": "symbol",
+      "theme": "monochrome",
+      "svg": "abemail/logos/svg/abemail-symbol-monochrome-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-symbol-monochrome-v1.png",
+      "viewBox": "0 0 512 512",
+      "png_dimensions": [
+        2048,
+        2048
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Symbol_Monochrome.svg",
+      "source_sha256": "82240d16bc588dd119bf08cd80e39892cb538155debaf0dbb79448c2a535af65",
+      "vector_paths": 2,
+      "live_text": 0
+    },
+    {
+      "composition": "horizontal",
+      "theme": "dark",
+      "svg": "abemail/logos/svg/abemail-horizontal-dark-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-horizontal-dark-v1.png",
+      "viewBox": "0 0 1100 330",
+      "png_dimensions": [
+        4400,
+        1320
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Horizontal_Dark.svg",
+      "source_sha256": "1ba3219b6d280f7074d719a7a1d0a1f431941c68e0096dbbdbd02190a361f27f",
+      "vector_paths": 2,
+      "live_text": 1
+    },
+    {
+      "composition": "horizontal",
+      "theme": "light",
+      "svg": "abemail/logos/svg/abemail-horizontal-light-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-horizontal-light-v1.png",
+      "viewBox": "0 0 1100 330",
+      "png_dimensions": [
+        4400,
+        1320
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Horizontal_Light.svg",
+      "source_sha256": "e539ca3c6b12310d14377d761bf87cccc0f20e66383da4a2b36d530c0b1f0d8b",
+      "vector_paths": 2,
+      "live_text": 1
+    },
+    {
+      "composition": "horizontal",
+      "theme": "monochrome",
+      "svg": "abemail/logos/svg/abemail-horizontal-monochrome-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-horizontal-monochrome-v1.png",
+      "viewBox": "0 0 1100 330",
+      "png_dimensions": [
+        4400,
+        1320
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Horizontal_Monochrome.svg",
+      "source_sha256": "6f5324a0e147b38f93c603b184349551488292257f37781b6598226b11389e2f",
+      "vector_paths": 2,
+      "live_text": 1
+    },
+    {
+      "composition": "stacked",
+      "theme": "dark",
+      "svg": "abemail/logos/svg/abemail-stacked-dark-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-stacked-dark-v1.png",
+      "viewBox": "0 0 800 600",
+      "png_dimensions": [
+        3200,
+        2400
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Stacked_Dark.svg",
+      "source_sha256": "7eee179e3ca258a0298931c19e65a24db1ef119ffa0f1dab3088d335fca73c25",
+      "vector_paths": 2,
+      "live_text": 1
+    },
+    {
+      "composition": "stacked",
+      "theme": "light",
+      "svg": "abemail/logos/svg/abemail-stacked-light-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-stacked-light-v1.png",
+      "viewBox": "0 0 800 600",
+      "png_dimensions": [
+        3200,
+        2400
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Stacked_Light.svg",
+      "source_sha256": "2bd73b5d3e389fe6249c31fa2c6a804017dc9a5837c55070edf4b5d02ac6ddf2",
+      "vector_paths": 2,
+      "live_text": 1
+    },
+    {
+      "composition": "stacked",
+      "theme": "monochrome",
+      "svg": "abemail/logos/svg/abemail-stacked-monochrome-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-stacked-monochrome-v1.png",
+      "viewBox": "0 0 800 600",
+      "png_dimensions": [
+        3200,
+        2400
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Stacked_Monochrome.svg",
+      "source_sha256": "ee9adcb7237d9edfc3cbb4a44fedfc051b725046adbac2d19ce7d20caeb72e1b",
+      "vector_paths": 2,
+      "live_text": 1
+    },
+    {
+      "composition": "wordmark",
+      "theme": "dark",
+      "svg": "abemail/logos/svg/abemail-wordmark-dark-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-wordmark-dark-v1.png",
+      "viewBox": "437 108 548 120",
+      "png_dimensions": [
+        2192,
+        480
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Horizontal_Dark.svg",
+      "source_type": "live-text-extraction-from-vector-source",
+      "live_text": 1
+    },
+    {
+      "composition": "wordmark",
+      "theme": "light",
+      "svg": "abemail/logos/svg/abemail-wordmark-light-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-wordmark-light-v1.png",
+      "viewBox": "437 108 548 120",
+      "png_dimensions": [
+        2192,
+        480
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Horizontal_Light.svg",
+      "source_type": "live-text-extraction-from-vector-source",
+      "live_text": 1
+    },
+    {
+      "composition": "wordmark",
+      "theme": "monochrome",
+      "svg": "abemail/logos/svg/abemail-wordmark-monochrome-v1.svg",
+      "transparent_png": "abemail/logos/png/abemail-wordmark-monochrome-v1.png",
+      "viewBox": "437 108 548 120",
+      "png_dimensions": [
+        2192,
+        480
+      ],
+      "render_scale": 4,
+      "source": "brands/abemail/source/ABEmail_C1_Horizontal_Monochrome.svg",
+      "source_type": "live-text-extraction-from-vector-source",
+      "live_text": 1
+    },
+    {
+      "composition": "symbol",
+      "background": "white",
+      "svg": "abemail/logos/svg/abemail-symbol-bg-white-v1.svg",
+      "png": "abemail/logos/png/abemail-symbol-bg-white-v1.png",
+      "png_dimensions": [
+        2048,
+        2048
+      ],
+      "render_scale": 4,
+      "source_theme": "light"
+    },
+    {
+      "composition": "symbol",
+      "background": "black",
+      "svg": "abemail/logos/svg/abemail-symbol-bg-black-v1.svg",
+      "png": "abemail/logos/png/abemail-symbol-bg-black-v1.png",
+      "png_dimensions": [
+        2048,
+        2048
+      ],
+      "render_scale": 4,
+      "source_theme": "dark"
+    },
+    {
+      "composition": "symbol",
+      "background": "lemon",
+      "svg": "abemail/logos/svg/abemail-symbol-bg-lemon-v1.svg",
+      "png": "abemail/logos/png/abemail-symbol-bg-lemon-v1.png",
+      "png_dimensions": [
+        2048,
+        2048
+      ],
+      "render_scale": 4,
+      "source_theme": "light"
+    },
+    {
+      "composition": "horizontal",
+      "background": "white",
+      "svg": "abemail/logos/svg/abemail-horizontal-bg-white-v1.svg",
+      "png": "abemail/logos/png/abemail-horizontal-bg-white-v1.png",
+      "png_dimensions": [
+        4400,
+        1320
+      ],
+      "render_scale": 4,
+      "source_theme": "light"
+    },
+    {
+      "composition": "horizontal",
+      "background": "black",
+      "svg": "abemail/logos/svg/abemail-horizontal-bg-black-v1.svg",
+      "png": "abemail/logos/png/abemail-horizontal-bg-black-v1.png",
+      "png_dimensions": [
+        4400,
+        1320
+      ],
+      "render_scale": 4,
+      "source_theme": "dark"
+    },
+    {
+      "composition": "horizontal",
+      "background": "lemon",
+      "svg": "abemail/logos/svg/abemail-horizontal-bg-lemon-v1.svg",
+      "png": "abemail/logos/png/abemail-horizontal-bg-lemon-v1.png",
+      "png_dimensions": [
+        4400,
+        1320
+      ],
+      "render_scale": 4,
+      "source_theme": "light"
+    },
+    {
+      "composition": "stacked",
+      "background": "white",
+      "svg": "abemail/logos/svg/abemail-stacked-bg-white-v1.svg",
+      "png": "abemail/logos/png/abemail-stacked-bg-white-v1.png",
+      "png_dimensions": [
+        3200,
+        2400
+      ],
+      "render_scale": 4,
+      "source_theme": "light"
+    },
+    {
+      "composition": "stacked",
+      "background": "black",
+      "svg": "abemail/logos/svg/abemail-stacked-bg-black-v1.svg",
+      "png": "abemail/logos/png/abemail-stacked-bg-black-v1.png",
+      "png_dimensions": [
+        3200,
+        2400
+      ],
+      "render_scale": 4,
+      "source_theme": "dark"
+    },
+    {
+      "composition": "stacked",
+      "background": "lemon",
+      "svg": "abemail/logos/svg/abemail-stacked-bg-lemon-v1.svg",
+      "png": "abemail/logos/png/abemail-stacked-bg-lemon-v1.png",
+      "png_dimensions": [
+        3200,
+        2400
+      ],
+      "render_scale": 4,
+      "source_theme": "light"
+    },
+    {
+      "composition": "wordmark",
+      "background": "white",
+      "svg": "abemail/logos/svg/abemail-wordmark-bg-white-v1.svg",
+      "png": "abemail/logos/png/abemail-wordmark-bg-white-v1.png",
+      "png_dimensions": [
+        2192,
+        480
+      ],
+      "render_scale": 4,
+      "source_theme": "light"
+    },
+    {
+      "composition": "wordmark",
+      "background": "black",
+      "svg": "abemail/logos/svg/abemail-wordmark-bg-black-v1.svg",
+      "png": "abemail/logos/png/abemail-wordmark-bg-black-v1.png",
+      "png_dimensions": [
+        2192,
+        480
+      ],
+      "render_scale": 4,
+      "source_theme": "dark"
+    },
+    {
+      "composition": "wordmark",
+      "background": "lemon",
+      "svg": "abemail/logos/svg/abemail-wordmark-bg-lemon-v1.svg",
+      "png": "abemail/logos/png/abemail-wordmark-bg-lemon-v1.png",
+      "png_dimensions": [
+        2192,
+        480
+      ],
+      "render_scale": 4,
+      "source_theme": "light"
+    }
+  ]
+}
