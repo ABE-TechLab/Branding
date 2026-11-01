@@ -60,10 +60,18 @@ def render_source(source, selector, bg, ink, accent, has_accent, target):
     }))
     svg = ET.tostring(root, encoding="unicode")
     width, height = round(w * 3), round(h * 3)
+    rgba_target = target.with_name(target.stem + ".rgba.png")
     cairosvg.svg2png(
-        bytestring=svg.encode("utf-8"), write_to=str(target),
+        bytestring=svg.encode("utf-8"), write_to=str(rgba_target),
         output_width=width, output_height=height
     )
+    with Image.open(rgba_target) as rendered:
+        rendered.convert("RGB").quantize(
+            colors=256,
+            method=Image.Quantize.FASTOCTREE,
+            dither=Image.Dither.NONE,
+        ).save(target, optimize=True)
+    rgba_target.unlink()
     validate(target, (width, height), bg, ink, accent, has_accent)
 
 
