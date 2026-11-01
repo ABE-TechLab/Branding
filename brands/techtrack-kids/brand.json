@@ -1,0 +1,683 @@
+{
+  "name": "TechTrack Kids",
+  "slug": "techtrack-kids",
+  "status": "draft",
+  "approval": "pending",
+  "provenance": "vector-reconstructed-from-raster",
+  "original_sources_preserved": true,
+  "palette": {
+    "white": "#FFFFFF",
+    "black": "#000000",
+    "lemon": "#FFC93D",
+    "navy": "#041B45",
+    "blue": "#0464FA",
+    "cyan": "#03A6FC",
+    "teal": "#02C9AC",
+    "kids_orange": "#FB693A",
+    "kids_yellow": "#FCCA38"
+  },
+  "tagline": "Learn. Play. Create.",
+  "sources": {
+    "mark": {
+      "original_file": "techtrack-kids-mark-bg-white-v1.svg",
+      "original_sha256": "3605dd5f359a0da8734acb4a834f70e224ec0545a7412f903bc9917a188612dc",
+      "svg_viewBox": "0 0 447 423",
+      "svg_dimensions": [
+        "447",
+        "423"
+      ],
+      "embedded_png_dimensions": [
+        447,
+        423
+      ],
+      "embedded_png_sha256": "7ed40a048cef2102de0ac56957decc9184a9541208182f2aae3733bfb6d44387",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ],
+      "component_pixel_counts": {
+        "components": 3,
+        "mark_components": 3
+      },
+      "vector_path_count": 4,
+      "geometry_method": "color-family segmentation / smoothed original silhouette contours; gradient stops fitted to raster samples"
+    },
+    "stacked": {
+      "original_file": "techtrack-kids-lockup-stacked-bg-white-v1.svg",
+      "original_sha256": "95aff0d9053966db4333d8857d4a7a4b3b2e97c154d4ac3d4c66509ed9e52317",
+      "svg_viewBox": "0 0 975 960",
+      "svg_dimensions": [
+        "975",
+        "960"
+      ],
+      "embedded_png_dimensions": [
+        975,
+        960
+      ],
+      "embedded_png_sha256": "7d3e8b92df5a196d7bd26738f492ddea1f534461d87e043fe04e72b09cd2c161",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ],
+      "component_pixel_counts": {
+        "components": 35,
+        "mark_components": 3
+      },
+      "vector_path_count": 36,
+      "geometry_method": "color-family segmentation / smoothed original silhouette contours; gradient stops fitted to raster samples"
+    },
+    "horizontal": {
+      "original_file": "techtrack-kids-lockup-horizontal-bg-black-v1.svg",
+      "original_sha256": "770de09f91a7a6457a215e2cf5c3a3d19afe80fa43f1324b3734938e1dd4b47c",
+      "svg_viewBox": "0 0 1434 534",
+      "svg_dimensions": [
+        "1434",
+        "534"
+      ],
+      "embedded_png_dimensions": [
+        1434,
+        534
+      ],
+      "embedded_png_sha256": "291b314e0687744f67bfc3b00537f785d7900f814a83d9a31391c53f2a99ef8e",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ],
+      "component_pixel_counts": {
+        "components": 35,
+        "mark_components": 3
+      },
+      "vector_path_count": 36,
+      "geometry_method": "color-family segmentation / smoothed original silhouette contours; gradient stops fitted to raster samples"
+    },
+    "wordmark": {
+      "original_file": "techtrack-kids-wordmark-bg-lemon-v1.svg",
+      "original_sha256": "1e7cb6c0ba11452b3782a155afde3683ef6d25a93bad2a59b6e019df4ea23916",
+      "svg_viewBox": "0 0 975 534",
+      "svg_dimensions": [
+        "975",
+        "534"
+      ],
+      "embedded_png_dimensions": [
+        975,
+        534
+      ],
+      "embedded_png_sha256": "51f93b1dd137c84c9bfe1eee1a40243e0a7c5445ad570e9e11eb7b39c3feadea",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ],
+      "component_pixel_counts": {
+        "components": 32,
+        "mark_components": 0
+      },
+      "vector_path_count": 32,
+      "geometry_method": "color-family segmentation / smoothed original silhouette contours; gradient stops fitted to raster samples"
+    }
+  },
+  "assets": {
+    "mark": {
+      "white": {
+        "svg": "logos/svg/techtrack-kids-mark-white-v1.svg",
+        "dimensions": [
+          447,
+          423
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-mark-white-512w-v1.png",
+            "dimensions": [
+              512,
+              485
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-mark-white-1024w-v1.png",
+            "dimensions": [
+              1024,
+              969
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-mark-white-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1938
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-mark-white-4096w-v1.png",
+            "dimensions": [
+              4096,
+              3876
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "black": {
+        "svg": "logos/svg/techtrack-kids-mark-black-v1.svg",
+        "dimensions": [
+          447,
+          423
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-mark-black-512w-v1.png",
+            "dimensions": [
+              512,
+              485
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-mark-black-1024w-v1.png",
+            "dimensions": [
+              1024,
+              969
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-mark-black-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1938
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-mark-black-4096w-v1.png",
+            "dimensions": [
+              4096,
+              3876
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "lemon": {
+        "svg": "logos/svg/techtrack-kids-mark-lemon-v1.svg",
+        "dimensions": [
+          447,
+          423
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-mark-lemon-512w-v1.png",
+            "dimensions": [
+              512,
+              485
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-mark-lemon-1024w-v1.png",
+            "dimensions": [
+              1024,
+              969
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-mark-lemon-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1938
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-mark-lemon-4096w-v1.png",
+            "dimensions": [
+              4096,
+              3876
+            ],
+            "alpha": false
+          }
+        ]
+      }
+    },
+    "stacked": {
+      "white": {
+        "svg": "logos/svg/techtrack-kids-stacked-white-v1.svg",
+        "dimensions": [
+          975,
+          960
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-stacked-white-1024w-v1.png",
+            "dimensions": [
+              1024,
+              1008
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-stacked-white-2048w-v1.png",
+            "dimensions": [
+              2048,
+              2016
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-stacked-white-4096w-v1.png",
+            "dimensions": [
+              4096,
+              4033
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "black": {
+        "svg": "logos/svg/techtrack-kids-stacked-black-v1.svg",
+        "dimensions": [
+          975,
+          960
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-stacked-black-1024w-v1.png",
+            "dimensions": [
+              1024,
+              1008
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-stacked-black-2048w-v1.png",
+            "dimensions": [
+              2048,
+              2016
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-stacked-black-4096w-v1.png",
+            "dimensions": [
+              4096,
+              4033
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "lemon": {
+        "svg": "logos/svg/techtrack-kids-stacked-lemon-v1.svg",
+        "dimensions": [
+          975,
+          960
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-stacked-lemon-1024w-v1.png",
+            "dimensions": [
+              1024,
+              1008
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-stacked-lemon-2048w-v1.png",
+            "dimensions": [
+              2048,
+              2016
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-stacked-lemon-4096w-v1.png",
+            "dimensions": [
+              4096,
+              4033
+            ],
+            "alpha": false
+          }
+        ]
+      }
+    },
+    "horizontal": {
+      "white": {
+        "svg": "logos/svg/techtrack-kids-horizontal-white-v1.svg",
+        "dimensions": [
+          1434,
+          534
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-horizontal-white-1024w-v1.png",
+            "dimensions": [
+              1024,
+              381
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-horizontal-white-2048w-v1.png",
+            "dimensions": [
+              2048,
+              763
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-horizontal-white-4096w-v1.png",
+            "dimensions": [
+              4096,
+              1525
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "black": {
+        "svg": "logos/svg/techtrack-kids-horizontal-black-v1.svg",
+        "dimensions": [
+          1434,
+          534
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-horizontal-black-1024w-v1.png",
+            "dimensions": [
+              1024,
+              381
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-horizontal-black-2048w-v1.png",
+            "dimensions": [
+              2048,
+              763
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-horizontal-black-4096w-v1.png",
+            "dimensions": [
+              4096,
+              1525
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "lemon": {
+        "svg": "logos/svg/techtrack-kids-horizontal-lemon-v1.svg",
+        "dimensions": [
+          1434,
+          534
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-horizontal-lemon-1024w-v1.png",
+            "dimensions": [
+              1024,
+              381
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-horizontal-lemon-2048w-v1.png",
+            "dimensions": [
+              2048,
+              763
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-horizontal-lemon-4096w-v1.png",
+            "dimensions": [
+              4096,
+              1525
+            ],
+            "alpha": false
+          }
+        ]
+      }
+    },
+    "wordmark": {
+      "white": {
+        "svg": "logos/svg/techtrack-kids-wordmark-white-v1.svg",
+        "dimensions": [
+          975,
+          534
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-wordmark-white-1024w-v1.png",
+            "dimensions": [
+              1024,
+              561
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-wordmark-white-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1122
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-wordmark-white-4096w-v1.png",
+            "dimensions": [
+              4096,
+              2243
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "black": {
+        "svg": "logos/svg/techtrack-kids-wordmark-black-v1.svg",
+        "dimensions": [
+          975,
+          534
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-wordmark-black-1024w-v1.png",
+            "dimensions": [
+              1024,
+              561
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-wordmark-black-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1122
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-wordmark-black-4096w-v1.png",
+            "dimensions": [
+              4096,
+              2243
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "lemon": {
+        "svg": "logos/svg/techtrack-kids-wordmark-lemon-v1.svg",
+        "dimensions": [
+          975,
+          534
+        ],
+        "png": [
+          {
+            "path": "logos/png/techtrack-kids-wordmark-lemon-1024w-v1.png",
+            "dimensions": [
+              1024,
+              561
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-wordmark-lemon-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1122
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/png/techtrack-kids-wordmark-lemon-4096w-v1.png",
+            "dimensions": [
+              4096,
+              2243
+            ],
+            "alpha": false
+          }
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Reference raster has quantization/antialiasing; exact original curves cannot be recovered.",
+    "Gradient regions inferred from colour samples; source illustration requires designer sign-off.",
+    "Letterforms are traced outlines, not a substitute font or original designer typography."
+  ],
+  "source_inventory": {
+    "techtrack-kids-lockup-horizontal-bg-black-v1.svg": {
+      "original_file": "techtrack-kids-lockup-horizontal-bg-black-v1.svg",
+      "original_sha256": "770de09f91a7a6457a215e2cf5c3a3d19afe80fa43f1324b3734938e1dd4b47c",
+      "svg_viewBox": "0 0 1434 534",
+      "svg_dimensions": [
+        "1434",
+        "534"
+      ],
+      "embedded_png_dimensions": [
+        1434,
+        534
+      ],
+      "embedded_png_sha256": "291b314e0687744f67bfc3b00537f785d7900f814a83d9a31391c53f2a99ef8e",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "techtrack-kids-lockup-stacked-bg-white-v1.svg": {
+      "original_file": "techtrack-kids-lockup-stacked-bg-white-v1.svg",
+      "original_sha256": "95aff0d9053966db4333d8857d4a7a4b3b2e97c154d4ac3d4c66509ed9e52317",
+      "svg_viewBox": "0 0 975 960",
+      "svg_dimensions": [
+        "975",
+        "960"
+      ],
+      "embedded_png_dimensions": [
+        975,
+        960
+      ],
+      "embedded_png_sha256": "7d3e8b92df5a196d7bd26738f492ddea1f534461d87e043fe04e72b09cd2c161",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "techtrack-kids-mark-bg-black-v1.svg": {
+      "original_file": "techtrack-kids-mark-bg-black-v1.svg",
+      "original_sha256": "aec5150d89ed5e6ba8a32d3429eabfd11aea3e46539283ce02e21157d793d3e7",
+      "svg_viewBox": "0 0 447 423",
+      "svg_dimensions": [
+        "447",
+        "423"
+      ],
+      "embedded_png_dimensions": [
+        447,
+        423
+      ],
+      "embedded_png_sha256": "5ca8443fafe5f9fd7968cd29a1f40c35981b45049e3c6fc440f6ecb7901d22cf",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "techtrack-kids-mark-bg-lemon-v1.svg": {
+      "original_file": "techtrack-kids-mark-bg-lemon-v1.svg",
+      "original_sha256": "379aa7b2405d601a5887ddc9a24750e63007f814b6762f10b4e00bc93f5a7152",
+      "svg_viewBox": "0 0 447 423",
+      "svg_dimensions": [
+        "447",
+        "423"
+      ],
+      "embedded_png_dimensions": [
+        447,
+        423
+      ],
+      "embedded_png_sha256": "6573661d363cf4eff0c1ef98e83b382c00421bf1e2b0609a71e3dbd185215037",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ]
+    },
+    "techtrack-kids-mark-bg-white-v1.svg": {
+      "original_file": "techtrack-kids-mark-bg-white-v1.svg",
+      "original_sha256": "3605dd5f359a0da8734acb4a834f70e224ec0545a7412f903bc9917a188612dc",
+      "svg_viewBox": "0 0 447 423",
+      "svg_dimensions": [
+        "447",
+        "423"
+      ],
+      "embedded_png_dimensions": [
+        447,
+        423
+      ],
+      "embedded_png_sha256": "7ed40a048cef2102de0ac56957decc9184a9541208182f2aae3733bfb6d44387",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "techtrack-kids-wordmark-bg-lemon-v1.svg": {
+      "original_file": "techtrack-kids-wordmark-bg-lemon-v1.svg",
+      "original_sha256": "1e7cb6c0ba11452b3782a155afde3683ef6d25a93bad2a59b6e019df4ea23916",
+      "svg_viewBox": "0 0 975 534",
+      "svg_dimensions": [
+        "975",
+        "534"
+      ],
+      "embedded_png_dimensions": [
+        975,
+        534
+      ],
+      "embedded_png_sha256": "51f93b1dd137c84c9bfe1eee1a40243e0a7c5445ad570e9e11eb7b39c3feadea",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ]
+    }
+  }
+}

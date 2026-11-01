@@ -1,0 +1,366 @@
+{
+  "techtrack": {
+    "techtrack-kids-lockup-horizontal-bg-black-v1.svg": {
+      "original_file": "techtrack-kids-lockup-horizontal-bg-black-v1.svg",
+      "original_sha256": "770de09f91a7a6457a215e2cf5c3a3d19afe80fa43f1324b3734938e1dd4b47c",
+      "svg_viewBox": "0 0 1434 534",
+      "svg_dimensions": [
+        "1434",
+        "534"
+      ],
+      "embedded_png_dimensions": [
+        1434,
+        534
+      ],
+      "embedded_png_sha256": "291b314e0687744f67bfc3b00537f785d7900f814a83d9a31391c53f2a99ef8e",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "techtrack-kids-lockup-stacked-bg-white-v1.svg": {
+      "original_file": "techtrack-kids-lockup-stacked-bg-white-v1.svg",
+      "original_sha256": "95aff0d9053966db4333d8857d4a7a4b3b2e97c154d4ac3d4c66509ed9e52317",
+      "svg_viewBox": "0 0 975 960",
+      "svg_dimensions": [
+        "975",
+        "960"
+      ],
+      "embedded_png_dimensions": [
+        975,
+        960
+      ],
+      "embedded_png_sha256": "7d3e8b92df5a196d7bd26738f492ddea1f534461d87e043fe04e72b09cd2c161",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "techtrack-kids-mark-bg-black-v1.svg": {
+      "original_file": "techtrack-kids-mark-bg-black-v1.svg",
+      "original_sha256": "aec5150d89ed5e6ba8a32d3429eabfd11aea3e46539283ce02e21157d793d3e7",
+      "svg_viewBox": "0 0 447 423",
+      "svg_dimensions": [
+        "447",
+        "423"
+      ],
+      "embedded_png_dimensions": [
+        447,
+        423
+      ],
+      "embedded_png_sha256": "5ca8443fafe5f9fd7968cd29a1f40c35981b45049e3c6fc440f6ecb7901d22cf",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "techtrack-kids-mark-bg-lemon-v1.svg": {
+      "original_file": "techtrack-kids-mark-bg-lemon-v1.svg",
+      "original_sha256": "379aa7b2405d601a5887ddc9a24750e63007f814b6762f10b4e00bc93f5a7152",
+      "svg_viewBox": "0 0 447 423",
+      "svg_dimensions": [
+        "447",
+        "423"
+      ],
+      "embedded_png_dimensions": [
+        447,
+        423
+      ],
+      "embedded_png_sha256": "6573661d363cf4eff0c1ef98e83b382c00421bf1e2b0609a71e3dbd185215037",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ]
+    },
+    "techtrack-kids-mark-bg-white-v1.svg": {
+      "original_file": "techtrack-kids-mark-bg-white-v1.svg",
+      "original_sha256": "3605dd5f359a0da8734acb4a834f70e224ec0545a7412f903bc9917a188612dc",
+      "svg_viewBox": "0 0 447 423",
+      "svg_dimensions": [
+        "447",
+        "423"
+      ],
+      "embedded_png_dimensions": [
+        447,
+        423
+      ],
+      "embedded_png_sha256": "7ed40a048cef2102de0ac56957decc9184a9541208182f2aae3733bfb6d44387",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "techtrack-kids-wordmark-bg-lemon-v1.svg": {
+      "original_file": "techtrack-kids-wordmark-bg-lemon-v1.svg",
+      "original_sha256": "1e7cb6c0ba11452b3782a155afde3683ef6d25a93bad2a59b6e019df4ea23916",
+      "svg_viewBox": "0 0 975 534",
+      "svg_dimensions": [
+        "975",
+        "534"
+      ],
+      "embedded_png_dimensions": [
+        975,
+        534
+      ],
+      "embedded_png_sha256": "51f93b1dd137c84c9bfe1eee1a40243e0a7c5445ad570e9e11eb7b39c3feadea",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ]
+    },
+    "techtrack-lockup-horizontal-bg-black-v1.svg": {
+      "original_file": "techtrack-lockup-horizontal-bg-black-v1.svg",
+      "original_sha256": "2426fd97f46c2a84eb1ce2551ec0239d7f762059fb75304deb93876b7ba1ec25",
+      "svg_viewBox": "0 0 1596 435",
+      "svg_dimensions": [
+        "1596",
+        "435"
+      ],
+      "embedded_png_dimensions": [
+        1596,
+        435
+      ],
+      "embedded_png_sha256": "7bcdf981afbcc0afeac30d4e96feec5eecedc2a5648b689dccaefdc8248dcc75",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "techtrack-lockup-stacked-bg-white-v1.svg": {
+      "original_file": "techtrack-lockup-stacked-bg-white-v1.svg",
+      "original_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+      "svg_viewBox": "0 0 1113 756",
+      "svg_dimensions": [
+        "1113",
+        "756"
+      ],
+      "embedded_png_dimensions": [
+        1113,
+        756
+      ],
+      "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "techtrack-mark-bg-black-v1.svg": {
+      "original_file": "techtrack-mark-bg-black-v1.svg",
+      "original_sha256": "84764521584097bb6bc838c72a26edae0cb50e918908f9bb36cef12f649c71cb",
+      "svg_viewBox": "0 0 471 435",
+      "svg_dimensions": [
+        "471",
+        "435"
+      ],
+      "embedded_png_dimensions": [
+        471,
+        435
+      ],
+      "embedded_png_sha256": "11eea6d26ae578464d311c6c8cd38b89cbdcdb44023c3a8e1ef480024dda3b12",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "techtrack-mark-bg-lemon-v1.svg": {
+      "original_file": "techtrack-mark-bg-lemon-v1.svg",
+      "original_sha256": "c013ea0426577710a9d6f989d55e438c4d8e58e8b889a48b9a05740d6cdf01cf",
+      "svg_viewBox": "0 0 471 435",
+      "svg_dimensions": [
+        "471",
+        "435"
+      ],
+      "embedded_png_dimensions": [
+        471,
+        435
+      ],
+      "embedded_png_sha256": "7857c4b8f3a09525fa3c050ac8cc96f5429f13bfc6fdfed57713ee9b4d26e606",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ]
+    },
+    "techtrack-mark-bg-white-v1.svg": {
+      "original_file": "techtrack-mark-bg-white-v1.svg",
+      "original_sha256": "01fdbfa4f87a5b5189dca51afcceedd88861fed72f962da6d8598f937b351616",
+      "svg_viewBox": "0 0 471 435",
+      "svg_dimensions": [
+        "471",
+        "435"
+      ],
+      "embedded_png_dimensions": [
+        471,
+        435
+      ],
+      "embedded_png_sha256": "b93102b026e2e23f163e61e0b74ef3a37b2f898e84d07968faeb81b991dbc383",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "techtrack-wordmark-bg-lemon-v1.svg": {
+      "original_file": "techtrack-wordmark-bg-lemon-v1.svg",
+      "original_sha256": "e6fed8ac614f408624fbc05d4e8f0b208f4174b731d061d0a6be13c6ebe59e84",
+      "svg_viewBox": "0 0 1113 348",
+      "svg_dimensions": [
+        "1113",
+        "348"
+      ],
+      "embedded_png_dimensions": [
+        1113,
+        348
+      ],
+      "embedded_png_sha256": "53b59949638dd093353a409dbbefa833799986ca3abfd69e7e5abb966997e4c8",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ]
+    }
+  },
+  "techtrack-kids": {
+    "techtrack-kids-lockup-horizontal-bg-black-v1.svg": {
+      "original_file": "techtrack-kids-lockup-horizontal-bg-black-v1.svg",
+      "original_sha256": "770de09f91a7a6457a215e2cf5c3a3d19afe80fa43f1324b3734938e1dd4b47c",
+      "svg_viewBox": "0 0 1434 534",
+      "svg_dimensions": [
+        "1434",
+        "534"
+      ],
+      "embedded_png_dimensions": [
+        1434,
+        534
+      ],
+      "embedded_png_sha256": "291b314e0687744f67bfc3b00537f785d7900f814a83d9a31391c53f2a99ef8e",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "techtrack-kids-lockup-stacked-bg-white-v1.svg": {
+      "original_file": "techtrack-kids-lockup-stacked-bg-white-v1.svg",
+      "original_sha256": "95aff0d9053966db4333d8857d4a7a4b3b2e97c154d4ac3d4c66509ed9e52317",
+      "svg_viewBox": "0 0 975 960",
+      "svg_dimensions": [
+        "975",
+        "960"
+      ],
+      "embedded_png_dimensions": [
+        975,
+        960
+      ],
+      "embedded_png_sha256": "7d3e8b92df5a196d7bd26738f492ddea1f534461d87e043fe04e72b09cd2c161",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "techtrack-kids-mark-bg-black-v1.svg": {
+      "original_file": "techtrack-kids-mark-bg-black-v1.svg",
+      "original_sha256": "aec5150d89ed5e6ba8a32d3429eabfd11aea3e46539283ce02e21157d793d3e7",
+      "svg_viewBox": "0 0 447 423",
+      "svg_dimensions": [
+        "447",
+        "423"
+      ],
+      "embedded_png_dimensions": [
+        447,
+        423
+      ],
+      "embedded_png_sha256": "5ca8443fafe5f9fd7968cd29a1f40c35981b45049e3c6fc440f6ecb7901d22cf",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "techtrack-kids-mark-bg-lemon-v1.svg": {
+      "original_file": "techtrack-kids-mark-bg-lemon-v1.svg",
+      "original_sha256": "379aa7b2405d601a5887ddc9a24750e63007f814b6762f10b4e00bc93f5a7152",
+      "svg_viewBox": "0 0 447 423",
+      "svg_dimensions": [
+        "447",
+        "423"
+      ],
+      "embedded_png_dimensions": [
+        447,
+        423
+      ],
+      "embedded_png_sha256": "6573661d363cf4eff0c1ef98e83b382c00421bf1e2b0609a71e3dbd185215037",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ]
+    },
+    "techtrack-kids-mark-bg-white-v1.svg": {
+      "original_file": "techtrack-kids-mark-bg-white-v1.svg",
+      "original_sha256": "3605dd5f359a0da8734acb4a834f70e224ec0545a7412f903bc9917a188612dc",
+      "svg_viewBox": "0 0 447 423",
+      "svg_dimensions": [
+        "447",
+        "423"
+      ],
+      "embedded_png_dimensions": [
+        447,
+        423
+      ],
+      "embedded_png_sha256": "7ed40a048cef2102de0ac56957decc9184a9541208182f2aae3733bfb6d44387",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "techtrack-kids-wordmark-bg-lemon-v1.svg": {
+      "original_file": "techtrack-kids-wordmark-bg-lemon-v1.svg",
+      "original_sha256": "1e7cb6c0ba11452b3782a155afde3683ef6d25a93bad2a59b6e019df4ea23916",
+      "svg_viewBox": "0 0 975 534",
+      "svg_dimensions": [
+        "975",
+        "534"
+      ],
+      "embedded_png_dimensions": [
+        975,
+        534
+      ],
+      "embedded_png_sha256": "51f93b1dd137c84c9bfe1eee1a40243e0a7c5445ad570e9e11eb7b39c3feadea",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ]
+    }
+  }
+}
