@@ -21,7 +21,8 @@ The central library for ABE TechLab's visual identity assets, working color valu
 | Product brand onboarding | [Onboarding guide](./docs/product-brand-onboarding.md) · [Manifest template](./templates/product-brand-manifest.json) | Establish a product-specific source of truth in the central brand library |
 | ABE TechLab company brand | [Brand folder](./brands/abe-techlab/README.md) · [SVG source folder](./brands/abe-techlab/source/) | Parent-company symbol source SVGs and brand record |
 | ABEmail product logo source | [Brand folder](./brands/abemail/README.md) · [SVG source folder](./brands/abemail/source/) | Original ABEmail logo variants uploaded; source review pending |
-| TechTrack product logo source | [Brand folder](./brands/techtrack/README.md) · [SVG upload folder](./brands/techtrack/source/) | Original editable TechTrack logo SVGs; awaiting source upload |
+| TechTrack reconstructed vector family | [Brand folder](./brands/techtrack/README.md) · [SVG variants](./brands/techtrack/logos/svg/) · [PNG exports](./brands/techtrack/logos/png/) | Source-preserving vector reconstruction; **draft / approval pending** |
+| TechTrack Kids reconstructed vector family | [Brand folder](./brands/techtrack-kids/README.md) · [SVG variants](./brands/techtrack-kids/logos/svg/) · [PNG exports](./brands/techtrack-kids/logos/png/) | Separate Kids ecosystem; original Kids sources copied intact; **draft / approval pending** |
 | Reproducible PNG exporter | [export_logo_variants.py](./scripts/export_logo_variants.py) | Render light/dark PNGs from adaptive SVG masters without changing geometry |
 | Email and static hosting | [Email-ready light PNG](./public/logos/abe-techlab-mark-light-v1.png) · [Email-ready dark PNG](./public/logos/abe-techlab-mark-dark-v1.png) | Transparent 320 × 255 PNG exports; intended to display at 160 px wide |
 | Public asset index and color copier | [public/index.html](./public/index.html) | Logo previews, direct asset links, and copy-ready core HEX codes |
@@ -35,6 +36,8 @@ The central library for ABE TechLab's visual identity assets, working color valu
 ### GitHub profile banner
 
 ![ABE TechLab — Ideas into systems. Systems into impact.](./assets/github/abe-techlab-profile-banner.svg)
+
+The [TechTrack draft reconstruction review](https://github.com/ABE-TechLab/Branding/pull/10) contains 4 compositions for TechTrack and Kids, source SHA-256 records, outlined SVGs, multi-resolution PNGs, and a contact sheet. These have not been approved by the designer. ABEmail sources are unchanged.
 
 ## Core brand colors
 
