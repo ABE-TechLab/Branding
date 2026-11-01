@@ -1,0 +1,30 @@
+name: Build TechTrack draft vector review assets
+on:
+  push:
+    branches: ['draft/techtrack-vector-reconstruction-20261101']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generate-and-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r scripts/requirements-techtrack.txt
+      - name: Reconstruct vector SVG and render all PNG sizes
+        run: python scripts/reconstruct_techtrack.py --root .
+      - name: Generate contact sheet
+        run: python scripts/make_techtrack_contact_sheet.py
+      - name: Validate non-raster SVG paths, source preservation, color variants and PNGs
+        run: python scripts/validate_techtrack.py
+      - name: Commit generated draft assets on review branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add brands/techtrack/vector brands/techtrack/logos brands/techtrack/brand.json brands/techtrack-kids/vector brands/techtrack-kids/logos brands/techtrack-kids/brand.json reconstruction-audit.json TechTrack_Visual_Contact_Sheet.png
+          git diff --cached --quiet || git commit -m "Build unapproved reconstructed vectors and PNG variants"
+          git push origin HEAD:refs/heads/draft/techtrack-vector-reconstruction-20261101

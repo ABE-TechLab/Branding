@@ -1,0 +1,40 @@
+name: Validate reconstructed TechTrack vectors
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'brands/techtrack/**'
+      - 'brands/techtrack-kids/**'
+      - 'scripts/reconstruct_techtrack.py'
+      - 'scripts/validate_techtrack.py'
+      - 'scripts/requirements-techtrack.txt'
+      - 'docs/techtrack-vector-contact-sheet.png'
+      - '.github/workflows/validate-techtrack-vectors.yml'
+permissions:
+  contents: read
+jobs:
+  inspect-vector-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r scripts/requirements-techtrack.txt
+      - name: Verify source hashes and SVG/PNG properties
+        run: python scripts/validate_techtrack.py
+      - name: Confirm no ABEmail changes
+        run: |
+          if git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD -- brands/abemail | grep .; then
+            echo 'ABEmail must remain untouched' && exit 1
+          fi
+      - name: Rebuild to verify every vector composition
+        run: |
+          mkdir -p /tmp/tt-regen/brands/techtrack /tmp/tt-regen/brands/techtrack-kids
+          cp -a brands/techtrack/source /tmp/tt-regen/brands/techtrack/
+          cp -a brands/techtrack-kids/source /tmp/tt-regen/brands/techtrack-kids/
+          python scripts/reconstruct_techtrack.py --root /tmp/tt-regen --no-png
+          diff -qr /tmp/tt-regen/brands/techtrack/vector brands/techtrack/vector
+          diff -qr /tmp/tt-regen/brands/techtrack-kids/vector brands/techtrack-kids/vector
+          diff -qr /tmp/tt-regen/brands/techtrack/logos/svg brands/techtrack/logos/svg
+          diff -qr /tmp/tt-regen/brands/techtrack-kids/logos/svg brands/techtrack-kids/logos/svg
