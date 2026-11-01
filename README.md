@@ -8,8 +8,8 @@ The central library for ABE TechLab's visual identity assets, working color valu
 
 | Use case | Asset | Notes |
 | --- | --- | --- |
-| Light backgrounds | [Light logo SVG](./assets/logos/abe-techlab-mark-light.svg) | Charcoal mark with lime accent; transparent canvas |
-| Dark backgrounds | [Dark logo SVG](./assets/logos/abe-techlab-mark-dark.svg) | Off-white mark with lime accent; transparent canvas |
+| Light backgrounds | [Light logo SVG](./brands/abe-techlab/source/abe-techlab-mark-light.svg) | Charcoal mark with lime accent; transparent canvas |
+| Dark backgrounds | [Dark logo SVG](./brands/abe-techlab/source/abe-techlab-mark-dark.svg) | Off-white mark with lime accent; transparent canvas |
 | Adaptive web and portfolio use | [Adaptive symbol SVG](./public/logos/abe-techlab-mark-adaptive.svg) | Standalone symbol that adapts to light/dark color schemes |
 | Stacked brand lockup | [Stacked adaptive SVG](./public/logos/abe-techlab-lockup-stacked-adaptive.svg) | Symbol centered above the ABE TechLab wordmark |
 | Horizontal brand lockup | [Horizontal adaptive SVG](./public/logos/abe-techlab-lockup-horizontal-adaptive.svg) | Symbol left of the ABE TechLab wordmark |
@@ -19,8 +19,9 @@ The central library for ABE TechLab's visual identity assets, working color valu
 | Wordmark PNGs | [Light PNG](./public/logos/abe-techlab-wordmark-light-v1.png) · [Dark PNG](./public/logos/abe-techlab-wordmark-dark-v1.png) | 1590 × 336, transparent, fixed-color exports |
 | Agent standard | [AGENTS.md](./AGENTS.md) | Cross-product instructions for source control, precise exports, validation, and publishing |
 | Product brand onboarding | [Onboarding guide](./docs/product-brand-onboarding.md) · [Manifest template](./templates/product-brand-manifest.json) | Establish a product-specific source of truth in the central brand library |
-| ABEmail product logo source | [Brand folder](./brands/abemail/README.md) · [SVG upload folder](./brands/abemail/source/) | Original editable ABEmail logo SVGs; currently awaiting source upload |
-| TechTrack product logo source | [Brand folder](./brands/techtrack/README.md) · [SVG upload folder](./brands/techtrack/source/) | Original editable TechTrack logo SVGs; currently awaiting source upload |
+| ABE TechLab company brand | [Brand folder](./brands/abe-techlab/README.md) · [SVG source folder](./brands/abe-techlab/source/) | Parent-company symbol source SVGs and brand record |
+| ABEmail product logo source | [Brand folder](./brands/abemail/README.md) · [SVG source folder](./brands/abemail/source/) | Original ABEmail logo variants uploaded; source review pending |
+| TechTrack product logo source | [Brand folder](./brands/techtrack/README.md) · [SVG upload folder](./brands/techtrack/source/) | Original editable TechTrack logo SVGs; awaiting source upload |
 | Reproducible PNG exporter | [export_logo_variants.py](./scripts/export_logo_variants.py) | Render light/dark PNGs from adaptive SVG masters without changing geometry |
 | Email and static hosting | [Email-ready light PNG](./public/logos/abe-techlab-mark-light-v1.png) · [Email-ready dark PNG](./public/logos/abe-techlab-mark-dark-v1.png) | Transparent 320 × 255 PNG exports; intended to display at 160 px wide |
 | Public asset index and color copier | [public/index.html](./public/index.html) | Logo previews, direct asset links, and copy-ready core HEX codes |
@@ -115,12 +116,23 @@ See [Email logo assets](./docs/email-logo-assets.md) for the HTML examples and A
 ├── README.md
 ├── AGENTS.md
 ├── assets/
-│   ├── github/
+│   └── github/
+│       ├── README.md
+│       └── abe-techlab-profile-banner.svg
+├── brands/
+│   ├── abe-techlab/
+│   │   ├── brand.json
 │   │   ├── README.md
-│   │   └── abe-techlab-profile-banner.svg
-│   └── logos/
-│       ├── abe-techlab-mark-dark.svg
-│       └── abe-techlab-mark-light.svg
+│   │   └── source/
+│   │       ├── README.md
+│   │       ├── abe-techlab-mark-dark.svg
+│   │       └── abe-techlab-mark-light.svg
+│   ├── abemail/
+│   │   ├── README.md
+│   │   └── source/
+│   └── techtrack/
+│       ├── README.md
+│       └── source/
 ├── docs/
 │   ├── product-brand-onboarding.md
 │   ├── logo-lockups.md
