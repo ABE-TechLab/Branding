@@ -121,7 +121,6 @@ jobs:
           git push
 
       - name: Re-render to a clean temporary directory for PR validation
-        if: github.event_name == 'pull_request'
         run: |
           python scripts/export_product_brand_asset_packages.py \
             --package-root /tmp/expected-brands \
@@ -129,11 +128,9 @@ jobs:
             --inventory-dir /tmp/expected-inventory
 
       - name: Generate expected shared brand navigation and asset pages
-        if: github.event_name == 'pull_request'
         run: python scripts/build_brand_library_site.py --public-root /tmp/expected-public
 
       - name: Verify brand pages and individual asset routes
-        if: github.event_name == 'pull_request'
         run: |
           test -s /tmp/expected-public/index.html
           test -s /tmp/expected-public/brands/index.html
@@ -162,7 +159,6 @@ jobs:
           test -s /tmp/expected-public/brands/abe-techlab/assets/wordmark/lemon/index.html
 
       - name: Compare generated exports against committed assets
-        if: github.event_name == 'pull_request'
         shell: bash
         run: |
           set -euo pipefail
