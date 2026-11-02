@@ -3,6 +3,13 @@
   "slug": "techtrack-kids",
   "status": "owner-reviewed-with-exclusions",
   "approval": "owner-reviewed-except-black-background",
+  "approval_notes": "Owner reviewed and accepted the transparent, white-background and lemon-background reconstructions. Black-background derivatives are deferred; use transparent assets on black or dark surfaces until that treatment is corrected.",
+  "excluded_variants": {
+    "black": {
+      "status": "deferred",
+      "reason": "The black-background reconstruction did not pass visual review. Use the transparent version on dark surfaces."
+    }
+  },
   "provenance": "vector-reconstructed-from-raster",
   "original_sources_preserved": true,
   "palette": {
@@ -554,9 +561,9 @@
     }
   },
   "limitations": [
-    "The vectors are derived from the preserved uploaded raster references and are not original designer-authored master paths.",
+    "The vectors are derived from preserved raster references and are not original designer-authored master paths.",
     "The transparent, white-background and lemon-background treatments were owner-reviewed and accepted for use.",
-    "The black-background reconstruction is intentionally excluded; use the transparent treatment on dark or black surfaces."
+    "The black-background reconstruction is intentionally excluded; use transparent treatments on dark or black surfaces."
   ],
   "source_inventory": {
     "techtrack-kids-lockup-horizontal-bg-black-v1.svg": {
@@ -678,13 +685,6 @@
         201,
         61
       ]
-    }
-  },
-  "approval_notes": "Owner reviewed and accepted the transparent, white-background and lemon-background reconstructions. Black-background derivatives are deferred; use transparent assets on black or dark surfaces until that treatment is corrected.",
-  "excluded_variants": {
-    "black": {
-      "status": "deferred",
-      "reason": "The black-background reconstruction did not pass visual review. Use the transparent version on dark surfaces."
     }
   }
 }
