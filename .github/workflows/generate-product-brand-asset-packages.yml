@@ -6,6 +6,7 @@ on:
       - main
       - brand/abemail-techtrack-logo-packages
       - chore/integrate-abe-opaque-backgrounds
+      - brand/techtrack-reviewed-vectors
     paths:
       - "brands/abemail/source/**"
       - "brands/techtrack/source/**"
@@ -14,6 +15,14 @@ on:
       - "scripts/export_logo_background_variants.py"
       - "public/logos/**"
       - "scripts/build_brand_library_site.py"
+      - "scripts/reconstruct_techtrack.py"
+      - "scripts/make_techtrack_contact_sheet.py"
+      - "scripts/validate_techtrack.py"
+      - "scripts/requirements-techtrack.txt"
+      - "brands/techtrack/vector/**"
+      - "brands/techtrack/logos/reconstructed/**"
+      - "brands/techtrack-kids/vector/**"
+      - "brands/techtrack-kids/logos/reconstructed/**"
       - "public/index.html"
       - ".github/workflows/generate-product-brand-asset-packages.yml"
   pull_request:
@@ -25,6 +34,13 @@ on:
       - "brands/techtrack-kids/**"
       - "scripts/export_product_brand_asset_packages.py"
       - "scripts/build_brand_library_site.py"
+      - "scripts/reconstruct_techtrack.py"
+      - "scripts/validate_techtrack.py"
+      - "scripts/requirements-techtrack.txt"
+      - "brands/techtrack/vector/**"
+      - "brands/techtrack/logos/reconstructed/**"
+      - "brands/techtrack-kids/vector/**"
+      - "brands/techtrack-kids/logos/reconstructed/**"
       - "public/index.html"
       - "public/brands/**"
       - ".github/workflows/generate-product-brand-asset-packages.yml"
@@ -58,6 +74,8 @@ jobs:
 
       - name: Install raster and SVG rendering dependencies
         run: python -m pip install "Pillow>=10,<13" "CairoSVG>=2.7,<3"
+      - name: Install TechTrack reconstruction dependencies
+        run: python -m pip install -r scripts/requirements-techtrack.txt
 
       - name: Sync branch before generating assets
         if: github.event_name == 'push'
@@ -66,6 +84,13 @@ jobs:
           set -euo pipefail
           git fetch origin "$GITHUB_REF_NAME"
           git rebase "origin/$GITHUB_REF_NAME"
+
+      - name: Generate owner-reviewed TechTrack vector reconstructions
+        if: github.event_name == 'push'
+        run: |
+          python scripts/reconstruct_techtrack.py --root .
+          python scripts/make_techtrack_contact_sheet.py
+          python scripts/validate_techtrack.py
 
       - name: Generate vector and raster-derived product packages
         if: github.event_name == 'push'
@@ -84,8 +109,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add \
             brands/abemail/logos brands/abemail/inventory.json \
-            brands/techtrack/logos brands/techtrack/inventory.json \
-            brands/techtrack-kids/logos brands/techtrack-kids/inventory.json \
+            brands/techtrack/logos brands/techtrack/vector brands/techtrack/brand.json brands/techtrack/README.md brands/techtrack/inventory.json \
+            brands/techtrack-kids/logos brands/techtrack-kids/vector brands/techtrack-kids/brand.json brands/techtrack-kids/README.md brands/techtrack-kids/inventory.json \
+            reconstruction-audit.json TechTrack_Visual_Contact_Sheet.png README.md \
             public/index.html public/brands
           if git diff --cached --quiet; then
             echo "Product logo exports are already current."
@@ -116,8 +142,14 @@ jobs:
           done
           test -s /tmp/expected-public/brands/abemail/assets/symbol/white/index.html
           test -s /tmp/expected-public/brands/abemail/assets/wordmark/monochrome/index.html
-          test -s /tmp/expected-public/brands/techtrack/assets/horizontal/transparent/index.html
+          test -s /tmp/expected-public/brands/techtrack/assets/mark/white/index.html
+          test -s /tmp/expected-public/brands/techtrack/assets/horizontal/lemon/index.html
+          test -s /tmp/expected-public/brands/techtrack/assets/wordmark/transparent/index.html
+          test -s /tmp/expected-public/brands/techtrack-kids/assets/mark/white/index.html
           test -s /tmp/expected-public/brands/techtrack-kids/assets/stacked/lemon/index.html
+          test -s /tmp/expected-public/brands/techtrack-kids/assets/wordmark/transparent/index.html
+          test ! -e /tmp/expected-public/brands/techtrack/assets/mark/black/index.html
+          test ! -e /tmp/expected-public/brands/techtrack-kids/assets/mark/black/index.html
           test -s /tmp/expected-public/brands/abe-techlab/assets/mark/adaptive/index.html
           test -s /tmp/expected-public/brands/abe-techlab/assets/mark/white/index.html
           test -s /tmp/expected-public/brands/abe-techlab/assets/lockup-horizontal/black/index.html
@@ -128,8 +160,19 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          mkdir -p /tmp/tt-regen/brands/techtrack /tmp/tt-regen/brands/techtrack-kids /tmp/tt-regen/scripts
+          cp -a brands/techtrack/source /tmp/tt-regen/brands/techtrack/
+          cp -a brands/techtrack-kids/source /tmp/tt-regen/brands/techtrack-kids/
+          cp scripts/reconstruct_techtrack.py /tmp/tt-regen/scripts/
+          python /tmp/tt-regen/scripts/reconstruct_techtrack.py --root /tmp/tt-regen --no-png
+          for brand in techtrack techtrack-kids; do
+            diff -qr "/tmp/tt-regen/brands/$brand/vector" "brands/$brand/vector"
+            diff -qr "/tmp/tt-regen/brands/$brand/logos/reconstructed/svg" "brands/$brand/logos/reconstructed/svg"
+          done
+          python scripts/validate_techtrack.py
           for brand in abemail techtrack techtrack-kids; do
-            diff -qr "/tmp/expected-brands/$brand/logos" "brands/$brand/logos"
+            diff -qr "/tmp/expected-brands/$brand/logos/svg" "brands/$brand/logos/svg"
+            diff -qr "/tmp/expected-brands/$brand/logos/png" "brands/$brand/logos/png"
             cmp "/tmp/expected-inventory/$brand/inventory.json" "brands/$brand/inventory.json"
             echo "Verified reproducible asset package: $brand"
           done
@@ -153,6 +196,8 @@ jobs:
           path: |
             brands/abemail/logos/png/*.png
             brands/techtrack/logos/png/*.png
+            brands/techtrack/logos/reconstructed/png/*.png
             brands/techtrack-kids/logos/png/*.png
+            brands/techtrack-kids/logos/reconstructed/png/*.png
           if-no-files-found: warn
           retention-days: 14

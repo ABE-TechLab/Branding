@@ -7,6 +7,8 @@ import re
 import shutil
 from pathlib import Path
 
+RECONSTRUCTED_BRANDS = {"techtrack", "techtrack-kids"}
+
 ROOT = Path(__file__).resolve().parents[1]
 BRANDS = {
     "abe-techlab": {
@@ -30,20 +32,20 @@ BRANDS = {
     "techtrack": {
         "name": "TechTrack", "kind": "Product identity",
         "intro": "Skills Today. Opportunities Tomorrow. The standard TechTrack ecosystem and its original colour system.",
-        "accent": "#1264F3", "status": "RASTER SOURCE · VECTOR RECONSTRUCTION PENDING",
+        "accent": "#1264F3", "status": "OWNER REVIEWED · BLACK-BACKGROUND VARIANT DEFERRED",
         "compositions": ["mark", "stacked", "horizontal", "wordmark"],
-        "variants": ["white", "black", "lemon", "transparent"],
-        "type": "raster",
-        "notes": "The uploaded SVG files wrap embedded PNGs and are not editable vector masters. Current PNG variants preserve the source pixels; 2× exports are interpolation only.",
+        "variants": ["white", "lemon", "transparent"],
+        "type": "reconstructed",
+        "notes": "Owner-reviewed vector reconstructions derived from immutable raster source artwork. White, lemon and transparent variants are accepted. The black-background reconstruction is deferred; use the transparent variant on black or dark surfaces. These are not original designer master paths.",
     },
     "techtrack-kids": {
         "name": "TechTrack Kids", "kind": "Product identity",
         "intro": "Learn. Play. Create. A separate identity for the TechTrack Kids ecosystem, with its own multicolour lettering and palette.",
-        "accent": "#885CF6", "status": "RASTER SOURCE · VECTOR RECONSTRUCTION PENDING",
+        "accent": "#885CF6", "status": "OWNER REVIEWED · BLACK-BACKGROUND VARIANT DEFERRED",
         "compositions": ["mark", "stacked", "horizontal", "wordmark"],
-        "variants": ["white", "black", "lemon", "transparent"],
-        "type": "raster",
-        "notes": "The uploaded SVG files wrap embedded PNGs and are not editable vector masters. The 2× files are interpolated exports, not new vector detail. Yellow accents shift to orange on the lemon background for contrast.",
+        "variants": ["white", "lemon", "transparent"],
+        "type": "reconstructed",
+        "notes": "Owner-reviewed vector reconstructions derived from immutable raster source artwork. White, lemon and transparent variants are accepted. The black-background reconstruction is deferred; use the transparent variant on black or dark surfaces. The lemon treatment shifts yellow details to orange for contrast. These are not original designer master paths.",
     },
 }
 
@@ -187,11 +189,15 @@ def shell(content: str, title: str, active: str, description: str = "") -> str:
 def image_path(slug: str, filename: str) -> str:
     if slug == "abe-techlab":
         return f"/logos/{filename}"
+    if slug in RECONSTRUCTED_BRANDS:
+        return f"/brands/{slug}/logos/reconstructed/png/{filename}"
     return f"/brands/{slug}/logos/png/{filename}"
 
 def svg_path(slug: str, filename: str) -> str:
     if slug == "abe-techlab":
         return f"/logos/{filename}"
+    if slug in RECONSTRUCTED_BRANDS:
+        return f"/brands/{slug}/logos/reconstructed/svg/{filename}"
     return f"/brands/{slug}/logos/svg/{filename}"
 
 def asset_route(slug: str, composition: str, variant: str) -> str:
@@ -207,6 +213,12 @@ def filename(slug: str, composition: str, variant: str, fmt: str = "png") -> str
             return f"abe-techlab-{composition}-bg-{variant}-v1.png" if fmt == "png" else None
         suffix = "light-v1.png" if variant == "light" else "dark-v1.png"
         return f"abe-techlab-{composition}-{suffix}" if fmt == "png" else None
+    if slug in RECONSTRUCTED_BRANDS:
+        if variant not in ("white", "lemon", "transparent"):
+            return None
+        if fmt == "svg":
+            return f"{slug}-{composition}-{variant}-v1.svg" if variant in ("white", "lemon") else None
+        return f"{slug}-{composition}-{variant}-1024w-v1.png"
     if slug == "abemail":
         base = f"abemail-{composition}"
         if variant in ("white", "black", "lemon"):
@@ -229,6 +241,16 @@ def variant_image_url(slug: str, composition: str, variant: str) -> str:
         raise ValueError(f"No PNG for {slug}/{composition}/{variant}")
     return image_path(slug, name)
 
+def variant_svg_url(slug: str, composition: str, variant: str) -> str | None:
+    if slug in RECONSTRUCTED_BRANDS:
+        if variant == "transparent":
+            return f"/brands/{slug}/vector/{composition}/{slug}-{composition}-master.svg"
+        if variant in ("white", "lemon"):
+            return f"/brands/{slug}/logos/reconstructed/svg/{slug}-{composition}-{variant}-v1.svg"
+        return None
+    name = filename(slug, composition, variant, "svg")
+    return svg_path(slug, name) if name else None
+
 def human_variant(variant: str) -> str:
     return {
         "white": "White background", "black": "Black background",
@@ -248,9 +270,9 @@ def composition_title(composition: str) -> str:
 
 def render_variant_page(slug: str, composition: str, variant: str, cfg: dict, public_root: Path) -> str:
     png_name = filename(slug, composition, variant, "png")
-    svg_name = filename(slug, composition, variant, "svg")
+    svg_url = variant_svg_url(slug, composition, variant)
+    svg_name = Path(svg_url).name if svg_url else None
     png_url = image_path(slug, png_name) if png_name else None
-    svg_url = svg_path(slug, svg_name) if svg_name else None
     if png_url and not (public_root / png_url.lstrip("/")).is_file():
         raise FileNotFoundError(f"Expected public preview image not found: {png_url}")
     if svg_url and not (public_root / svg_url.lstrip("/")).is_file():
@@ -264,7 +286,25 @@ def render_variant_page(slug: str, composition: str, variant: str, cfg: dict, pu
     if png_url:
         actions.append(f'<a class="primary" href="{png_url}" target="_blank" rel="noopener">Open PNG in new tab</a>')
         actions.append(f'<a href="{png_url}" download="{esc(png_name)}">Download PNG</a>')
-    if slug in ("techtrack", "techtrack-kids"):
+    if cfg["type"] == "reconstructed":
+        if svg_url:
+            actions.append(f'<a href="{svg_url}" target="_blank" rel="noopener">Open SVG reconstruction</a>')
+            actions.append(f'<a href="{svg_url}" download="{esc(svg_name)}">Download SVG reconstruction</a>')
+        widths = (512, 2048, 4096) if composition == "mark" else (2048, 4096)
+        for width in widths:
+            high_res = f"/brands/{slug}/logos/reconstructed/png/{slug}-{composition}-{variant}-{width}w-v1.png"
+            if (public_root / high_res.lstrip("/")).is_file():
+                actions.append(f'<a href="{high_res}" download>Download {width}px PNG</a>')
+        source_name = {
+            "mark": f"{slug}-mark-bg-white-v1.svg",
+            "horizontal": f"{slug}-lockup-horizontal-bg-black-v1.svg",
+            "stacked": f"{slug}-lockup-stacked-bg-white-v1.svg",
+            "wordmark": f"{slug}-wordmark-bg-lemon-v1.svg",
+        }[composition]
+        source_url = f"/brands/{slug}/source/{source_name}"
+        if (public_root / source_url.lstrip("/")).is_file():
+            actions.append(f'<a href="{source_url}" target="_blank" rel="noopener">Open original uploaded SVG reference</a>')
+    elif slug in ("techtrack", "techtrack-kids"):
         raster_variant = "transparent" if variant == "transparent" else f"bg-{variant}"
         two_x = f"/brands/{slug}/logos/png/{slug}-{composition}-{raster_variant}-2x-v1.png"
         if (public_root / two_x.lstrip("/")).is_file():
@@ -275,7 +315,7 @@ def render_variant_page(slug: str, composition: str, variant: str, cfg: dict, pu
             "mark": f"{slug}-mark-bg-white-v1.svg",
             "horizontal": f"{slug}-lockup-horizontal-bg-black-v1.svg",
             "stacked": f"{slug}-lockup-stacked-bg-white-v1.svg",
-            "wordmark": f"{slug}-lockup-stacked-bg-white-v1.svg",
+            "wordmark": f"{slug}-wordmark-bg-lemon-v1.svg",
         }[composition]
         source_url = f"/brands/{slug}/source/{source_name}"
         if (public_root / source_url.lstrip("/")).is_file():
@@ -294,6 +334,8 @@ def render_variant_page(slug: str, composition: str, variant: str, cfg: dict, pu
     meta = ""
     if slug == "abemail":
         meta = '<div class="asset-meta">Source: editable SVG vector paths · PNG render scale: 4× · Colour treatment follows the original Concept 1 artwork.</div>'
+    elif cfg["type"] == "reconstructed":
+        meta = '<div class="asset-meta">Source: outlined vector reconstruction from immutable raster references. Transparent, white and lemon treatments are owner-reviewed. Black-background reconstruction is deferred; use the transparent version on dark or black surfaces. Not the original designer master.</div>'
     elif slug in ("techtrack", "techtrack-kids"):
         meta = '<div class="asset-meta">Source: PNG embedded inside uploaded SVG · 2× variant is interpolated · Not an editable vector master.</div>'
     else:
@@ -314,12 +356,15 @@ def render_brand_page(slug: str, cfg: dict, public_root: Path) -> str:
     for comp in cfg["compositions"]:
         title = composition_title(comp)
         previews = []
-        preview_variants = ["white", "black", "lemon"] if cfg["type"] in ("abemail", "raster") else ["adaptive", "light", "dark"]
+        if cfg["type"] == "reconstructed":
+            preview_variants = ["white", "lemon", "transparent"]
+        else:
+            preview_variants = ["white", "black", "lemon"] if cfg["type"] in ("abemail", "raster") else ["adaptive", "light", "dark"]
         for v in preview_variants:
             url = variant_image_url(slug, comp, v)
             if not (public_root / url.lstrip("/")).is_file():
                 continue
-            vclass = {"black":"brand-preview--black","lemon":"brand-preview--lemon"}.get(v,"")
+            vclass = {"black":"brand-preview--black","lemon":"brand-preview--lemon","transparent":"brand-preview--transparent"}.get(v,"")
             target = asset_route(slug,comp,v)
             previews.append(
                 f'<a class="brand-preview {vclass}" href="{target}" title="View {esc(title)} · {esc(human_variant(v))}">'
@@ -339,6 +384,8 @@ def render_brand_page(slug: str, cfg: dict, public_root: Path) -> str:
             extra = [f'<a class="brand-link" href="{asset_route(slug,comp,v)}">View {esc(human_variant(v))}</a>' for v in ("light","dark","monochrome")]
         elif cfg["type"] == "raster":
             extra = [f'<a class="brand-link" href="{asset_route(slug,comp,v)}">View {esc(human_variant(v))}</a>' for v in ("transparent",)]
+        elif cfg["type"] == "reconstructed":
+            extra = [f'<a class="brand-link" href="{asset_route(slug,comp,v)}">View {esc(human_variant(v))}</a>' for v in ("white", "lemon", "transparent")]
         else:
             extra = [f'<a class="brand-link" href="{asset_route(slug,comp,v)}">View {esc(human_variant(v))}</a>' for v in ("adaptive","light","dark")]
         composition_cards.append(f"""
@@ -373,6 +420,8 @@ def render_directory(public_root: Path) -> str:
             preview="/logos/abe-techlab-mark-adaptive.svg"
         elif slug=="abemail":
             preview="/brands/abemail/logos/png/abemail-horizontal-bg-white-v1.png"
+        elif slug in RECONSTRUCTED_BRANDS:
+            preview=f"/brands/{slug}/logos/reconstructed/png/{slug}-horizontal-transparent-1024w-v1.png"
         elif slug=="techtrack":
             preview="/brands/techtrack/logos/png/techtrack-horizontal-bg-white-v1.png"
         else:
@@ -444,8 +493,21 @@ def wrap_company_page(source_html: str) -> str:
             source_html = source_html.replace(old_background, f'href="{route}">')
     return source_html
 
+def copy_reconstructed_assets(public_root: Path) -> None:
+    for slug in RECONSTRUCTED_BRANDS:
+        source_root = ROOT / "brands" / slug
+        for relative in ("vector", "logos/reconstructed"):
+            source = source_root / relative
+            destination = public_root / "brands" / slug / relative
+            if source.exists():
+                if destination.exists():
+                    shutil.rmtree(destination)
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copytree(source, destination)
+
 def build(public_root: Path) -> None:
     public_root.mkdir(parents=True,exist_ok=True)
+    copy_reconstructed_assets(public_root)
     # Preserve the existing ABE TechLab main page and wrap it in the shared navigation.
     company_file=ROOT/"public"/"index.html"
     company_html=wrap_company_page(company_file.read_text(encoding="utf-8"))
