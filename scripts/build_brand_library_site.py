@@ -442,8 +442,8 @@ def wrap_company_page(source_html: str) -> str:
     source_html = shell_css.sub("", source_html)
     # Remove blank lines left by previous shell-insertion iterations so repeated
     # generation produces byte-identical company-homepage output.
-    source_html = re.sub(r"(?m)^[ \\t]+$", "", source_html)
-    source_html = re.sub(r"\\n{3,}", "\\n\\n", source_html)
+    source_html = re.sub(r"(?m)^[ \t]+$", "", source_html)
+    source_html = re.sub(r"\n{3,}", "\n\n", source_html)
     if "</style>" not in source_html:
         raise ValueError("Company page is missing its inline style block")
     source_html = source_html.replace("</style>", ROOT_CSS.strip() + "\n  </style>", 1)
