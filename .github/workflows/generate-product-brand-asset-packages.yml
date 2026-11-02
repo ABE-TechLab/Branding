@@ -7,6 +7,7 @@ on:
       - brand/abemail-techtrack-logo-packages
       - chore/integrate-abe-opaque-backgrounds
       - brand/techtrack-reviewed-vectors
+      - fix/shared-brand-navigation
     paths:
       - "brands/abemail/source/**"
       - "brands/techtrack/source/**"
@@ -15,6 +16,7 @@ on:
       - "scripts/export_logo_background_variants.py"
       - "public/logos/**"
       - "scripts/build_brand_library_site.py"
+      - "scripts/validate_brand_navigation.py"
       - "scripts/reconstruct_techtrack.py"
       - "scripts/make_techtrack_contact_sheet.py"
       - "scripts/validate_techtrack.py"
@@ -34,6 +36,7 @@ on:
       - "brands/techtrack-kids/**"
       - "scripts/export_product_brand_asset_packages.py"
       - "scripts/build_brand_library_site.py"
+      - "scripts/validate_brand_navigation.py"
       - "scripts/reconstruct_techtrack.py"
       - "scripts/validate_techtrack.py"
       - "scripts/requirements-techtrack.txt"
@@ -99,6 +102,9 @@ jobs:
       - name: Generate shared brand navigation and individual asset pages
         if: github.event_name == 'push'
         run: python scripts/build_brand_library_site.py
+      - name: Validate shared brand navigation
+        if: github.event_name == 'push'
+        run: python scripts/validate_brand_navigation.py
 
       - name: Commit generated logo variants and public assets
         if: github.event_name == 'push'
@@ -129,6 +135,8 @@ jobs:
 
       - name: Generate expected shared brand navigation and asset pages
         run: python scripts/build_brand_library_site.py --public-root /tmp/expected-public
+      - name: Validate expected shared brand navigation
+        run: python scripts/validate_brand_navigation.py --public-root /tmp/expected-public
 
       - name: Verify brand pages and individual asset routes
         run: |

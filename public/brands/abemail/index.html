@@ -3,10 +3,10 @@
 <meta name="theme-color" content="#f4f5f2"><meta name="description" content="The ABEmail identity, rendered directly from its supplied editable vector SVG artwork.">
 <title>ABEmail · ABE TechLab Brand Library</title><style>
 /* BRAND_LIBRARY_SHELL_START */
-:root { --brand-ink:#171816; --brand-muted:#62675f; --brand-line:#dedfd9; --brand-panel:#fff; --brand-canvas:#f4f5f2; --brand-accent:#396b16; }
+:root { --brand-sidebar-width:260px; --brand-ink:#171816; --brand-muted:#62675f; --brand-line:#dedfd9; --brand-panel:#fff; --brand-canvas:#f4f5f2; --brand-accent:#396b16; }
 body { background:var(--brand-canvas); }
-.brand-shell { min-height:100vh; display:grid; grid-template-columns:260px minmax(0,1fr); }
-.brand-sidebar { position:sticky; top:0; height:100vh; padding:26px 18px 24px; background:#fff; border-right:1px solid var(--brand-line); display:flex; flex-direction:column; gap:26px; z-index:10; }
+.brand-shell { min-height:100vh; display:grid; grid-template-columns:var(--brand-sidebar-width) minmax(0,1fr); }
+.brand-sidebar { width:var(--brand-sidebar-width); box-sizing:border-box; position:sticky; top:0; height:100vh; padding:26px 18px 24px; background:#fff; border-right:1px solid var(--brand-line); display:flex; flex-direction:column; gap:26px; z-index:10; }
 .brand-sidebar__identity { display:flex; align-items:center; gap:12px; padding:2px 8px 20px; border-bottom:1px solid #e9ebe5; text-decoration:none; color:inherit; }
 .brand-sidebar__identity img { width:38px; height:38px; object-fit:contain; }
 .brand-sidebar__identity span { display:block; font-weight:760; font-size:14px; letter-spacing:-.02em; color:#171816; }
@@ -79,7 +79,7 @@ body { background:var(--brand-canvas); }
 .brand-footer { margin-top:42px; padding-top:17px; border-top:1px solid #e2e5dc; color:#858b7f; font-size:11px; line-height:1.65; }
 .brand-main .eyebrow { color:#65705b; }
 .brand-main h1 { letter-spacing:-.045em; }
-@media(max-width:880px) { .brand-shell{grid-template-columns:220px minmax(0,1fr)} .brand-sidebar{padding:23px 12px} .brand-main{padding:40px 25px 60px} .asset-hero{grid-template-columns:1fr} }
+@media(max-width:880px) { :root{--brand-sidebar-width:220px} .brand-shell{grid-template-columns:var(--brand-sidebar-width) minmax(0,1fr)} .brand-sidebar{padding:23px 12px} .brand-main{padding:40px 25px 60px} .asset-hero{grid-template-columns:1fr} }
 @media(max-width:680px) {
  .brand-shell{display:block}
  .brand-sidebar{position:sticky;top:0;width:100%;height:auto;padding:11px 14px 12px;border-right:0;border-bottom:1px solid var(--brand-line);gap:8px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px)}
@@ -103,8 +103,7 @@ body { background:var(--brand-canvas); }
 }
  /* BRAND_LIBRARY_SHELL_END */
 </style></head>
-<body><div class="brand-shell">
-<aside class="brand-sidebar" aria-label="Brand navigation">
+<body><div class="brand-shell"><aside class="brand-sidebar" aria-label="Brand navigation">
   <a class="brand-sidebar__identity" href="/brands/abe-techlab/">
     <img src="/logos/abe-techlab-mark-adaptive.svg" alt="" aria-hidden="true">
     <span>ABE TechLab<small>Brand library</small></span>
@@ -114,8 +113,7 @@ body { background:var(--brand-canvas); }
     <nav class="brand-nav"><a href="/brands/abe-techlab/"><span class="brand-nav__dot" style="background:#A7E021"></span><span>ABE TechLab</span></a><a href="/brands/abemail/" aria-current="page"><span class="brand-nav__dot" style="background:#72E3AD"></span><span>ABEmail</span></a><a href="/brands/techtrack/"><span class="brand-nav__dot" style="background:#1264F3"></span><span>TechTrack</span></a><a href="/brands/techtrack-kids/"><span class="brand-nav__dot" style="background:#885CF6"></span><span>TechTrack Kids</span></a></nav>
   </div>
   <div class="brand-sidebar__foot">One source of truth for every brand.<br><a href="https://github.com/ABE-TechLab/Branding">Open Brand Library repository ↗</a></div>
-</aside>
-<div class="brand-main">
+</aside><div class="brand-main">
 <div class="page-kicker"><span class="page-kicker__line"></span>Product identity · ABE TechLab Brand Library</div>
 <div class="brand-hero"><div><h1>ABEmail</h1><p>The ABEmail identity, rendered directly from its supplied editable vector SVG artwork.</p></div><span class="brand-badge">VECTOR SOURCE · REVIEW PENDING</span></div>
 <section class="brand-section"><div class="brand-section__heading"><h2>Logo compositions</h2></div><p class="brand-section__intro">Every composition has its own page for viewing the artwork at full size, opening the source image directly, and downloading the PNG or SVG where available.</p>
