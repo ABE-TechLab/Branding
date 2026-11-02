@@ -150,6 +150,12 @@ jobs:
           test -s /tmp/expected-public/brands/techtrack-kids/assets/wordmark/transparent/index.html
           test ! -e /tmp/expected-public/brands/techtrack/assets/mark/black/index.html
           test ! -e /tmp/expected-public/brands/techtrack-kids/assets/mark/black/index.html
+          for brand in techtrack techtrack-kids; do
+            if find "/tmp/expected-public/brands/$brand/logos/png" -type f -name '*-bg-black-*' | grep -q .; then
+              echo "Deferred black-background raster files must not be published for $brand."
+              exit 1
+            fi
+          done
           test -s /tmp/expected-public/brands/abe-techlab/assets/mark/adaptive/index.html
           test -s /tmp/expected-public/brands/abe-techlab/assets/mark/white/index.html
           test -s /tmp/expected-public/brands/abe-techlab/assets/lockup-horizontal/black/index.html

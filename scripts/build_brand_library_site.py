@@ -496,14 +496,27 @@ def wrap_company_page(source_html: str) -> str:
 def copy_reconstructed_assets(public_root: Path) -> None:
     for slug in RECONSTRUCTED_BRANDS:
         source_root = ROOT / "brands" / slug
+        public_brand_root = public_root / "brands" / slug
         for relative in ("vector", "logos/reconstructed"):
             source = source_root / relative
-            destination = public_root / "brands" / slug / relative
+            destination = public_brand_root / relative
             if source.exists():
                 if destination.exists():
                     shutil.rmtree(destination)
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copytree(source, destination)
+
+        # Do not publish the deferred legacy black-background raster derivatives.
+        legacy_png_dir = public_brand_root / "logos" / "png"
+        if legacy_png_dir.exists():
+            for path in legacy_png_dir.glob("*-bg-black-*"):
+                path.unlink()
+
+        # Remove stale four-variant pages left by the earlier raster-backed site.
+        # The reconstructed brand page below is rebuilt with white, lemon and transparent only.
+        stale_asset_pages = public_brand_root / "assets"
+        if stale_asset_pages.exists():
+            shutil.rmtree(stale_asset_pages)
 
 def build(public_root: Path) -> None:
     public_root.mkdir(parents=True,exist_ok=True)
