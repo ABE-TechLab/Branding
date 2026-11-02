@@ -1,35 +1,29 @@
-# TechTrack Kids Brand Assets
+# TechTrack Kids — owner-reviewed reconstructed vector package
 
-A separate brand package for the TechTrack Kids ecosystem.
+**Status:** owner-reviewed with one explicit exclusion. The transparent, white-background and lemon-background reconstructions have been reviewed and accepted for use. The black-background reconstruction is deferred; use the transparent version on black or dark surfaces. **Provenance:** `vector-reconstructed-from-raster` — these are derived vector paths, not the original designer master artwork. These SVG paths are **not** the original vector masters. The original raster-backed SVGs in `source/` are immutable references; the original uploads in `brands/techtrack/source/` have not been changed.
 
-**Tagline:** Learn. Play. Create.
+## Brand essentials
 
-## Source artwork
+- Brand: TechTrack Kids
+- Tagline (outlined in SVG paths): **Learn. Play. Create.**
+- Palette (reference approximations): cyan `#03A6FC`, blue `#0464FA`, teal `#02C9AC`, navy `#041B45`, white `#FFFFFF`, black `#000000`, lemon `#FFC93D`, Kids orange `#FB693A` and yellow `#FCCA38` where applicable.
+- Core compositions: `mark` (symbol), `stacked`, `horizontal`, `wordmark` (full brand lettering + tagline).
+- Each composition has SVG variants named `<brand>-<composition>-white|lemon-v1.svg` under [`logos/reconstructed/svg/`](logos/svg/), plus a transparent base under [`vector/`](vector/).
+- PNG files are under [`logos/reconstructed/png/`](logos/png/): `512` pixel width for marks only, plus `1024`, `2048`, and `4096` pixel widths for all compositions (preserving viewBox proportions). Transparent, white and lemon backgrounds are separate files. No black-background reconstruction is published.
 
-The six supplied Kids SVG files have been moved unchanged into [source/](./source/). Each SVG contains an embedded PNG and no editable vector paths. They are preserved as source references, not treated as vector masters.
+## Source audit
 
-The package includes standalone symbol, horizontal, stacked, and wordmark-only compositions. Wordmark-only is cropped from the supplied stacked logo.
+| Composition | Reference SVG | Original artboard | SHA-256 |
+| --- | --- | --- | --- |
+| mark | [`techtrack-kids-mark-bg-white-v1.svg`](source/techtrack-kids-mark-bg-white-v1.svg) | 0 0 447 423 | `3605dd5f359a0da8734acb4a834f70e224ec0545a7412f903bc9917a188612dc` |
+| stacked | [`techtrack-kids-lockup-stacked-bg-white-v1.svg`](source/techtrack-kids-lockup-stacked-bg-white-v1.svg) | 0 0 975 960 | `95aff0d9053966db4333d8857d4a7a4b3b2e97c154d4ac3d4c66509ed9e52317` |
+| horizontal | [`techtrack-kids-lockup-horizontal-bg-black-v1.svg`](source/techtrack-kids-lockup-horizontal-bg-black-v1.svg) | 0 0 1434 534 | `770de09f91a7a6457a215e2cf5c3a3d19afe80fa43f1324b3734938e1dd4b47c` |
+| wordmark | [`techtrack-kids-wordmark-bg-lemon-v1.svg`](source/techtrack-kids-wordmark-bg-lemon-v1.svg) | 0 0 975 534 | `1e7cb6c0ba11452b3782a155afde3683ef6d25a93bad2a59b6e019df4ea23916` |
 
-## Exports
+Full inventory, SHA-256 hashes of all original images and embedded PNGs, original SVG and image sizes, reconstruction status, and individual SVG/PNG paths: [`brand.json`](brand.json).
 
-Generated assets are in [logos/svg/](./logos/svg/) and [logos/png/](./logos/png/).
+## Fidelity and review limitations
 
-- Transparent PNG exports and 2× derivatives.
-- White (#FFFFFF), black (#000000), and lemon (#FFC93D) background PNG variants for all four compositions, plus 2× derivatives.
-- Transparent SVG compatibility wrappers contain embedded raster artwork; they are not editable vectors.
-- On lemon backgrounds, the yellow accent details shift to orange (#FF7A45) for legibility.
+The shapes are smoothed silhouettes traced from the original raster image and all letterforms are path outlines (not substitute typefaces). They preserve visible layout, but These files remain raster-derived reconstructions rather than original designer vectors, so the exact original control points and all subtle raster edge details cannot be recovered. The owner-reviewed transparent, white and lemon treatments are the usable set. The black-background treatment is deliberately excluded until its contrast and detail issues are corrected. The lemon Kids treatment switches yellow details to the original orange accent for contrast.
 
-The 2× PNGs are interpolated from the native embedded image; they do not invent extra vector detail. The original editable Kids logo source is still required for truly sharp vector scaling at any size.
-
-## Palette
-
-Blue #1264F3, Teal #08C9A5, Yellow #FFC93D, Orange #FF7A45, Purple #885CF6, Pink #FF5C7A, Light #F8FAFF, Lemon #FFC93D.
-
-## Status
-
-- Brand asset status: **review**.
-- Formal approval: pending.
-- Source: PNG-backed SVG, not vector.
-- Rights and redistribution review: not recorded.
-
-See [brand.json](./brand.json) for the source metadata and inventory.
+Do not describe these reconstructions as the original designer masters. Use the transparent asset on black or dark surfaces. The source files are unchanged. Reproduce the reviewed package by running `python scripts/reconstruct_techtrack.py --root .`, then `python scripts/validate_techtrack.py`.

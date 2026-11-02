@@ -1,139 +1,690 @@
 {
-  "schema_version": 1,
-  "brand_id": "techtrack",
-  "product_name": "TechTrack",
-  "brand_owner": "ABE TechLab",
-  "status": "review",
-  "source_of_truth": {
-    "repository": "ABE-TechLab/Branding",
-    "path": "brands/techtrack/",
-    "source_revision": "32c4373d3dddf8fabb893be1a99872695debf9f2"
+  "name": "TechTrack",
+  "slug": "techtrack",
+  "status": "owner-reviewed-with-exclusions",
+  "approval": "owner-reviewed-except-black-background",
+  "approval_notes": "Owner reviewed and accepted the transparent, white-background and lemon-background reconstructions. Black-background derivatives are deferred; use transparent assets on black or dark surfaces until that treatment is corrected.",
+  "excluded_variants": {
+    "black": {
+      "status": "deferred",
+      "reason": "The black-background reconstruction did not pass visual review. Use the transparent version on dark surfaces."
+    }
   },
-  "approval": {
-    "status": "pending",
-    "approved_by": [],
-    "approved_at": null,
-    "notes": "The supplied .svg files wrap embedded PNGs; they are not editable vector masters. Preserve them as source references and do not claim vector-quality scaling."
-  },
+  "provenance": "vector-reconstructed-from-raster",
+  "original_sources_preserved": true,
   "palette": {
-    "colors": [
-      {
-        "token": "navy",
-        "name": "Navy",
-        "hex": "#071A3D",
-        "rgb": [
-          7,
-          26,
-          61
-        ],
-        "role": "primary",
-        "status": "reference"
+    "white": "#FFFFFF",
+    "black": "#000000",
+    "lemon": "#FFC93D",
+    "navy": "#041B45",
+    "blue": "#0464FA",
+    "cyan": "#03A6FC",
+    "teal": "#02C9AC",
+    "kids_orange": "#FB693A",
+    "kids_yellow": "#FCCA38"
+  },
+  "tagline": "Skills Today. Opportunities Tomorrow.",
+  "sources": {
+    "mark": {
+      "original_file": "techtrack-mark-bg-white-v1.svg",
+      "original_sha256": "01fdbfa4f87a5b5189dca51afcceedd88861fed72f962da6d8598f937b351616",
+      "svg_viewBox": "0 0 471 435",
+      "svg_dimensions": [
+        "471",
+        "435"
+      ],
+      "embedded_png_dimensions": [
+        471,
+        435
+      ],
+      "embedded_png_sha256": "b93102b026e2e23f163e61e0b74ef3a37b2f898e84d07968faeb81b991dbc383",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ],
+      "component_pixel_counts": {
+        "components": 3,
+        "mark_components": 3
       },
-      {
-        "token": "electric-blue",
-        "name": "Electric Blue",
-        "hex": "#1264F3",
-        "rgb": [
-          18,
-          100,
-          243
-        ],
-        "role": "primary",
-        "status": "reference"
+      "vector_path_count": 4,
+      "geometry_method": "color-family segmentation / smoothed original silhouette contours; gradient stops fitted to raster samples"
+    },
+    "stacked": {
+      "original_file": "techtrack-lockup-stacked-bg-white-v1.svg",
+      "original_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+      "svg_viewBox": "0 0 1113 756",
+      "svg_dimensions": [
+        "1113",
+        "756"
+      ],
+      "embedded_png_dimensions": [
+        1113,
+        756
+      ],
+      "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ],
+      "component_pixel_counts": {
+        "components": 49,
+        "mark_components": 3
       },
-      {
-        "token": "cyan-blue",
-        "name": "Cyan Blue",
-        "hex": "#1488F0",
-        "rgb": [
-          20,
-          136,
-          240
-        ],
-        "role": "secondary",
-        "status": "reference"
+      "vector_path_count": 50,
+      "geometry_method": "color-family segmentation / smoothed original silhouette contours; gradient stops fitted to raster samples"
+    },
+    "horizontal": {
+      "original_file": "techtrack-lockup-horizontal-bg-black-v1.svg",
+      "original_sha256": "2426fd97f46c2a84eb1ce2551ec0239d7f762059fb75304deb93876b7ba1ec25",
+      "svg_viewBox": "0 0 1596 435",
+      "svg_dimensions": [
+        "1596",
+        "435"
+      ],
+      "embedded_png_dimensions": [
+        1596,
+        435
+      ],
+      "embedded_png_sha256": "7bcdf981afbcc0afeac30d4e96feec5eecedc2a5648b689dccaefdc8248dcc75",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ],
+      "component_pixel_counts": {
+        "components": 49,
+        "mark_components": 3
       },
-      {
-        "token": "teal-green",
-        "name": "Teal Green",
-        "hex": "#08C9A5",
-        "rgb": [
-          8,
-          201,
-          165
-        ],
-        "role": "accent",
-        "status": "reference"
+      "vector_path_count": 50,
+      "geometry_method": "color-family segmentation / smoothed original silhouette contours; gradient stops fitted to raster samples"
+    },
+    "wordmark": {
+      "original_file": "techtrack-wordmark-bg-lemon-v1.svg",
+      "original_sha256": "e6fed8ac614f408624fbc05d4e8f0b208f4174b731d061d0a6be13c6ebe59e84",
+      "svg_viewBox": "0 0 1113 348",
+      "svg_dimensions": [
+        "1113",
+        "348"
+      ],
+      "embedded_png_dimensions": [
+        1113,
+        348
+      ],
+      "embedded_png_sha256": "53b59949638dd093353a409dbbefa833799986ca3abfd69e7e5abb966997e4c8",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ],
+      "component_pixel_counts": {
+        "components": 46,
+        "mark_components": 0
       },
-      {
-        "token": "light-gray",
-        "name": "Light Gray",
-        "hex": "#F3F6FC",
-        "rgb": [
-          243,
-          246,
-          252
+      "vector_path_count": 46,
+      "geometry_method": "color-family segmentation / smoothed original silhouette contours; gradient stops fitted to raster samples"
+    }
+  },
+  "assets": {
+    "mark": {
+      "white": {
+        "svg": "logos/reconstructed/svg/techtrack-mark-white-v1.svg",
+        "dimensions": [
+          471,
+          435
         ],
-        "role": "surface",
-        "status": "reference"
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-white-512w-v1.png",
+            "dimensions": [
+              512,
+              473
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-white-1024w-v1.png",
+            "dimensions": [
+              1024,
+              946
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-white-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1891
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-white-4096w-v1.png",
+            "dimensions": [
+              4096,
+              3783
+            ],
+            "alpha": false
+          }
+        ]
       },
-      {
-        "token": "white",
-        "name": "White",
-        "hex": "#FFFFFF",
-        "rgb": [
-          255,
-          255,
-          255
+      "lemon": {
+        "svg": "logos/reconstructed/svg/techtrack-mark-lemon-v1.svg",
+        "dimensions": [
+          471,
+          435
         ],
-        "role": "surface",
-        "status": "reference"
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-lemon-512w-v1.png",
+            "dimensions": [
+              512,
+              473
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-lemon-1024w-v1.png",
+            "dimensions": [
+              1024,
+              946
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-lemon-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1891
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-lemon-4096w-v1.png",
+            "dimensions": [
+              4096,
+              3783
+            ],
+            "alpha": false
+          }
+        ]
       },
-      {
-        "token": "lemon",
-        "name": "Lemon",
-        "hex": "#FFC93D",
-        "rgb": [
-          255,
-          201,
-          61
+      "transparent": {
+        "svg": "vector/mark/techtrack-mark-master.svg",
+        "dimensions": [
+          471,
+          435
         ],
-        "role": "surface",
-        "status": "reference"
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-transparent-512w-v1.png",
+            "dimensions": [
+              512,
+              473
+            ],
+            "alpha": true
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-transparent-1024w-v1.png",
+            "dimensions": [
+              1024,
+              946
+            ],
+            "alpha": true
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-transparent-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1891
+            ],
+            "alpha": true
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-mark-transparent-4096w-v1.png",
+            "dimensions": [
+              4096,
+              3783
+            ],
+            "alpha": true
+          }
+        ]
       }
-    ]
+    },
+    "stacked": {
+      "white": {
+        "svg": "logos/reconstructed/svg/techtrack-stacked-white-v1.svg",
+        "dimensions": [
+          1113,
+          756
+        ],
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-stacked-white-1024w-v1.png",
+            "dimensions": [
+              1024,
+              696
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-stacked-white-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1391
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-stacked-white-4096w-v1.png",
+            "dimensions": [
+              4096,
+              2782
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "lemon": {
+        "svg": "logos/reconstructed/svg/techtrack-stacked-lemon-v1.svg",
+        "dimensions": [
+          1113,
+          756
+        ],
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-stacked-lemon-1024w-v1.png",
+            "dimensions": [
+              1024,
+              696
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-stacked-lemon-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1391
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-stacked-lemon-4096w-v1.png",
+            "dimensions": [
+              4096,
+              2782
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "transparent": {
+        "svg": "vector/stacked/techtrack-stacked-master.svg",
+        "dimensions": [
+          1113,
+          756
+        ],
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-stacked-transparent-1024w-v1.png",
+            "dimensions": [
+              1024,
+              696
+            ],
+            "alpha": true
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-stacked-transparent-2048w-v1.png",
+            "dimensions": [
+              2048,
+              1391
+            ],
+            "alpha": true
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-stacked-transparent-4096w-v1.png",
+            "dimensions": [
+              4096,
+              2782
+            ],
+            "alpha": true
+          }
+        ]
+      }
+    },
+    "horizontal": {
+      "white": {
+        "svg": "logos/reconstructed/svg/techtrack-horizontal-white-v1.svg",
+        "dimensions": [
+          1596,
+          435
+        ],
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-horizontal-white-1024w-v1.png",
+            "dimensions": [
+              1024,
+              279
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-horizontal-white-2048w-v1.png",
+            "dimensions": [
+              2048,
+              558
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-horizontal-white-4096w-v1.png",
+            "dimensions": [
+              4096,
+              1116
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "lemon": {
+        "svg": "logos/reconstructed/svg/techtrack-horizontal-lemon-v1.svg",
+        "dimensions": [
+          1596,
+          435
+        ],
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-horizontal-lemon-1024w-v1.png",
+            "dimensions": [
+              1024,
+              279
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-horizontal-lemon-2048w-v1.png",
+            "dimensions": [
+              2048,
+              558
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-horizontal-lemon-4096w-v1.png",
+            "dimensions": [
+              4096,
+              1116
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "transparent": {
+        "svg": "vector/horizontal/techtrack-horizontal-master.svg",
+        "dimensions": [
+          1596,
+          435
+        ],
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-horizontal-transparent-1024w-v1.png",
+            "dimensions": [
+              1024,
+              279
+            ],
+            "alpha": true
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-horizontal-transparent-2048w-v1.png",
+            "dimensions": [
+              2048,
+              558
+            ],
+            "alpha": true
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-horizontal-transparent-4096w-v1.png",
+            "dimensions": [
+              4096,
+              1116
+            ],
+            "alpha": true
+          }
+        ]
+      }
+    },
+    "wordmark": {
+      "white": {
+        "svg": "logos/reconstructed/svg/techtrack-wordmark-white-v1.svg",
+        "dimensions": [
+          1113,
+          348
+        ],
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-wordmark-white-1024w-v1.png",
+            "dimensions": [
+              1024,
+              320
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-wordmark-white-2048w-v1.png",
+            "dimensions": [
+              2048,
+              640
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-wordmark-white-4096w-v1.png",
+            "dimensions": [
+              4096,
+              1281
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "lemon": {
+        "svg": "logos/reconstructed/svg/techtrack-wordmark-lemon-v1.svg",
+        "dimensions": [
+          1113,
+          348
+        ],
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-wordmark-lemon-1024w-v1.png",
+            "dimensions": [
+              1024,
+              320
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-wordmark-lemon-2048w-v1.png",
+            "dimensions": [
+              2048,
+              640
+            ],
+            "alpha": false
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-wordmark-lemon-4096w-v1.png",
+            "dimensions": [
+              4096,
+              1281
+            ],
+            "alpha": false
+          }
+        ]
+      },
+      "transparent": {
+        "svg": "vector/wordmark/techtrack-wordmark-master.svg",
+        "dimensions": [
+          1113,
+          348
+        ],
+        "png": [
+          {
+            "path": "logos/reconstructed/png/techtrack-wordmark-transparent-1024w-v1.png",
+            "dimensions": [
+              1024,
+              320
+            ],
+            "alpha": true
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-wordmark-transparent-2048w-v1.png",
+            "dimensions": [
+              2048,
+              640
+            ],
+            "alpha": true
+          },
+          {
+            "path": "logos/reconstructed/png/techtrack-wordmark-transparent-4096w-v1.png",
+            "dimensions": [
+              4096,
+              1281
+            ],
+            "alpha": true
+          }
+        ]
+      }
+    }
   },
-  "typography": {
-    "families": [],
-    "font_licenses_reviewed": false,
-    "notes": "Lettering is raster artwork inside embedded PNGs; font family and licensing cannot be inferred from the container."
-  },
-  "source_artwork": {
-    "format": "svg-with-embedded-png",
-    "editable_vector_master": false,
-    "compositions": [
-      "mark",
-      "horizontal",
-      "stacked",
-      "wordmark"
-    ],
-    "note": "Wordmark-only image is derived by cropping the text region from the supplied stacked logo."
-  },
-  "export": {
-    "png": "logos/png/",
-    "svg": "logos/svg/",
-    "native_and_2x_png": true,
-    "opaque_backgrounds": [
-      "white",
-      "black",
-      "lemon"
-    ],
-    "transparent_variants": true
-  },
-  "licensing": {
-    "ownership_confirmed": false,
-    "redistribution_status": "unreviewed",
-    "notes": "Internal product brand source supplied by ABE TechLab; legal/redistribution review not recorded."
-  },
-  "last_reviewed": "2026-11-01"
+  "limitations": [
+    "The vectors are derived from preserved raster references and are not original designer-authored master paths.",
+    "The transparent, white-background and lemon-background treatments were owner-reviewed and accepted for use.",
+    "The black-background reconstruction is intentionally excluded; use transparent treatments on dark or black surfaces."
+  ],
+  "source_inventory": {
+    "techtrack-lockup-horizontal-bg-black-v1.svg": {
+      "original_file": "techtrack-lockup-horizontal-bg-black-v1.svg",
+      "original_sha256": "2426fd97f46c2a84eb1ce2551ec0239d7f762059fb75304deb93876b7ba1ec25",
+      "svg_viewBox": "0 0 1596 435",
+      "svg_dimensions": [
+        "1596",
+        "435"
+      ],
+      "embedded_png_dimensions": [
+        1596,
+        435
+      ],
+      "embedded_png_sha256": "7bcdf981afbcc0afeac30d4e96feec5eecedc2a5648b689dccaefdc8248dcc75",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "techtrack-lockup-stacked-bg-white-v1.svg": {
+      "original_file": "techtrack-lockup-stacked-bg-white-v1.svg",
+      "original_sha256": "5f3a6c2bbbaaf5146019231e293c2b737255cf1299174b8b9b8b5a77cb2bd141",
+      "svg_viewBox": "0 0 1113 756",
+      "svg_dimensions": [
+        "1113",
+        "756"
+      ],
+      "embedded_png_dimensions": [
+        1113,
+        756
+      ],
+      "embedded_png_sha256": "d49176ce7345cc90ff121b11dfd5c343cfb8a12bbcb96b2a4b396cb53963312b",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "techtrack-mark-bg-black-v1.svg": {
+      "original_file": "techtrack-mark-bg-black-v1.svg",
+      "original_sha256": "84764521584097bb6bc838c72a26edae0cb50e918908f9bb36cef12f649c71cb",
+      "svg_viewBox": "0 0 471 435",
+      "svg_dimensions": [
+        "471",
+        "435"
+      ],
+      "embedded_png_dimensions": [
+        471,
+        435
+      ],
+      "embedded_png_sha256": "11eea6d26ae578464d311c6c8cd38b89cbdcdb44023c3a8e1ef480024dda3b12",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "techtrack-mark-bg-lemon-v1.svg": {
+      "original_file": "techtrack-mark-bg-lemon-v1.svg",
+      "original_sha256": "c013ea0426577710a9d6f989d55e438c4d8e58e8b889a48b9a05740d6cdf01cf",
+      "svg_viewBox": "0 0 471 435",
+      "svg_dimensions": [
+        "471",
+        "435"
+      ],
+      "embedded_png_dimensions": [
+        471,
+        435
+      ],
+      "embedded_png_sha256": "7857c4b8f3a09525fa3c050ac8cc96f5429f13bfc6fdfed57713ee9b4d26e606",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ]
+    },
+    "techtrack-mark-bg-white-v1.svg": {
+      "original_file": "techtrack-mark-bg-white-v1.svg",
+      "original_sha256": "01fdbfa4f87a5b5189dca51afcceedd88861fed72f962da6d8598f937b351616",
+      "svg_viewBox": "0 0 471 435",
+      "svg_dimensions": [
+        "471",
+        "435"
+      ],
+      "embedded_png_dimensions": [
+        471,
+        435
+      ],
+      "embedded_png_sha256": "b93102b026e2e23f163e61e0b74ef3a37b2f898e84d07968faeb81b991dbc383",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "techtrack-wordmark-bg-lemon-v1.svg": {
+      "original_file": "techtrack-wordmark-bg-lemon-v1.svg",
+      "original_sha256": "e6fed8ac614f408624fbc05d4e8f0b208f4174b731d061d0a6be13c6ebe59e84",
+      "svg_viewBox": "0 0 1113 348",
+      "svg_dimensions": [
+        "1113",
+        "348"
+      ],
+      "embedded_png_dimensions": [
+        1113,
+        348
+      ],
+      "embedded_png_sha256": "53b59949638dd093353a409dbbefa833799986ca3abfd69e7e5abb966997e4c8",
+      "embedded_png_mode": "P",
+      "background_rgb": [
+        255,
+        201,
+        61
+      ]
+    }
+  }
 }
