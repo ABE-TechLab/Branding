@@ -51,10 +51,10 @@ BRANDS = {
 
 ROOT_CSS = r"""
 /* BRAND_LIBRARY_SHELL_START */
-:root { --brand-ink:#171816; --brand-muted:#62675f; --brand-line:#dedfd9; --brand-panel:#fff; --brand-canvas:#f4f5f2; --brand-accent:#396b16; }
+:root { --brand-sidebar-width:260px; --brand-ink:#171816; --brand-muted:#62675f; --brand-line:#dedfd9; --brand-panel:#fff; --brand-canvas:#f4f5f2; --brand-accent:#396b16; }
 body { background:var(--brand-canvas); }
-.brand-shell { min-height:100vh; display:grid; grid-template-columns:260px minmax(0,1fr); }
-.brand-sidebar { position:sticky; top:0; height:100vh; padding:26px 18px 24px; background:#fff; border-right:1px solid var(--brand-line); display:flex; flex-direction:column; gap:26px; z-index:10; }
+.brand-shell { min-height:100vh; display:grid; grid-template-columns:var(--brand-sidebar-width) minmax(0,1fr); }
+.brand-sidebar { width:var(--brand-sidebar-width); box-sizing:border-box; position:sticky; top:0; height:100vh; padding:26px 18px 24px; background:#fff; border-right:1px solid var(--brand-line); display:flex; flex-direction:column; gap:26px; z-index:10; }
 .brand-sidebar__identity { display:flex; align-items:center; gap:12px; padding:2px 8px 20px; border-bottom:1px solid #e9ebe5; text-decoration:none; color:inherit; }
 .brand-sidebar__identity img { width:38px; height:38px; object-fit:contain; }
 .brand-sidebar__identity span { display:block; font-weight:760; font-size:14px; letter-spacing:-.02em; color:#171816; }
@@ -127,7 +127,7 @@ body { background:var(--brand-canvas); }
 .brand-footer { margin-top:42px; padding-top:17px; border-top:1px solid #e2e5dc; color:#858b7f; font-size:11px; line-height:1.65; }
 .brand-main .eyebrow { color:#65705b; }
 .brand-main h1 { letter-spacing:-.045em; }
-@media(max-width:880px) { .brand-shell{grid-template-columns:220px minmax(0,1fr)} .brand-sidebar{padding:23px 12px} .brand-main{padding:40px 25px 60px} .asset-hero{grid-template-columns:1fr} }
+@media(max-width:880px) { :root{--brand-sidebar-width:220px} .brand-shell{grid-template-columns:var(--brand-sidebar-width) minmax(0,1fr)} .brand-sidebar{padding:23px 12px} .brand-main{padding:40px 25px 60px} .asset-hero{grid-template-columns:1fr} }
 @media(max-width:680px) {
  .brand-shell{display:block}
  .brand-sidebar{position:sticky;top:0;width:100%;height:auto;padding:11px 14px 12px;border-right:0;border-bottom:1px solid var(--brand-line);gap:8px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px)}
@@ -156,27 +156,34 @@ def esc(s: str) -> str:
     return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
              .replace('"', "&quot;").replace("'", "&#39;"))
 
-def shell(content: str, title: str, active: str, description: str = "") -> str:
-    nav = []
+def render_brand_sidebar(active: str) -> str:
+    """Render the single shared company/product navigation used on every brand page."""
+    if active and active not in BRANDS:
+        raise ValueError(f"Unknown active brand: {active}")
+
+    links = []
     for slug, cfg in BRANDS.items():
         current = ' aria-current="page"' if slug == active else ""
-        nav.append(
+        links.append(
             f'<a href="/brands/{slug}/"{current}><span class="brand-nav__dot" '
             f'style="background:{cfg["accent"]}"></span><span>{esc(cfg["name"])}</span></a>'
         )
-    sidebar = f"""
-<aside class="brand-sidebar" aria-label="Brand navigation">
+
+    return f"""<aside class="brand-sidebar" aria-label="Brand navigation">
   <a class="brand-sidebar__identity" href="/brands/abe-techlab/">
     <img src="/logos/abe-techlab-mark-adaptive.svg" alt="" aria-hidden="true">
     <span>ABE TechLab<small>Brand library</small></span>
   </a>
   <div>
     <p class="brand-nav__label">Company & product brands</p>
-    <nav class="brand-nav">{''.join(nav)}</nav>
+    <nav class="brand-nav">{''.join(links)}</nav>
   </div>
   <div class="brand-sidebar__foot">One source of truth for every brand.<br><a href="https://github.com/ABE-TechLab/Branding">Open Brand Library repository ↗</a></div>
-</aside>
-"""
+</aside>"""
+
+
+def shell(content: str, title: str, active: str, description: str = "") -> str:
+    sidebar = render_brand_sidebar(active)
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f4f5f2"><meta name="description" content="{esc(description)}">
@@ -185,6 +192,7 @@ def shell(content: str, title: str, active: str, description: str = "") -> str:
 <footer class="brand-footer">ABE TechLab Brand Library · Source artwork, derivation method and approval status are recorded per brand. Generated assets do not imply formal approval.</footer>
 </div></div></body></html>
 """
+
 
 def image_path(slug: str, filename: str) -> str:
     if slug == "abe-techlab":
@@ -448,28 +456,27 @@ def wrap_company_page(source_html: str) -> str:
         raise ValueError("Company page is missing its inline style block")
     source_html = source_html.replace("</style>", ROOT_CSS.strip() + "\n  </style>", 1)
 
-    # Add the shell/sidebar only when the source page has not already been wrapped.
-    if '<aside class="brand-sidebar"' not in source_html:
-        sidebar = """
-    <aside class="brand-sidebar" aria-label="Brand navigation">
-      <a class="brand-sidebar__identity" href="/brands/abe-techlab/"><img src="/logos/abe-techlab-mark-adaptive.svg" alt=""><span>ABE TechLab<small>Brand library</small></span></a>
-      <div><p class="brand-nav__label">Company & product brands</p><nav class="brand-nav">
-      <a href="/brands/abe-techlab/" aria-current="page"><span class="brand-nav__dot" style="background:#A7E021"></span><span>ABE TechLab</span></a>
-      <a href="/brands/abemail/"><span class="brand-nav__dot" style="background:#72E3AD"></span><span>ABEmail</span></a>
-      <a href="/brands/techtrack/"><span class="brand-nav__dot" style="background:#1264F3"></span><span>TechTrack</span></a>
-      <a href="/brands/techtrack-kids/"><span class="brand-nav__dot" style="background:#885CF6"></span><span>TechTrack Kids</span></a>
-      </nav></div>
-      <div class="brand-sidebar__foot">One source of truth for every brand.<br><a href="https://github.com/ABE-TechLab/Branding">Open Brand Library repository ↗</a></div>
-    </aside>
-"""
+    # Replace any earlier hand-authored sidebar copy with the same component used by shell().
+    sidebar = render_brand_sidebar("abe-techlab")
+    sidebar_pattern = re.compile(r'<aside class="brand-sidebar"[^>]*>.*?</aside>', re.S)
+    source_html = sidebar_pattern.sub("", source_html)
+
+    if '<div class="brand-shell">' in source_html:
+        source_html = source_html.replace(
+            '<div class="brand-shell">',
+            '<div class="brand-shell">\n' + sidebar,
+            1,
+        )
+    else:
         source_html = source_html.replace(
             "<body>\n  <main>",
-            "<body>\n  <div class=\"brand-shell\">" + sidebar + "<div class=\"brand-main\">\n  <main>",
+            '<body>\n  <div class="brand-shell">\n' + sidebar + '<div class="brand-main">\n  <main>',
             1,
         )
         source_html = source_html.replace("</main>\n</body>", "</main></div>\n</div>\n</body>", 1)
-        if '<aside class="brand-sidebar"' not in source_html:
-            raise ValueError("Sidebar navigation was not installed in company page")
+
+    if source_html.count('<aside class="brand-sidebar"') != 1:
+        raise ValueError("Company page must contain exactly one shared brand navigation")
 
     dimensions = {
         "mark": None,
