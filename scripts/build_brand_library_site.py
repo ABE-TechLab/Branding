@@ -460,6 +460,10 @@ def wrap_company_page(source_html: str) -> str:
     sidebar = render_brand_sidebar("abe-techlab")
     sidebar_pattern = re.compile(r'<aside class="brand-sidebar"[^>]*>.*?</aside>', re.S)
     source_html = sidebar_pattern.sub("", source_html)
+    # Removing the old sidebar can expose indentation-only lines after </aside>.
+    # Normalize once more so repeat homepage generation is byte-for-byte stable.
+    source_html = re.sub(r"(?m)^[ \\t]+$", "", source_html)
+    source_html = re.sub(r"\\n{3,}", "\\n\\n", source_html)
 
     if '<div class="brand-shell">' in source_html:
         source_html = source_html.replace(
